@@ -5,9 +5,8 @@ public class Professor extends User {
 	private String department;
 	private int empId;
 
-	public Professor(String userId, String name, String password,  String address, String department,
-			int empId) {
-		super(userId, name, password,address);
+	public Professor(String userId, String name, String password, String address, String department, int empId) {
+		super(userId, name, password, address);
 		this.department = department;
 		this.empId = empId;
 	}

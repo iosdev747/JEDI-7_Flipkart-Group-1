@@ -6,9 +6,9 @@ public class Student extends User {
 	private String Department;
 	private int CurrentYear;
 
-	public Student(String userId, String name, String password, String address,
-			int studentId, String department, int currentYear) {
-		super(userId, name, password,address);
+	public Student(String userId, String name, String password, String address, int studentId, String department,
+			int currentYear) {
+		super(userId, name, password, address);
 		this.studentId = studentId;
 		Department = department;
 		CurrentYear = currentYear;

@@ -1,6 +1,5 @@
 package com.flipkart.service;
 
-
 public interface StudentInterface {
 
 	public Grade getGrade(String studentId, String courseId);
