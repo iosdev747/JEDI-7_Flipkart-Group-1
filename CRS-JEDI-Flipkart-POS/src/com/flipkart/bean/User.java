@@ -5,15 +5,12 @@ public abstract class User {
 	private int userId;
 	private String name;
 	private String password;
-	private Gender gender;
 	private String address;
 
-	public User(int userId, String name, String password, Gender gender, String address) {
-		super();
+	public User(int userId, String name, String password, String address) {
 		this.userId = userId;
 		this.name = name;
 		this.password = password;
-		this.gender = gender;
 		this.address = address;
 	}
 
@@ -39,14 +36,6 @@ public abstract class User {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public Gender getGender() {
-		return gender;
-	}
-
-	public void setGender(Gender gender) {
-		this.gender = gender;
 	}
 
 	public String getAddress() {
