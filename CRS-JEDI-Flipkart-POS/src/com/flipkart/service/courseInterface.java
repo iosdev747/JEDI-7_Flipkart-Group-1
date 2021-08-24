@@ -1,16 +1,19 @@
-package src.com.flipkart.service;
+package com.flipkart.service;
 
+import com.flipkart.bean.Course;
+import com.flipkart.bean.Professor;
 import com.flipkart.bean.Student;
 
 public interface courseInterface {
-	public Course[] getCourseCatalog();
 
-	public Course getCourseObject(String courseId);
+    Course[] getCourseCatalog();
 
-	public Professor getProfessor(String courseId);
+    Course getCourseObject(String courseId);
 
-	public Student[] getEnrolledStudents(String courseId);
+    Professor getProfessor(String courseId);
 
-	public boolean isAvailable(String courseId);
+    Student[] getEnrolledStudents(String courseId);
+
+    boolean isAvailable(String courseId);
 
 }

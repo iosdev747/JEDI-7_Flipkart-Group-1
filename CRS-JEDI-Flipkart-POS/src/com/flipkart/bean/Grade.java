@@ -1,41 +1,39 @@
-
-package src.com.flipkart.bean;
-
-import com.flipkart.constant.Grade;
+package com.flipkart.bean;
 
 public class Grade {
-	private String courseId;
-	private double grade;
-	private String studentId;
 
-	public Grade(String courseId, double grade, String studentId) {
-		this.courseId = courseId;
-		this.grade = grade;
-		this.studentId = studentId;
-	}
+    private String courseId;
+    private double grade;
+    private String studentId;
 
-	public String getCourseId() {
-		return courseId;
-	}
+    public Grade(String courseId, double grade, String studentId) {
+        this.courseId = courseId;
+        this.grade = grade;
+        this.studentId = studentId;
+    }
 
-	public void setCourseId(String courseId) {
-		this.courseId = courseId;
-	}
+    public String getCourseId() {
+        return courseId;
+    }
 
-	public double getGrade() {
-		return grade;
-	}
+    public void setCourseId(String courseId) {
+        this.courseId = courseId;
+    }
 
-	public void setGrade(double grade) {
-		this.grade = grade;
-	}
+    public double getGrade() {
+        return grade;
+    }
 
-	public String getStudentId() {
-		return studentId;
-	}
+    public void setGrade(double grade) {
+        this.grade = grade;
+    }
 
-	public void setStudentId(String studentId) {
-		this.studentId = studentId;
-	}
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
+    }
 
 }

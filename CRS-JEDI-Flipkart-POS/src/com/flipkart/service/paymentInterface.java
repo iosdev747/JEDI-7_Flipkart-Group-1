@@ -1,10 +1,11 @@
-package src.com.flipkart.service;
+package com.flipkart.service;
 
-public class paymentInterface {
-	public boolean makePayment(String studentId);
+public interface paymentInterface {
 
-	public boolean verifyPayment(String studentId);
+    boolean makePayment(String studentId);
 
-	public int calculateFee(String studentId);
+    boolean verifyPayment(String studentId);
+
+    int calculateFee(String studentId);
 
 }

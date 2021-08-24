@@ -1,16 +1,21 @@
 package com.flipkart.service;
 
+import com.flipkart.bean.Course;
+import com.flipkart.bean.Professor;
+
+import java.util.List;
+
 public interface AdminInterface {
 
-	public boolean deleteCourse(String courseId);
+    boolean deleteCourse(String courseId);
 
-	public boolean addCourse(Course course);
+    boolean addCourse(Course course);
 
-	public boolean verifyStudentProfile(String studentId);
+    boolean verifyStudentProfile(String studentId);
 
-	public boolean addProfessor(Professor professor);
+    boolean addProfessor(Professor professor);
 
-	public List<Course> viewCourses(int catalogId);
+    List<Course> viewCourses(int catalogId);
 
-	public List<Professor> viewProfessors();
+    List<Professor> viewProfessors();
 }

@@ -1,15 +1,19 @@
 package com.flipkart.service;
 
+import com.flipkart.bean.Course;
+import com.flipkart.bean.Grade;
+import com.flipkart.bean.Student;
+
 public interface StudentInterface {
 
-	public Grade getGrade(String studentId, String courseId);
+    Grade getGrade(String studentId, String courseId);
 
-	public Course[] viewCourse(String studentId);
+    Course[] viewCourse(String studentId);
 
-	public boolean enrollCourse(String courseId, String studentId);
+    boolean enrollCourse(String courseId, String studentId);
 
-	public boolean dropCourse(String courseId, String studentId);
+    boolean dropCourse(String courseId, String studentId);
 
-	public Student getStudentObject(String userId);
+    Student getStudentObject(int userId);
 
 }
