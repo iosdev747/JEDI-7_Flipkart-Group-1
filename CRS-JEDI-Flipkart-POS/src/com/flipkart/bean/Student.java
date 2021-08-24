@@ -2,11 +2,11 @@ package com.flipkart.bean;
 
 public class Student extends User {
 
-    private int studentId;
+    private String studentId;
     private String Department;
     private int CurrentYear;
 
-    public Student(int userId, String name, String password, String address, int studentId, String department,
+    public Student(int userId, String name, String password, String address, String studentId, String department,
                    int currentYear) {
         super(userId, name, password, address);
         this.studentId = studentId;
@@ -14,11 +14,11 @@ public class Student extends User {
         CurrentYear = currentYear;
     }
 
-    public int getStudentId() {
+    public String getStudentId() {
         return studentId;
     }
 
-    public void setStudentId(int studentId) {
+    public void setStudentId(String studentId) {
         this.studentId = studentId;
     }
 

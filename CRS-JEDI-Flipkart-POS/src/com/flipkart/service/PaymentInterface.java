@@ -1,6 +1,6 @@
 package com.flipkart.service;
 
-public interface paymentInterface {
+public interface PaymentInterface {
 
     boolean makePayment(String studentId);
 

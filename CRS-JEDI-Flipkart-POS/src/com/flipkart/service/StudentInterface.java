@@ -4,11 +4,13 @@ import com.flipkart.bean.Course;
 import com.flipkart.bean.Grade;
 import com.flipkart.bean.Student;
 
+import java.util.ArrayList;
+
 public interface StudentInterface {
 
     Grade getGrade(String studentId, String courseId);
 
-    Course[] viewCourse(String studentId);
+    ArrayList<Course> viewRegisteredCourse(String studentId);
 
     boolean enrollCourse(String courseId, String studentId);
 

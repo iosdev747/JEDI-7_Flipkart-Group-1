@@ -4,15 +4,17 @@ import com.flipkart.bean.Course;
 import com.flipkart.bean.Professor;
 import com.flipkart.bean.Student;
 
-public interface courseInterface {
+import java.util.ArrayList;
 
-    Course[] getCourseCatalog();
+public interface CourseInterface {
+
+    ArrayList<Course> getCourseCatalog();
 
     Course getCourseObject(String courseId);
 
     Professor getProfessor(String courseId);
 
-    Student[] getEnrolledStudents(String courseId);
+    ArrayList<Student> getEnrolledStudents(String courseId);
 
     boolean isAvailable(String courseId);
 

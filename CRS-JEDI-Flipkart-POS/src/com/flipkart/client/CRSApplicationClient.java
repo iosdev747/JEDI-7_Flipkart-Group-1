@@ -1,5 +1,7 @@
 package com.flipkart.client;
 
+import com.flipkart.bean.Student;
+
 import java.util.Scanner;
 
 public class CRSApplicationClient {
@@ -21,7 +23,7 @@ public class CRSApplicationClient {
         String password = in.nextLine();
         switch (choice) {
             case 1:
-                verifyStudentCredentials(userName, password);
+                new StudentApplicationClient(verifyStudentCredentials(userName, password)).menu();
                 break;
             case 2:
                 verifyProfessorCredentials(userName, password);
@@ -37,6 +39,7 @@ public class CRSApplicationClient {
                 break;
 
         }
+        // exit menu code
 
     }
 
@@ -48,8 +51,8 @@ public class CRSApplicationClient {
 
     }
 
-    private static void verifyStudentCredentials(String userName, String password) {
-
+    private static Student verifyStudentCredentials(String userName, String password) {
+        return new Student(101, "user1", "pass1", "someaddress - 1", "2001", "CSE", 2020);
     }
 
     private static void exit() {
