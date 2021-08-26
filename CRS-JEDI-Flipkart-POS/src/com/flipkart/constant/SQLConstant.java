@@ -11,14 +11,18 @@ public class SQLConstant {
     // Student Queries
     public static final String ADD_STUDENT = "INSERT INTO Student (studentID, department, currentYear, userID, isApproved) values (?, ?, ? ,?, ?)";
     public static final String GET_STUDENT_ID ="SELECT studentID FROM Student WHERE userID = ?";
-    public static final String GET_STUDENT_GRADE = "SELECT studentID, studentID, grade FROM Grade WHERE studentID = ?";
+    public static final String GET_STUDENT_GRADE = "SELECT studentID, courseID, grade FROM Grade WHERE studentID = ?";
     public static final String IS_APPROVED = "SELECT isApproved FROM Student WHERE studentID = ?";
     public static final String VERIFY_STUDENT = "SELECT COUNT(studentID) FROM Student WHERE userID = ?";
 
     // Professor
     public static final String GET_PROF_COURSE = "SELECT courseID, courseName, credit, professorEmpID, fee FROM Course WHERE professorEmpID = ?";
-    public static final String GET_ENROL_STUDENT = "SELECT e.courseID, e.studentID FROM Course c, EnrolledStudent e WHERE c.professorEmpID = ? AND c.courseID = e.courseID";
-    public static final String ADD_GRADE = "UPDATE Grade SET grade = ? WHERE courseID = ? AND studentID = ?";
+    public static final String GET_ENROL_STUDENT = "SELECT c.courseID, e.studentID FROM Course c, EnrolledStudent e WHERE c.professorEmpID = ? AND c.courseID = e.courseID";
+    public static final String UPDATE_GRADE = "UPDATE Grade SET grade = ? WHERE courseID = ? AND studentID = ?";
+
+    public static final String CHECK_GRADE = "SELECT courseID FROM Grade WHERE courseID = ? AND studentID = ?";
+    public static final String ADD_GRADE = "INSERT INTO Grade (courseID, studentID, grade) VALUES (?, ?, ?)";
+
     public static final String GET_PROF_NAME = "SELECT u.userName FROM UserDetail u, Professor p WHERE p.professorEmpId = ? AND p.userID = u.userID";
     public static final String DELETE_COURSE = "DELETE FROM Course WHERE courseID = ?";
     public static final String ADD_COURSE = "INSERT INTO Course (courseID, courseName, credit, professorEmpID, fee) VALUES (?, ?, ?, ?, ?)";
@@ -33,7 +37,7 @@ public class SQLConstant {
     public static final String DROP_REGISTER_COURSE = "DELETE FROM EnrolledStudent WHERE courseID = ? AND studentID = ?";
     public static final String VIEW_ALL_COURSES = "SELECT courseID, courseName, credit, professorEmpID, fee FROM Course";
     public static final String VIEW_REGISTER_COURSES = "SELECT c.courseID, c.courseName, c.credit, c.professorEmpID, c.fee FROM EnrolledStudent e, Course c WHERE e.studentID = ? AND e.courseID = c.courseID";
-    public static final String CALCULATE_FEE = "SELECT SUM(c.fee) FROM EnrolledStudent e, course c WHERE e.studentID = ? AND e.courseID = c.courseID";
+    public static final String CALCULATE_FEE = "SELECT SUM(c.fee) FROM EnrolledStudent e, Course c WHERE e.studentID = ? AND e.courseID = c.courseID";
     public static final String CALCULATE_NO_OF_COURSE = "SELECT COUNT(courseID) FROM EnrolledStudent WHERE studentID = ?";
     public static final String REGISTER_IN_ENROLL = "SELECT * FROM EnrolledStudent WHERE studentID = ? AND courseID = ?";
 

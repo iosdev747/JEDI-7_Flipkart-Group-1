@@ -93,13 +93,29 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
             Connection conn = DriverManager.getConnection(url,user,pass);
-            PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.ADD_GRADE);
-            preparedStatement.setString(1, String.valueOf(grade));
-            preparedStatement.setString(2, String.valueOf(courseId));
-            preparedStatement.setString(3, String.valueOf(studentId));
+            PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.CHECK_GRADE);
+            preparedStatement.setString(1, String.valueOf(courseId));
+            preparedStatement.setString(2, String.valueOf(studentId));
 
-            preparedStatement.executeUpdate();
+            ResultSet result = preparedStatement.executeQuery();
 
+            if(result.next()) {
+
+                PreparedStatement preparedStatement2 = conn.prepareStatement(SQLConstant.UPDATE_GRADE);
+                preparedStatement2.setString(1, String.valueOf(grade));
+                preparedStatement2.setString(2, String.valueOf(courseId));
+                preparedStatement2.setString(3, String.valueOf(studentId));
+
+                preparedStatement2.executeUpdate();
+            }
+            else{
+                PreparedStatement preparedStatement2 = conn.prepareStatement(SQLConstant.ADD_GRADE);
+                preparedStatement2.setString(1, String.valueOf(courseId));
+                preparedStatement2.setString(2, String.valueOf(studentId));
+                preparedStatement2.setString(3, String.valueOf(grade));
+
+                preparedStatement2.executeUpdate();
+            }
             conn.close();
             return true;
         }

@@ -145,7 +145,7 @@ public class StudentCRSMenu {
 
             int choice = sc.nextInt();
             if (choice == 1) viewCourse(studentId);
-            logger.info("Enter the Course you selected: ");
+            logger.info("Enter the CourseId you selected: ");
 
             String courseId = sc.next();
 
