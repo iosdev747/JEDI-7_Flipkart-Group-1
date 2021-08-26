@@ -4,19 +4,18 @@ public class Course {
 
     private String courseId;
     private String courseName;
-    private int credits;
-    private Professor professor;
+    private int credit;
+    private int professorEmpId;
     private double fee;
-    private Student[] enrolledStudents = new Student[10];
 
-    public void addStudent(Student student) {
+    public Course() {
     }
 
-    public Course(String courseId, String courseName, int credits, Professor professor, double fee) {
+    public Course(String courseId, String courseName, int credit, int professorEmpId, double fee) {
         this.courseId = courseId;
         this.courseName = courseName;
-        this.credits = credits;
-        this.professor = professor;
+        this.credit = credit;
+        this.professorEmpId = professorEmpId;
         this.fee = fee;
     }
 
@@ -36,20 +35,20 @@ public class Course {
         this.courseName = courseName;
     }
 
-    public int getCredits() {
-        return credits;
+    public int getCredit() {
+        return credit;
     }
 
-    public void setCredits(int credits) {
-        this.credits = credits;
+    public void setCredit(int credit) {
+        this.credit = credit;
     }
 
-    public Professor getProfessor() {
-        return professor;
+    public int getProfessorEmpId() {
+        return professorEmpId;
     }
 
-    public void setProfessor(Professor professor) {
-        this.professor = professor;
+    public void setProfessorEmpId(int professorEmpId) {
+        this.professorEmpId = professorEmpId;
     }
 
     public double getFee() {
@@ -59,5 +58,4 @@ public class Course {
     public void setFee(double fee) {
         this.fee = fee;
     }
-
 }

@@ -1,0 +1,181 @@
+package com.flipkart.dao;
+
+import java.sql.*;
+import java.util.*;
+import com.flipkart.bean.Course;
+import com.flipkart.bean.EnrolledStudent;
+import com.flipkart.bean.Grade;
+import com.flipkart.bean.Student;
+import com.flipkart.constant.SQLConstant;
+
+
+public class ProfessorDaoOperation implements ProfessorDaoInterface{
+
+    private static String url = "jdbc:mysql://localhost:3306/JEDI-7-CRS";
+    private static String user = "root";
+    private static String pass = "12345678";
+
+    public ProfessorDaoOperation() {   // In future may be change to private
+    }
+
+    // here also change the professorEmpId to string if it is in db
+    @Override
+    public List<Course> getCoursesByProfessor(int professorEmpId){
+
+        List<Course> courseList = new ArrayList<Course>();
+
+        try{
+            Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
+
+            Connection conn = DriverManager.getConnection(url,user,pass);
+            PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.GET_PROF_COURSE);
+            preparedStatement.setString(1,String.valueOf(professorEmpId));
+
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while(rs.next()){
+
+                courseList.add(new Course(rs.getString("courseID"), rs.getString("courseName"), rs.getInt("credit"), rs.getInt("professorEmpId"), rs.getDouble("fee")));
+                // here change getInt to getString for professor
+            }
+
+            conn.close();
+        }
+        catch(Exception e){
+            System.out.println("There is an Error : "+ e.getMessage());
+        }
+
+        return courseList;
+    }
+
+    // here also change it to professorEmpId to string if in db
+    @Override
+    public List<EnrolledStudent> getEnrolledStudent(int professorEmpId){
+
+        List<EnrolledStudent> enrolledList = new ArrayList<EnrolledStudent>();
+
+        try{
+            Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
+
+            Connection conn = DriverManager.getConnection(url,user,pass);
+            PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.GET_ENROL_STUDENT);
+            preparedStatement.setString(1,String.valueOf(professorEmpId));
+
+            ResultSet result = preparedStatement.executeQuery();
+
+            while(result.next()){
+                // change 1st getInt  to getString   if studentID is String
+                enrolledList.add(new EnrolledStudent(result.getString("courseID"), result.getInt("studentID")));
+            }
+
+            conn.close();
+        }
+        catch(Exception e){
+            System.out.println("There is an Error : "+ e.getMessage());
+        }
+
+        return enrolledList;
+    }
+
+    // studentId can be change to String if db is String
+    @Override
+    public boolean addGrade(int studentId, String courseId, double grade){
+
+        try{
+            Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
+
+            Connection conn = DriverManager.getConnection(url,user,pass);
+            PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.ADD_GRADE);
+            preparedStatement.setString(1, String.valueOf(grade));
+            preparedStatement.setString(2, String.valueOf(courseId));
+            preparedStatement.setString(3, String.valueOf(studentId));
+
+            preparedStatement.executeUpdate();
+
+            conn.close();
+            return true;
+        }
+        catch(Exception e){
+            System.out.println("There is an Error : "+ e.getMessage());
+        }
+
+        return false;
+    }
+
+    // change professorEmpId to String if in db it is String
+    @Override
+    public String getProfessorName(int professorEmpId){
+
+        try{
+            Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
+
+            Connection conn = DriverManager.getConnection(url,user,pass);
+            PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.GET_PROF_NAME);
+            preparedStatement.setString(1, String.valueOf(professorEmpId));
+
+            ResultSet result = preparedStatement.executeQuery();
+
+            if(result.next()){
+                conn.close();
+                return result.getString("userName");  // return result.getString("studentID);  //uncomment it otherwise
+            }
+
+            conn.close();
+        }
+        catch(Exception e){
+            System.out.println("There is an Error : "+ e.getMessage());
+        }
+
+        return "No Professor of ID: "+professorEmpId;
+    }
+
+    @Override
+    public boolean verifyProfessor(int userId){
+        boolean flag = false;
+
+        try{
+            Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
+
+            Connection conn = DriverManager.getConnection(url,user,pass);
+            PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.VERIFY_PROFESSOR);
+            preparedStatement.setString(1, String.valueOf(userId));
+
+            ResultSet result = preparedStatement.executeQuery();
+
+            result.next();
+
+            int numRow = result.getInt(1);
+
+            if(numRow == 1) flag = true;
+
+        }
+        catch(Exception e){
+            System.out.println("There is an Error : "+ e.getMessage());
+        }
+        return flag;
+    }
+
+    @Override
+    public int getProfessorId(int userId){
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
+
+            Connection conn = DriverManager.getConnection(url,user,pass);
+            PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.GET_PROFESSOR_ID);
+            preparedStatement.setString(1, String.valueOf(userId));
+            ResultSet result = preparedStatement.executeQuery();
+
+            if(result.next()){
+                conn.close();
+                return result.getInt("professorEmpID");  // return result.getString("professorID);  //uncomment it otherwise
+            }
+            conn.close();
+        }
+        catch(Exception e){
+            System.out.println("There is an Error : "+ e.getMessage());
+        }
+        return -1; // return "No pofessor added"   // uncomment it if string
+
+    }
+}

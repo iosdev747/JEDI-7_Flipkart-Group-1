@@ -2,13 +2,21 @@ package com.flipkart.bean;
 
 public class Grade {
 
+    private int studentId;
     private String courseId;
     private double grade;
-    private String studentId;
 
-    public Grade(String courseId, double grade, String studentId) {
+    public Grade(int studentId, String courseId, double grade) {
+        this.studentId = studentId;
         this.courseId = courseId;
         this.grade = grade;
+    }
+
+    public int getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(int studentId) {
         this.studentId = studentId;
     }
 
@@ -20,6 +28,7 @@ public class Grade {
         this.courseId = courseId;
     }
 
+
     public double getGrade() {
         return grade;
     }
@@ -27,13 +36,4 @@ public class Grade {
     public void setGrade(double grade) {
         this.grade = grade;
     }
-
-    public String getStudentId() {
-        return studentId;
-    }
-
-    public void setStudentId(String studentId) {
-        this.studentId = studentId;
-    }
-
 }
