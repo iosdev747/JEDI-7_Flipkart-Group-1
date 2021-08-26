@@ -11,7 +11,8 @@ import com.flipkart.constant.SQLConstant;
 import com.flipkart.exception.CourseNotAssignedToProfessorException;
 import com.flipkart.exception.ProfessorNotAddedException;
 import com.flipkart.exception.UserNotAddedException;
-
+import com.flipkart.exception.*;
+import com.flipkart.dao.*;
 
 public class AdminDaoOperation implements AdminDaoInterface {
 
@@ -23,7 +24,7 @@ public class AdminDaoOperation implements AdminDaoInterface {
     }
 
     @Override
-    public void deleteCourse(String courseId) {
+    public void deleteCourse(String courseId) throws CourseNotDeletedException{
 
         try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
@@ -38,6 +39,7 @@ public class AdminDaoOperation implements AdminDaoInterface {
             conn.close();
         } catch (Exception e) {
             System.out.println("There is an Error : " + e.getMessage());
+            throw new CourseNotDeletedException(CourseID);
         }
     }
 
@@ -139,7 +141,7 @@ public class AdminDaoOperation implements AdminDaoInterface {
 
 
     @Override
-    public void assignCourse(String courseId, String professorEmpId) {
+    public void assignCourse(String courseId, String professorEmpId) throws CourseNotAssignedToProfessorException {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
@@ -154,7 +156,7 @@ public class AdminDaoOperation implements AdminDaoInterface {
             conn.close();
         } catch (Exception e) {
             System.out.println("There is an Error : " + e.getMessage());
-            throw new CourseNotAssignedToProfessorException(courseId, professorEmpId)
+            throw new CourseNotAssignedToProfessorException(courseId, professorEmpId);
         }
     }
 

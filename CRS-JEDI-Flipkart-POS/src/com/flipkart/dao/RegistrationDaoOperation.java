@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.util.*;
 import com.flipkart.bean.Course;
 import com.flipkart.constant.SQLConstant;
+import com.flipkart.exception.*;
 
 
 public class RegistrationDaoOperation implements RegistrationDaoInterface {
@@ -20,7 +21,7 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
     }
 
     @Override
-    public boolean addCourse(String courseId, int studentId){
+    public boolean addCourse(String courseId, int studentId) throws CourseNotFoundException{
 
         try{
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
@@ -36,13 +37,14 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
         }
         catch(Exception e){
             System.out.println("There is an Error : "+ e.getMessage());
+            throw new CourseNotFoundException(courseID);
         }
 
         return false;
     }
 
     @Override
-    public boolean dropCourse(String courseId, int studentId){
+    public boolean dropCourse(String courseId, int studentId) throws CourseNotDeletedException{
 
         try{
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
@@ -58,6 +60,7 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
         }
         catch(Exception e){
             System.out.println("There is an Error : "+ e.getMessage());
+            throw new CourseNotDeletedException(courseID);
         }
 
         return false;
@@ -100,7 +103,7 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
     }
 
     @Override
-    public List<Course> viewRegisterCourse(int studentId){
+    public List<Course> viewRegisterCourse(int studentId) {
 
         List<Course> courseList = new ArrayList<Course>();
 
@@ -190,7 +193,7 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
 
     // Isme Query ke baad jo comment ha usse check kar lo ek baar
     @Override
-    public boolean isRegistered(String courseId, int studentId){
+    public boolean isRegistered(String courseId, int studentId) {
 
         try{
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used

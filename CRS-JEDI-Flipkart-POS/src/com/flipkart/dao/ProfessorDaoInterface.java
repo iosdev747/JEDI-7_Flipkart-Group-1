@@ -11,9 +11,9 @@ public interface ProfessorDaoInterface {
 
     public List<EnrolledStudent> getEnrolledStudent(int professorEmpId);
 
-    public boolean addGrade(int studentId, String courseId, double grade);
+    public boolean addGrade(int studentId, String courseId, double grade) throws GradeNotAddedException;
 
-    public String getProfessorName(int professorEmpId);
+    public String getProfessorName(int professorEmpId) ;
 
     public boolean verifyProfessor(int userId);
 

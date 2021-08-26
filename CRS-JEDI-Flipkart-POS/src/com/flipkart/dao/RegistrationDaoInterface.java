@@ -2,12 +2,12 @@ package com.flipkart.dao;
 
 import java.util.*;
 
+import com.flipkart.exception.*;
 import com.flipkart.bean.Course;
-
 
 public interface RegistrationDaoInterface {
 
-    public boolean addCourse(String courseId, int studentId);
+    public boolean addCourse(String courseId, int studentId) throws CourseNotFoundException;
 
     public boolean dropCourse(String courseId, int studentId);
 

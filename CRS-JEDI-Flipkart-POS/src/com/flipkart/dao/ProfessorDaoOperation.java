@@ -20,7 +20,7 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
 
     // here also change the professorEmpId to string if it is in db
     @Override
-    public List<Course> getCoursesByProfessor(int professorEmpId){
+    public List<Course> getCoursesByProfessor(int professorEmpId) {
 
         List<Course> courseList = new ArrayList<Course>();
 
@@ -79,7 +79,7 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
 
     // studentId can be change to String if db is String
     @Override
-    public boolean addGrade(int studentId, String courseId, double grade){
+    public boolean addGrade(int studentId, String courseId, double grade) throws GradeNotAddedException{
 
         try{
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
@@ -97,6 +97,7 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
         }
         catch(Exception e){
             System.out.println("There is an Error : "+ e.getMessage());
+            throw new GradeNotAddedException(Integer.toString(studentId));
         }
 
         return false;
@@ -104,7 +105,7 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
 
     // change professorEmpId to String if in db it is String
     @Override
-    public String getProfessorName(int professorEmpId){
+    public String getProfessorName(int professorEmpId) {
 
         try{
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
@@ -124,6 +125,7 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
         }
         catch(Exception e){
             System.out.println("There is an Error : "+ e.getMessage());
+
         }
 
         return "No Professor of ID: "+professorEmpId;

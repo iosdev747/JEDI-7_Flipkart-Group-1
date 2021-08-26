@@ -4,11 +4,12 @@ import java.sql.*;
 import java.util.*;
 import com.flipkart.bean.Grade;
 import com.flipkart.bean.Student;
+import com.flipkart.exception.StudentNotAddedException;
 
 
 public interface StudentDaoInterface {
 
-    public boolean addStudent(Student student);
+    public boolean addStudent(Student student) throws StudentNotAddedException;
 
     public int getStudentId(int userId);
     //  can change return to string if studentId in Db is string

@@ -4,8 +4,8 @@ public class CourseNotAssignedToProfessorException extends Exception{
 	private String courseId;
 	private String professorId;
 	
-	public CourseNotAssignedToProfessorException(String courseCode, String professorId) {
-		this.courseId = courseCode;
+	public CourseNotAssignedToProfessorException(String courseId, String professorId) {
+		this.courseId = courseId;
 		this.professorId = professorId;
 	}
 	
