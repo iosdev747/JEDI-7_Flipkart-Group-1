@@ -22,7 +22,7 @@ public class SQLConstant {
     public static final String GET_PROF_NAME = "SELECT u.userName FROM UserDetail u, Professor p WHERE p.professorEmpId = ? AND p.userID = u.userID";
     public static final String DELETE_COURSE = "DELETE FROM Course WHERE courseID = ?";
     public static final String ADD_COURSE = "INSERT INTO Course (courseID, courseName, credit, professorEmpID, fee) VALUES (?, ?, ?, ?, ?)";
-    public static final String ADD_PROFESSOR = "INSERT INTO Professor (userID, professorID, department) VALUES (?, ?, ?)";
+    public static final String ADD_PROFESSOR = "INSERT INTO Professor (userID, professorEmpID, department) VALUES (?, ?, ?)";
     public static final String ASSIGN_COURSE = "UPDATE Course SET professorEmpID = ? WHERE courseID = ?";
     public static final String VIEW_PROFESSOR = "SELECT p.userID, p.professorEmpID, p.department, u.userName, u.paswrd, u.address FROM Professor p, user u WHERE p.userID = u.userID";
     public static final String VERIFY_PROFESSOR = "SELECT COUNT(professorEmpID) FROM Professor WHERE userID = ?";

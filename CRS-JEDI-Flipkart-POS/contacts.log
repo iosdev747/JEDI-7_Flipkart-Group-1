@@ -1,0 +1,106 @@
+00:11:53,282  INFO CRSApplication,main:204 - Hi info
+00:11:53,391  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+00:11:53,393  INFO CRSApplication,main:29 - 1. Login as Student
+00:11:53,396  INFO CRSApplication,main:30 - 2. Login as Professor
+00:11:53,399  INFO CRSApplication,main:31 - 3. Login as Admin
+00:11:53,402  INFO CRSApplication,main:32 - 4. Student SignUp
+00:11:53,403  INFO CRSApplication,main:33 - Enter user input
+00:12:40,193  INFO CRSApplication,main:204 - Hi info
+00:12:40,209  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+00:12:40,210  INFO CRSApplication,main:29 - 1. Login as Student
+00:12:40,211  INFO CRSApplication,main:30 - 2. Login as Professor
+00:12:40,211  INFO CRSApplication,main:31 - 3. Login as Admin
+00:12:40,212  INFO CRSApplication,main:32 - 4. Student SignUp
+00:12:40,213  INFO CRSApplication,main:33 - Enter user input
+00:24:58,012  INFO CRSApplication,main:204 - Hi info
+00:24:58,030  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+00:24:58,031  INFO CRSApplication,main:29 - 1. Login as Student
+00:24:58,031  INFO CRSApplication,main:30 - 2. Login as Professor
+00:24:58,032  INFO CRSApplication,main:31 - 3. Login as Admin
+00:24:58,033  INFO CRSApplication,main:32 - 4. Student SignUp
+00:24:58,034  INFO CRSApplication,main:33 - Enter user input
+00:25:01,968  INFO CRSApplication,main:113 - ********* Admin Login ***********
+00:25:01,977  INFO CRSApplication,main:120 - Enter the userID: 
+00:25:19,789  INFO CRSApplication,main:122 - Enter the password: 
+00:25:24,944 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 1
+00:25:26,039 DEBUG AdminOperation,main:162 - Verifying Professor 1
+00:25:26,257 DEBUG AdminOperation,main:175 - Getting Admin with ID : 1
+00:25:26,449  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+00:25:26,450  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+00:25:26,451  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+00:25:26,452  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+00:25:26,452  INFO AdminCRSMenu,main:30 - 4. Add Professor
+00:25:26,453  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+00:25:26,455  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+00:25:26,455  INFO AdminCRSMenu,main:33 - 7. Approve Student
+00:25:26,456  INFO AdminCRSMenu,main:34 - 8. LogOut
+00:25:26,458  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+00:25:41,790  INFO AdminCRSMenu,main:200 - -------Add A Professor---------
+00:25:41,793  INFO AdminCRSMenu,main:202 - Enter The details for the professor
+00:25:41,799  INFO AdminCRSMenu,main:211 - Enter the UserId for Professor:
+00:25:48,372  INFO AdminCRSMenu,main:214 - Enter the Name for Professor:
+00:26:01,440  INFO AdminCRSMenu,main:217 - Enter the password for Professor:
+00:26:09,726  INFO AdminCRSMenu,main:220 - Enter the password for Address:
+00:26:22,186  INFO AdminCRSMenu,main:223 - Enter the Department for Professor:
+00:26:36,307  INFO AdminCRSMenu,main:226 - Enter the ProfessorId for Professor:
+00:26:41,846 DEBUG AdminOperation,main:91 - Adding Professor 1
+00:26:42,541 ERROR AdminDaoOperation,main:208 - Unknown column 'professorID' in 'field list'
+00:26:42,542 ERROR AdminCRSMenu,main:238 - userId: 1 is already in use.
+00:26:42,543  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+00:26:42,544  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+00:26:42,544  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+00:26:42,545  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+00:26:42,545  INFO AdminCRSMenu,main:30 - 4. Add Professor
+00:26:42,546  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+00:26:42,547  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+00:26:42,548  INFO AdminCRSMenu,main:33 - 7. Approve Student
+00:26:42,548  INFO AdminCRSMenu,main:34 - 8. LogOut
+00:26:42,549  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+00:30:13,340  INFO AdminCRSMenu,main:72 - You Are Logged Out
+00:30:13,344  INFO CRSApplication,main:140 - ********* *************** ***********
+00:30:23,229  INFO CRSApplication,main:204 - Hi info
+00:30:23,250  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+00:30:23,250  INFO CRSApplication,main:29 - 1. Login as Student
+00:30:23,251  INFO CRSApplication,main:30 - 2. Login as Professor
+00:30:23,252  INFO CRSApplication,main:31 - 3. Login as Admin
+00:30:23,252  INFO CRSApplication,main:32 - 4. Student SignUp
+00:30:23,253  INFO CRSApplication,main:33 - Enter user input
+00:30:30,438  INFO CRSApplication,main:113 - ********* Admin Login ***********
+00:30:30,440  INFO CRSApplication,main:120 - Enter the userID: 
+00:30:33,380  INFO CRSApplication,main:122 - Enter the password: 
+00:30:43,459 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 1
+00:30:44,320 DEBUG AdminOperation,main:162 - Verifying Professor 1
+00:30:44,475 DEBUG AdminOperation,main:175 - Getting Admin with ID : 1
+00:30:44,614  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+00:30:44,615  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+00:30:44,615  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+00:30:44,616  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+00:30:44,617  INFO AdminCRSMenu,main:30 - 4. Add Professor
+00:30:44,617  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+00:30:44,618  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+00:30:44,619  INFO AdminCRSMenu,main:33 - 7. Approve Student
+00:30:44,619  INFO AdminCRSMenu,main:34 - 8. LogOut
+00:30:44,620  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+00:30:48,687  INFO AdminCRSMenu,main:200 - -------Add A Professor---------
+00:30:48,690  INFO AdminCRSMenu,main:202 - Enter The details for the professor
+00:30:48,698  INFO AdminCRSMenu,main:211 - Enter the UserId for Professor:
+00:30:53,761  INFO AdminCRSMenu,main:214 - Enter the Name for Professor:
+00:30:58,376  INFO AdminCRSMenu,main:217 - Enter the password for Professor:
+00:31:02,074  INFO AdminCRSMenu,main:220 - Enter the password for Address:
+00:31:10,527  INFO AdminCRSMenu,main:223 - Enter the Department for Professor:
+00:31:22,941  INFO AdminCRSMenu,main:226 - Enter the ProfessorId for Professor:
+00:31:25,977 DEBUG AdminOperation,main:91 - Adding Professor 1
+00:31:26,370 ERROR AdminDaoOperation,main:208 - Duplicate entry '2' for key 'UserDetail.PRIMARY'
+00:31:26,373 ERROR AdminCRSMenu,main:238 - userId: 1 is already in use.
+00:31:26,378  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+00:31:26,390  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+00:31:26,395  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+00:31:26,399  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+00:31:26,417  INFO AdminCRSMenu,main:30 - 4. Add Professor
+00:31:26,421  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+00:31:26,423  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+00:31:26,426  INFO AdminCRSMenu,main:33 - 7. Approve Student
+00:31:26,429  INFO AdminCRSMenu,main:34 - 8. LogOut
+00:31:26,430  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+00:32:25,209  INFO AdminCRSMenu,main:72 - You Are Logged Out
+00:32:25,211  INFO CRSApplication,main:140 - ********* *************** ***********
