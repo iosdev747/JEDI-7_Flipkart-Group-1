@@ -42,7 +42,7 @@ public class AdminOperation implements AdminInterface{
     }
 
     @Override
-    public void assignCourse(String courseId, int professorEmpId){
+    public void assignCourse(String courseId, String professorEmpId){
         AdminDaoInterface adminInterface = new AdminDaoOperation();
         adminInterface.assignCourse(courseId, professorEmpId);
     }

@@ -5,11 +5,15 @@ import com.flipkart.bean.Course;
 import com.flipkart.bean.Professor;
 import com.flipkart.bean.Student;
 import com.flipkart.bean.User;
+import com.flipkart.exception.CourseNotAssignedToProfessorException;
+import com.flipkart.exception.ProfessorNotAddedException;
+import com.flipkart.exception.UserNotAddedException;
+import com.flipkart.exception.CourseNotDeletedException;
 
 
 public interface AdminDaoInterface {
 
-    public void deleteCourse(String courseId);
+    public void deleteCourse(String courseId) throws CourseNotDeletedException;
 
     public void addCourse(Course course);
 
@@ -19,11 +23,11 @@ public interface AdminDaoInterface {
     public void approveStudent(int studentId);
      */
 
-    public void addProfessor(Professor professor);
+    public void addProfessor(Professor professor) throws ProfessorNotAddedException;
 
-    public void addUser(User user);
+    public void addUser(User user) throws UserNotAddedException;
 
-    public void assignCourse(String courseId, int professorEmpId);
+    public void assignCourse(String courseId, String professorEmpId) throws CourseNotAssignedToProfessorException;
 
     public List<Professor> viewProfessor();
 

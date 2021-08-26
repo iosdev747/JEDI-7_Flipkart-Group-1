@@ -22,7 +22,7 @@ public interface AdminInterface {
 
     public void addUser(User user);
 
-    public void assignCourse(String courseId, int professorEmpId);
+    public void assignCourse(String courseId, String professorEmpId);
 
     public List<Professor> viewProfessor();
 

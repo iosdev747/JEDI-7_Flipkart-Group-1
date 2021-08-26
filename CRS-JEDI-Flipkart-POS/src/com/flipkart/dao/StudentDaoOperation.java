@@ -9,6 +9,7 @@ import java.util.*;
 import com.flipkart.bean.Grade;
 import com.flipkart.bean.Student;
 import com.flipkart.constant.SQLConstant;
+import com.flipkart.exception.StudentNotAddedException;
 
 
 // there may be some extra conn.close() statments so remove if it feel redundant
@@ -23,7 +24,7 @@ public class StudentDaoOperation implements StudentDaoInterface{
     }
 
     @Override
-    public boolean addStudent(Student student){
+    public boolean addStudent(Student student) throws StudentNotAddedException {
 
         // let get all the details from the student first
         int studentID = student.getStudentId();   // also change this to string if studentId in db is String
@@ -66,6 +67,7 @@ public class StudentDaoOperation implements StudentDaoInterface{
         }
         catch(Exception e){
             System.out.println("There is an Error : "+ e.getMessage());
+            throw new StudentNotAddedException(studentID);
         }
         finally{
             System.out.println("This Finally is to AddStudent");
