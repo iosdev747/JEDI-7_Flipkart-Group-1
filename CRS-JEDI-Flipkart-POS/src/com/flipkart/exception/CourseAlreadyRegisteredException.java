@@ -2,22 +2,22 @@ package com.flipkart.exception;
 
 public class CourseAlreadyRegisteredException extends Exception{
 	
-	private String courseCode;
+	private String courseID;
 	
 	/**
 	 * Constructor
 	 * @param courseCode
 	 */
 	public CourseAlreadyRegisteredException(String courseCode) {
-		this.courseCode = courseCode;
+		this.courseID = courseCode;
 	}
 	
 	/**
 	 * Getter method
 	 * @return course code
 	 */
-	public String getCourseCode() {
-		return courseCode;
+	public String getCourseID() {
+		return courseID;
 	}
 	
 	/**
@@ -25,7 +25,7 @@ public class CourseAlreadyRegisteredException extends Exception{
 	 */
 	@Override
 	public String getMessage() {
-		return "You have already registered for " + courseCode;
+		return "You have already registered for " + courseID;
 	}
 
 }

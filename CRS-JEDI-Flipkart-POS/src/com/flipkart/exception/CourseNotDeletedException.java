@@ -3,9 +3,9 @@ package com.flipkart.exception;
 public class CourseNotDeletedException extends Exception{
 private String courseCode;
 	
-	public CourseNotDeletedException(String courseCode)
+	public CourseNotDeletedException(String courseID)
 	{	
-		this.courseCode = courseCode;
+		this.courseCode = courseID;
 	}
 
 	/**

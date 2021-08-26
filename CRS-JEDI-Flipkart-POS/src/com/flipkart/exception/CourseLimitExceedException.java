@@ -22,6 +22,5 @@ public class CourseLimitExceedException extends Exception{
 	{
 		return "You have already registered for " + num + " courses";
 	}
-
-
+	
 }

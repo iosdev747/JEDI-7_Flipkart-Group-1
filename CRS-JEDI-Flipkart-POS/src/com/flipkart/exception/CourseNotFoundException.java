@@ -1,20 +1,20 @@
 package com.flipkart.exception;
 
 public class CourseNotFoundException extends Exception{
-	private String courseCode;
+	private String courseID;
 	
 	public CourseNotFoundException(String courseCode)
 	{	
-		this.courseCode = courseCode;
+		this.courseID = courseCode;
 	}
 
 	/**
 	 * Getter function for course code
 	 * @return
 	 */
-	public String getCourseCode()
+	public String getCourseID()
 	{
-		return courseCode;
+		return courseID;
 	}
 	
 
@@ -24,6 +24,6 @@ public class CourseNotFoundException extends Exception{
 	@Override
 	public String getMessage() 
 	{
-		return "Course with courseCode: " + courseCode + " not found.";
+		return "Course with courseCode: " + courseID + " not found.";
 	}
 }

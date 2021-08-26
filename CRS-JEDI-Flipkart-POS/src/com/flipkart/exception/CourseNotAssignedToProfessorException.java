@@ -1,11 +1,11 @@
 package com.flipkart.exception;
 
 public class CourseNotAssignedToProfessorException extends Exception{
-	private String courseCode;
+	private String courseId;
 	private String professorId;
 	
 	public CourseNotAssignedToProfessorException(String courseCode, String professorId) {
-		this.courseCode = courseCode;
+		this.courseId = courseCode;
 		this.professorId = professorId;
 	}
 	
@@ -13,8 +13,8 @@ public class CourseNotAssignedToProfessorException extends Exception{
 	 * Get courseCode
 	 * @return
 	 */
-	public String getCourseCode() {
-		return courseCode;
+	public String getCourseId() {
+		return courseId;
 	}
 	/**
 	 * get Professor id
@@ -34,10 +34,10 @@ public class CourseNotAssignedToProfessorException extends Exception{
 
 	/**
 	 * set course code
-	 * @param courseCode
+	 * @param courseId
 	 */
-	public void setCourseCode(String courseCode) {
-		this.courseCode = courseCode;
+	public void setCourseId(String courseId) {
+		this.courseId = courseId;
 	}
 
 
@@ -46,6 +46,6 @@ public class CourseNotAssignedToProfessorException extends Exception{
 	 */
 	@Override
 	public String getMessage() {
-		return "courseCode: " + courseCode + " OR professorId: " + professorId + " does not exist!";
+		return "courseCode: " + courseId + " OR professorId: " + professorId + " does not exist!";
 	}
 }

@@ -2,15 +2,15 @@ package com.flipkart.exception;
 
 public class SeatNotAvailableException extends Exception{
 	
-	private String courseCode;
+	private String courseID;
 
 	/**
 	 * Constructor
 	 * @param courseCode
 	 */
-	public SeatNotAvailableException(String courseCode)
+	public SeatNotAvailableException(String courseID)
 	{	
-		this.courseCode = courseCode;
+		this.courseID = courseID;
 	}
 
 
@@ -19,7 +19,7 @@ public class SeatNotAvailableException extends Exception{
 	 */
 	@Override
 	public String getMessage() {
-		return  "Seats are not available in : " + courseCode;
+		return  "Seats are not available in : " + courseID;
 	}
 
 

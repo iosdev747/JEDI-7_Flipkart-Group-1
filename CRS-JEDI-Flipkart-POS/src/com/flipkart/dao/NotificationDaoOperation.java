@@ -24,7 +24,7 @@ public class NotificationDaoOperation implements NotificationDaoInterface{
             statement.setString(2, msg);
             statement.setString(3, false);
             notificationId = statement.executeUpdate();
-            System.out.Println(notificationId + " was successfully sent.");
+            System.out.println(notificationId + " was successfully sent.");
             connection.close();
         } catch (Exception e) {
             System.out.println("EXCEPTION OCCURED");
