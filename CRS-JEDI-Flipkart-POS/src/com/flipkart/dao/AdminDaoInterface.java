@@ -8,6 +8,7 @@ import com.flipkart.bean.User;
 import com.flipkart.exception.CourseNotAssignedToProfessorException;
 import com.flipkart.exception.ProfessorNotAddedException;
 import com.flipkart.exception.UserNotAddedException;
+import com.flipkart.exception.CourseNotDeletedException;
 
 
 public interface AdminDaoInterface {

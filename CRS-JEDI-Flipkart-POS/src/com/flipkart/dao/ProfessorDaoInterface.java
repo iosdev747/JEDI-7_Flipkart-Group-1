@@ -3,7 +3,8 @@ package com.flipkart.dao;
 import java.util.*;
 import com.flipkart.bean.Course;
 import com.flipkart.bean.EnrolledStudent;
-import com.flipkart.bean.Student;
+import com.flipkart.bean.Student ;
+import com.flipkart.exception.GradeNotAddedException ;
 
 public interface ProfessorDaoInterface {
 

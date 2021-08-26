@@ -7,6 +7,7 @@ import com.flipkart.bean.EnrolledStudent;
 import com.flipkart.bean.Grade;
 import com.flipkart.bean.Student;
 import com.flipkart.constant.SQLConstant;
+import com.flipkart.exception.GradeNotAddedException ;
 
 
 public class ProfessorDaoOperation implements ProfessorDaoInterface{
