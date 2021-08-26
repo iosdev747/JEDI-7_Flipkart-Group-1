@@ -1,41 +1,59 @@
 package com.flipkart.bean;
 
-public class Student extends User {
+public class Student extends User{
 
-    private String studentId;
-    private String Department;
-    private int CurrentYear;
+    private int studentId;
+    private int batch;
+    private String branch;
+    private boolean isApproved;
 
-    public Student(int userId, String name, String password, String address, String studentId, String department,
-                   int currentYear) {
-        super(userId, name, password, address);
+    public Student(int userID, String name, String password, String address, int studentId, int batch, String branch, boolean isApproved) {
+        super(userID, name, password, address);
         this.studentId = studentId;
-        Department = department;
-        CurrentYear = currentYear;
+        this.batch = batch;
+        this.branch = branch;
+        this.isApproved = isApproved;
     }
 
-    public String getStudentId() {
+    public Student(int studentId, int batch, String branch, boolean isApproved) {
+        this.studentId = studentId;
+        this.batch = batch;
+        this.branch = branch;
+        this.isApproved = isApproved;
+    }
+
+    public Student() {
+    }
+
+    public int getStudentId() {
         return studentId;
     }
 
-    public void setStudentId(String studentId) {
+    public void setStudentId(int studentId) {
         this.studentId = studentId;
     }
 
-    public String getDepartment() {
-        return Department;
+    public int getBatch() {
+        return batch;
     }
 
-    public void setDepartment(String department) {
-        Department = department;
+    public void setBatch(int batch) {
+        this.batch = batch;
     }
 
-    public int getCurrentYear() {
-        return CurrentYear;
+    public String getBranch() {
+        return branch;
     }
 
-    public void setCurrentYear(int currentYear) {
-        CurrentYear = currentYear;
+    public void setBranch(String branch) {
+        this.branch = branch;
     }
 
+    public boolean isApproved() {
+        return isApproved;
+    }
+
+    public void setApproved(boolean approved) {
+        isApproved = approved;
+    }
 }
