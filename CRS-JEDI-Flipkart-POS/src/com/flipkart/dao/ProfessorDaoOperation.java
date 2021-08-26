@@ -80,7 +80,7 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
 
     // studentId can be change to String if db is String
     @Override
-    public boolean addGrade(int studentId, String courseId, double grade) throws GradeNotAddedException{
+    public boolean addGrade(String studentId, String courseId, double grade) throws GradeNotAddedException{
 
         try{
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used

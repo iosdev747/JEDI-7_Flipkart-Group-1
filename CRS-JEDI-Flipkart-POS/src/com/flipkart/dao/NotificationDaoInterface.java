@@ -8,7 +8,7 @@ public interface NotificationDaoInterface {
      * @param msg: Message to be sent
      * @return notification ID
      */
-    public int sendNotification(int userID, String msg);
+    public String sendNotification(int userID, String msg);
     /**
      * Read Notification
      * @param userID: userID to view all notifications for

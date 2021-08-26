@@ -13,16 +13,16 @@ public class NotificationDaoOperation implements NotificationDaoInterface{
     private static String user = "root";
     private static String pass = "12345678";
 
-    public int sendNotification(int userId, String msg) {
+    public String sendNotification(int userId, String msg) {
         int notificationId = 0;
         try {
             Connection connection = DriverManager.getConnection(url,user,pass);
             String sql = "INSERT INTO Notifications(userID, msg, isSeen) values (?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(sql);
 
-            statement.setString(1, userId);
+            statement.setString(1, String.valueOf(userId));
             statement.setString(2, msg);
-            statement.setString(3, false);
+            statement.setString(3, "No");
             notificationId = statement.executeUpdate();
             System.out.println(notificationId + " was successfully sent.");
             connection.close();
@@ -39,7 +39,7 @@ public class NotificationDaoOperation implements NotificationDaoInterface{
             String sql = "SELECT msg FROM Notifications where userID=?";
             PreparedStatement statement = connection.prepareStatement(sql);
 
-            statement.setString(1, userID);
+            statement.setString(1, String.valueOf(userID));
             ResultSet result = statement.executeQuery();
 
             while(result.next()) {

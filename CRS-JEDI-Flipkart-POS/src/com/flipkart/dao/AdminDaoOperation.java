@@ -39,7 +39,7 @@ public class AdminDaoOperation implements AdminDaoInterface {
             conn.close();
         } catch (Exception e) {
             System.out.println("There is an Error : " + e.getMessage());
-            throw new CourseNotDeletedException(CourseID);
+            throw new CourseNotDeletedException(courseId);
         }
     }
 
