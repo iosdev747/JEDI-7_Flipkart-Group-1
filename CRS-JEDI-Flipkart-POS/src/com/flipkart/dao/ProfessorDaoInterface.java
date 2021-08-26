@@ -7,6 +7,7 @@ import com.flipkart.bean.Student;
 
 public interface ProfessorDaoInterface {
 
+    // give the courses taught by professor
     public List<Course> getCoursesByProfessor(int professorEmpId);
 
     public List<EnrolledStudent> getEnrolledStudent(int professorEmpId);

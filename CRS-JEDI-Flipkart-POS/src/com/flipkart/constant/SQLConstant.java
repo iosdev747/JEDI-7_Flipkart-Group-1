@@ -32,7 +32,7 @@ public class SQLConstant {
     public static final String REGISTER_COURSE = "INSERT INTO EnrolledStudent (courseID, studentID) values (?, ?)";
     public static final String DROP_REGISTER_COURSE = "DELETE FROM EnrolledStudent WHERE courseID = ? AND studentID = ?";
     public static final String VIEW_ALL_COURSES = "SELECT courseID, courseName, credit, professorEmpID, fee FROM Course";
-    public static final String VIEW_REGISTER_COURSES = "SELECT e.courseID, e.courseName, e.credit, e.professorEmpID, e.fee FROM EnrolledStudent e, Course c WHERE e.studentID = ? AND e.courseID = c.courseID";
+    public static final String VIEW_REGISTER_COURSES = "SELECT c.courseID, c.courseName, c.credit, c.professorEmpID, c.fee FROM EnrolledStudent e, Course c WHERE e.studentID = ? AND e.courseID = c.courseID";
     public static final String CALCULATE_FEE = "SELECT SUM(c.fee) FROM EnrolledStudent e, course c WHERE e.studentID = ? AND e.courseID = c.courseID";
     public static final String CALCULATE_NO_OF_COURSE = "SELECT COUNT(courseID) FROM EnrolledStudent WHERE studentID = ?";
     public static final String REGISTER_IN_ENROLL = "SELECT * FROM EnrolledStudent WHERE studentID = ? AND courseID = ?";

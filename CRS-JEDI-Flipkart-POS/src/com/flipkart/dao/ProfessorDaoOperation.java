@@ -147,6 +147,7 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
             int numRow = result.getInt(1);
 
             if(numRow == 1) flag = true;
+            conn.close();
 
         }
         catch(Exception e){
@@ -167,8 +168,9 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
             ResultSet result = preparedStatement.executeQuery();
 
             if(result.next()){
+                int profId = result.getInt("professorEmpID");  // return result.getString("professorID);  //uncomment it otherwise
                 conn.close();
-                return result.getInt("professorEmpID");  // return result.getString("professorID);  //uncomment it otherwise
+                return  profId;
             }
             conn.close();
         }

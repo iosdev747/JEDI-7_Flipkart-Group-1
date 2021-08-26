@@ -230,8 +230,9 @@ public class AdminDaoOperation implements AdminDaoInterface{
             ResultSet result = preparedStatement.executeQuery();
 
             if(result.next()){
+                int empId = result.getInt("empID");  // return result.getString("empID);  //uncomment it otherwise
                 conn.close();
-                return result.getInt("empID");  // return result.getString("empID);  //uncomment it otherwise
+                return empId;
             }
             conn.close();
         }

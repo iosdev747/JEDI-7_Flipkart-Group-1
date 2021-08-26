@@ -6,6 +6,8 @@ import com.flipkart.bean.EnrolledStudent;
 import java.util.*;
 
 public interface ProfessorInterface {
+
+    // give the list of course by professor
     public List<Course> getCoursesByProfessor(int professorEmpId);
 
     public List<EnrolledStudent> getEnrolledStudent(int professorEmpId);
