@@ -2,34 +2,28 @@ package com.flipkart.bean;
 
 public class Student extends User{
 
-    private int studentId;
+    private String studentId;
     private int batch;
     private String branch;
     private boolean isApproved;
 
-    public Student(int userID, String name, String password, String address, int studentId, int batch, String branch, boolean isApproved) {
+    public Student(int userID, String name, String password, String address, String studentId, int batch, String branch, boolean isApproved) {
         super(userID, name, password, address);
         this.studentId = studentId;
         this.batch = batch;
         this.branch = branch;
         this.isApproved = isApproved;
     }
-
-    public Student(int studentId, int batch, String branch, boolean isApproved) {
-        this.studentId = studentId;
-        this.batch = batch;
-        this.branch = branch;
-        this.isApproved = isApproved;
-    }
+    
 
     public Student() {
     }
 
-    public int getStudentId() {
+    public String getStudentId() {
         return studentId;
     }
 
-    public void setStudentId(int studentId) {
+    public void setStudentId(String studentId) {
         this.studentId = studentId;
     }
 

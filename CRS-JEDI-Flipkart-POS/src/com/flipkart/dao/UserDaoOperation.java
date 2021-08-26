@@ -1,7 +1,11 @@
 package com.flipkart.dao;
 
 import java.sql.*;
+
+import com.flipkart.exception.UserNotFoundException;
+import org.apache.log4j.Logger;
 import com.flipkart.constant.SQLConstant;
+import com.flipkart.exception.*;
 
 
 public class UserDaoOperation implements UserDaoInterface{
@@ -9,13 +13,14 @@ public class UserDaoOperation implements UserDaoInterface{
     private static String url = "jdbc:mysql://localhost:3306/JEDI-7-CRS";
     private static String user = "root";
     private static String pass = "12345678";
+    private static Logger logger = Logger.getLogger(UserDaoOperation.class);
 
     public UserDaoOperation(){      // in future may be changed to private
 
     }
 
     @Override
-    public boolean verifyCredentials(int userId, String password){
+    public boolean verifyCredentials(int userId, String password) throws UserNotFoundException {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
@@ -28,8 +33,9 @@ public class UserDaoOperation implements UserDaoInterface{
 
             if(!resultSet.next()){
                 conn.close();
-                System.out.println("No Such user try again");
+                throw new UserNotFoundException(Integer.toString(userId));
             }
+
             else if(password.equals(resultSet.getString("paswrd"))){
                 conn.close();
                 return true;
@@ -40,10 +46,10 @@ public class UserDaoOperation implements UserDaoInterface{
             }
         }
         catch(Exception e){
-            System.out.println("There is an Error verifyCredential : "+ e.getMessage());
+            logger.error("There is an Error verifyCredential : "+ e.getMessage());
         }
         finally{
-            System.out.println("Who Knows What happens verifyCredential");
+            logger.debug("Who Knows What happens verifyCredential");
         }
         return false;
     }
@@ -71,10 +77,10 @@ public class UserDaoOperation implements UserDaoInterface{
 
         }
         catch(Exception e){
-            System.out.println("There is an Error : "+ e.getMessage());
+            logger.error("There is an Error : "+ e.getMessage());
         }
         finally{
-            System.out.println("This Finally is to update password");
+            logger.debug("This Finally is to update password");
         }
 
         return false;

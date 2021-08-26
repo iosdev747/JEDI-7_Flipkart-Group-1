@@ -2,12 +2,12 @@ package com.flipkart.dao;
 
 import java.sql.*;
 import java.util.*;
-import com.flipkart.bean.Course;
-import com.flipkart.bean.EnrolledStudent;
-import com.flipkart.bean.Grade;
-import com.flipkart.bean.Student;
+import java.sql.SQLException;
+
+import com.flipkart.bean.*;
 import com.flipkart.constant.SQLConstant;
 import com.flipkart.exception.GradeNotAddedException ;
+import org.apache.log4j.Logger;
 
 
 public class ProfessorDaoOperation implements ProfessorDaoInterface{
@@ -15,13 +15,14 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
     private static String url = "jdbc:mysql://localhost:3306/JEDI-7-CRS";
     private static String user = "root";
     private static String pass = "12345678";
+    private static Logger logger = Logger.getLogger(ProfessorDaoOperation.class);
 
     public ProfessorDaoOperation() {   // In future may be change to private
     }
 
     // here also change the professorEmpId to string if it is in db
     @Override
-    public List<Course> getCoursesByProfessor(int professorEmpId) {
+    public List<Course> getCoursesByProfessor(String professorEmpId) {
 
         List<Course> courseList = new ArrayList<Course>();
 
@@ -30,20 +31,23 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
 
             Connection conn = DriverManager.getConnection(url,user,pass);
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.GET_PROF_COURSE);
-            preparedStatement.setString(1,String.valueOf(professorEmpId));
+            preparedStatement.setString(1,professorEmpId);
 
             ResultSet rs = preparedStatement.executeQuery();
 
             while(rs.next()){
 
-                courseList.add(new Course(rs.getString("courseID"), rs.getString("courseName"), rs.getInt("credit"), rs.getInt("professorEmpId"), rs.getDouble("fee")));
+                courseList.add(new Course(rs.getString("courseID"), rs.getString("courseName"), rs.getInt("credit"), rs.getString("professorEmpId"), rs.getDouble("fee")));
                 // here change getInt to getString for professor
             }
 
             conn.close();
         }
+        catch(SQLException e){
+            logger.error(e.getMessage());
+        }
         catch(Exception e){
-            System.out.println("There is an Error : "+ e.getMessage());
+            logger.error("There is an Error : "+ e.getMessage());
         }
 
         return courseList;
@@ -51,7 +55,7 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
 
     // here also change it to professorEmpId to string if in db
     @Override
-    public List<EnrolledStudent> getEnrolledStudent(int professorEmpId){
+    public List<EnrolledStudent> getEnrolledStudent(String professorEmpId){
 
         List<EnrolledStudent> enrolledList = new ArrayList<EnrolledStudent>();
 
@@ -60,19 +64,22 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
 
             Connection conn = DriverManager.getConnection(url,user,pass);
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.GET_ENROL_STUDENT);
-            preparedStatement.setString(1,String.valueOf(professorEmpId));
+            preparedStatement.setString(1,professorEmpId);
 
             ResultSet result = preparedStatement.executeQuery();
 
             while(result.next()){
                 // change 1st getInt  to getString   if studentID is String
-                enrolledList.add(new EnrolledStudent(result.getString("courseID"), result.getInt("studentID")));
+                enrolledList.add(new EnrolledStudent(result.getString("courseID"), result.getString("studentID")));
             }
 
             conn.close();
         }
+        catch(SQLException e){
+            logger.error(e.getMessage());
+        }
         catch(Exception e){
-            System.out.println("There is an Error : "+ e.getMessage());
+            logger.error("There is an Error : "+ e.getMessage());
         }
 
         return enrolledList;
@@ -97,23 +104,23 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
             return true;
         }
         catch(Exception e){
-            System.out.println("There is an Error : "+ e.getMessage());
-            throw new GradeNotAddedException(Integer.toString(studentId));
+            logger.error("There is an Error : "+ e.getMessage());
+            throw new GradeNotAddedException(studentId);
         }
 
-        return false;
+        //return false;
     }
 
     // change professorEmpId to String if in db it is String
     @Override
-    public String getProfessorName(int professorEmpId) {
-
+    public String getProfessorName(String professorEmpId) {
+        logger.debug("---------Getting Name of Professor--------");
         try{
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
             Connection conn = DriverManager.getConnection(url,user,pass);
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.GET_PROF_NAME);
-            preparedStatement.setString(1, String.valueOf(professorEmpId));
+            preparedStatement.setString(1, professorEmpId);
 
             ResultSet result = preparedStatement.executeQuery();
 
@@ -125,7 +132,7 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
             conn.close();
         }
         catch(Exception e){
-            System.out.println("There is an Error : "+ e.getMessage());
+            logger.error("There is an Error : "+ e.getMessage());
 
         }
 
@@ -134,6 +141,7 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
 
     @Override
     public boolean verifyProfessor(int userId){
+        logger.debug("---------Verifying Professor--------");
         boolean flag = false;
 
         try{
@@ -154,14 +162,14 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
 
         }
         catch(Exception e){
-            System.out.println("There is an Error : "+ e.getMessage());
+            logger.error("There is an Error : "+ e.getMessage());
         }
         return flag;
     }
 
     @Override
-    public int getProfessorId(int userId){
-
+    public String getProfessorId(int userId){
+        logger.debug("---------Getting Professor--------");
         try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
@@ -171,16 +179,16 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
             ResultSet result = preparedStatement.executeQuery();
 
             if(result.next()){
-                int profId = result.getInt("professorEmpID");  // return result.getString("professorID);  //uncomment it otherwise
+                String profId = result.getString("professorEmpID");  // return result.getString("professorID);  //uncomment it otherwise
                 conn.close();
                 return  profId;
             }
             conn.close();
         }
         catch(Exception e){
-            System.out.println("There is an Error : "+ e.getMessage());
+            logger.error("There is an Error : "+ e.getMessage());
         }
-        return -1; // return "No pofessor added"   // uncomment it if string
+        return "Not Right user"; // return "No pofessor added"   // uncomment it if string
 
     }
 }

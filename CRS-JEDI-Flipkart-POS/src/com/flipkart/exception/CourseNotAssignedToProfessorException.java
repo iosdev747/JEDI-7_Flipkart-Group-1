@@ -1,16 +1,21 @@
 package com.flipkart.exception;
 
+
+
 public class CourseNotAssignedToProfessorException extends Exception{
 	private String courseId;
 	private String professorId;
-	
+
+	/**
+	 * Constructor
+	 */
 	public CourseNotAssignedToProfessorException(String courseId, String professorId) {
 		this.courseId = courseId;
 		this.professorId = professorId;
 	}
 	
 	/**
-	 * Get courseCode
+	 * Get courseId
 	 * @return
 	 */
 	public String getCourseId() {

@@ -1,5 +1,7 @@
 package com.flipkart.dao;
 
+import org.apache.log4j.Logger;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -12,8 +14,10 @@ public class NotificationDaoOperation implements NotificationDaoInterface{
     private static String url = "jdbc:mysql://localhost:3306/JEDI-7-CRS";
     private static String user = "root";
     private static String pass = "12345678";
+    private static Logger logger = Logger.getLogger(NotificationDaoOperation.class);
 
     public String sendNotification(int userId, String msg) {
+        logger.debug("-------------Sending Notification--------");
         int notificationId = 0;
         try {
             Connection connection = DriverManager.getConnection(url,user,pass);
@@ -24,15 +28,16 @@ public class NotificationDaoOperation implements NotificationDaoInterface{
             statement.setString(2, msg);
             statement.setString(3, "No");
             notificationId = statement.executeUpdate();
-            System.out.println(notificationId + " was successfully sent.");
+            logger.error(notificationId + " was successfully sent.");
             connection.close();
         } catch (Exception e) {
-            System.out.println("EXCEPTION OCCURED");
+            logger.error("EXCEPTION OCCURED");
         }
-        return notificationId;
+        return Integer.toString(notificationId);
     }
 
     public ArrayList<String> readNotification(int userID) {
+        logger.debug("-------------Reading Notification--------");
         ArrayList<String> notifications = new ArrayList<String>();
         try {
             Connection connection = DriverManager.getConnection(url,user,pass);
@@ -51,7 +56,7 @@ public class NotificationDaoOperation implements NotificationDaoInterface{
             statement.setInt(1, userID);
             statement.executeUpdate();
         } catch (Exception e) {
-            System.out.println("Exception Occured");
+            logger.error("Exception Occured");
         }
 
         return notifications;

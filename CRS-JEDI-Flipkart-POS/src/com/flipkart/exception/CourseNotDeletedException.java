@@ -1,8 +1,11 @@
 package com.flipkart.exception;
 
 public class CourseNotDeletedException extends Exception{
-private String courseCode;
-	
+	private String courseCode;
+
+	/**
+	 * Constructor
+	 */
 	public CourseNotDeletedException(String courseID)
 	{	
 		this.courseCode = courseID;

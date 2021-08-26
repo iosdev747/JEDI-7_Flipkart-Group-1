@@ -38,7 +38,10 @@ public class SQLConstant {
     public static final String REGISTER_IN_ENROLL = "SELECT * FROM EnrolledStudent WHERE studentID = ? AND courseID = ?";
 
 
+    // select userId, name, password, role, gender, address, country, studentId from student natural join user where isApproved = 0"
     // Admin
     public static final String VERIFY_ADMIN = "SELECT COUNT(empID) FROM Admin WHERE userID = ?";
     public static final String GET_ADMIN_ID ="SELECT empID FROM Admin WHERE userID = ?";
+    public static final String VIEW_PENDING_ADMISSION_QUERY = "SELECT u.userID, u.userName, u.paswrd, u.address, s.studentID, s.department, s.currentYear FROM UserDetail u, Student s WHERE s.isApproved = 0 AND u.userID = s.userID";
+    public static final String APPROVE_STUDENT_QUERY = "update Student set isApproved = 1 where studentId = ?";
 }

@@ -9,15 +9,15 @@ import com.flipkart.exception.GradeNotAddedException ;
 public interface ProfessorDaoInterface {
 
     // give the courses taught by professor
-    public List<Course> getCoursesByProfessor(int professorEmpId);
+    public List<Course> getCoursesByProfessor(String professorEmpId);
 
-    public List<EnrolledStudent> getEnrolledStudent(int professorEmpId);
+    public List<EnrolledStudent> getEnrolledStudent(String professorEmpId);
 
-    public boolean addGrade(int studentId, String courseId, double grade) throws GradeNotAddedException;
+    public boolean addGrade(String studentId, String courseId, double grade) throws GradeNotAddedException;
 
-    public String getProfessorName(int professorEmpId) ;
+    public String getProfessorName(String professorEmpId) ;
 
     public boolean verifyProfessor(int userId);
 
-    public int getProfessorId(int userId);
+    public String getProfessorId(int userId);
 }

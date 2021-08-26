@@ -2,18 +2,14 @@ package com.flipkart.bean;
 
 public class Professor extends User{
     private String department;
-    private int professorEmpId;
+    private String professorEmpId;
 
-    public Professor(int userID, String name, String password, String address, String department, int professorEmpId) {
+    public Professor(int userID, String name, String password, String address, String department, String professorEmpId) {
         super(userID, name, password, address);
         this.department = department;
         this.professorEmpId = professorEmpId;
     }
-
-    public Professor(String department, int professorEmpId) {
-        this.department = department;
-        this.professorEmpId = professorEmpId;
-    }
+    
 
     public Professor() {
     }
@@ -26,11 +22,11 @@ public class Professor extends User{
         this.department = department;
     }
 
-    public int getProfessorEmpId() {
+    public String getProfessorEmpId() {
         return professorEmpId;
     }
 
-    public void setProfessorEmpId(int professorEmpId) {
+    public void setProfessorEmpId(String professorEmpId) {
         this.professorEmpId = professorEmpId;
     }
 }

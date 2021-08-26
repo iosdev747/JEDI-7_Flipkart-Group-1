@@ -2,21 +2,23 @@ package com.flipkart.business;
 
 import com.flipkart.bean.Course;
 import com.flipkart.bean.EnrolledStudent;
+import com.flipkart.exception.*;
 
 import java.util.*;
+import java.sql.*;
 
 public interface ProfessorInterface {
 
     // give the list of course by professor
-    public List<Course> getCoursesByProfessor(int professorEmpId);
+    public List<Course> getCoursesByProfessor(String professorEmpId);
 
-    public List<EnrolledStudent> getEnrolledStudent(int professorEmpId);
+    public List<EnrolledStudent> getEnrolledStudent(String professorEmpId) throws SQLException;
 
-    public boolean addGrade(int studentId, String courseId, double grade);
+    public boolean addGrade(String studentId, String courseId, double grade) throws GradeNotAddedException;
 
-    public String getProfessorName(int professorEmpId);
+    public String getProfessorName(String professorEmpId);
 
     public boolean verifyProfessor(int userId);
 
-    public int getProfessorId(int userId);
+    public String getProfessorId(int userId);
 }

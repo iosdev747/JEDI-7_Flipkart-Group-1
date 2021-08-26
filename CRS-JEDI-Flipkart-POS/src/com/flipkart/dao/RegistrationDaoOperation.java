@@ -4,10 +4,15 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.*;
+
 import java.util.*;
 import com.flipkart.bean.Course;
 import com.flipkart.constant.SQLConstant;
 import com.flipkart.exception.*;
+import com.flipkart.exception.*;
+import org.apache.log4j.Logger;
 
 
 public class RegistrationDaoOperation implements RegistrationDaoInterface {
@@ -15,13 +20,14 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
     private static String url = "jdbc:mysql://localhost:3306/JEDI-7-CRS";
     private static String user = "root";
     private static String pass = "12345678";
+    private static Logger logger = Logger.getLogger(RegistrationDaoOperation.class);
 
     public RegistrationDaoOperation(){ // In future may be change to private
 
     }
 
     @Override
-    public boolean addCourse(String courseId, int studentId) throws CourseNotFoundException{
+    public boolean addCourse(String courseId, String studentId) throws SQLException{
 
         try{
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
@@ -29,22 +35,24 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
             Connection conn = DriverManager.getConnection(url,user,pass);
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.REGISTER_COURSE);
             preparedStatement.setString(1,courseId);
-            preparedStatement.setString(2, String.valueOf(studentId));
+            preparedStatement.setString(2, studentId);
             preparedStatement.executeUpdate();
 
             conn.close();
             return true;
         }
+        catch(SQLException e){
+            logger.info( e.getMessage());
+        }
         catch(Exception e){
-            System.out.println("There is an Error : "+ e.getMessage());
-            throw new CourseNotFoundException(courseID);
+            logger.info("There is an Error : "+ e.getMessage());
         }
 
         return false;
     }
 
     @Override
-    public boolean dropCourse(String courseId, int studentId) throws CourseNotDeletedException{
+    public boolean dropCourse(String courseId, String studentId) throws SQLException{
 
         try{
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
@@ -52,15 +60,17 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
             Connection conn = DriverManager.getConnection(url,user,pass);
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.DROP_REGISTER_COURSE);
             preparedStatement.setString(1,courseId);
-            preparedStatement.setString(2, String.valueOf(studentId));
+            preparedStatement.setString(2, studentId);
             preparedStatement.executeUpdate();
 
             conn.close();
             return true;
         }
+        catch(SQLException e){
+            logger.info(e.getMessage());
+        }
         catch(Exception e){
-            System.out.println("There is an Error : "+ e.getMessage());
-            throw new CourseNotDeletedException(courseID);
+            logger.info("There is an Error : "+ e.getMessage());
         }
 
         return false;
@@ -68,7 +78,7 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
 
 
     @Override
-    public List<Course> viewCourse(){
+    public List<Course> viewCourse() throws SQLException{
 
         List<Course> courseList = new ArrayList<Course>();
 
@@ -86,7 +96,7 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
                 course.setCourseId(result.getString("courseID"));
                 course.setCourseName(result.getString("courseName"));
                 course.setCredit(result.getInt("credit"));
-                course.setProfessorEmpId(result.getInt("professorEmpID"));
+                course.setProfessorEmpId(result.getString("professorEmpID"));
                 course.setFee(result.getDouble("fee"));
 
                 courseList.add(course);
@@ -95,16 +105,19 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
             conn.close();
 
         }
+        catch(SQLException e){
+            logger.info(e.getMessage());
+        }
         catch(Exception e){
-            System.out.println("There is an Error : "+ e.getMessage());
+            logger.error("There is an Error : "+ e.getMessage());
         }
 
         return courseList;
     }
 
     @Override
-    public List<Course> viewRegisterCourse(int studentId) {
-
+    public List<Course> viewRegisterCourse(String studentId) throws SQLException{
+        logger.debug("-----------Viewing Registered Courses----------");
         List<Course> courseList = new ArrayList<Course>();
 
         try {
@@ -112,7 +125,7 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
 
             Connection conn = DriverManager.getConnection(url,user,pass);
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.VIEW_REGISTER_COURSES);
-            preparedStatement.setString(1, String.valueOf(studentId));
+            preparedStatement.setString(1, studentId);
 
             ResultSet result = preparedStatement.executeQuery();
 
@@ -122,7 +135,7 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
                 course.setCourseId(result.getString("courseID"));
                 course.setCourseName(result.getString("courseName"));
                 course.setCredit(result.getInt("credit"));
-                course.setProfessorEmpId(result.getInt("professorEmpID"));
+                course.setProfessorEmpId(result.getString("professorEmpID"));
                 course.setFee(result.getDouble("fee"));
 
                 courseList.add(course);
@@ -131,8 +144,11 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
 
             conn.close();
         }
+        catch(SQLException e){
+            logger.info(e.getMessage());
+        }
         catch(Exception e){
-            System.out.println("There is an Error : "+ e.getMessage());
+            logger.error("There is an Error : "+ e.getMessage());
         }
 
         return courseList;
@@ -140,7 +156,7 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
 
 
     @Override
-    public double calculate(int studentId){
+    public double calculate(String studentId) throws SQLException{
         double amount = 0;
 
         try{
@@ -148,7 +164,7 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
 
             Connection conn = DriverManager.getConnection(url,user,pass);
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.CALCULATE_FEE);
-            preparedStatement.setString(1, String.valueOf(studentId));
+            preparedStatement.setString(1, studentId);
 
             ResultSet rs = preparedStatement.executeQuery();
 
@@ -157,15 +173,19 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
 
             conn.close();
         }
+        catch(SQLException e){
+            logger.info(e.getMessage());
+        }
         catch(Exception e){
-            System.out.println("There is an Error : "+ e.getMessage());
+            logger.error("There is an Error : "+ e.getMessage());
         }
 
         return amount;
     }
 
     @Override
-    public int numOfRegisteredCourses(int studentId){
+    public int numOfRegisteredCourses(String studentId) throws SQLException{
+
         int numCol = 0;
 
         try{
@@ -173,7 +193,7 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
 
             Connection conn = DriverManager.getConnection(url,user,pass);
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.CALCULATE_NO_OF_COURSE);
-            preparedStatement.setString(1, String.valueOf(studentId));
+            preparedStatement.setString(1, studentId);
 
             ResultSet rs = preparedStatement.executeQuery();
 
@@ -183,8 +203,11 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
             conn.close();
 
         }
+        catch (SQLException e){
+            logger.info(e.getMessage());
+        }
         catch(Exception e){
-            System.out.println("There is an Error : "+ e.getMessage());
+            logger.error("There is an Error : "+ e.getMessage());
         }
 
         return numCol;
@@ -193,14 +216,14 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
 
     // Isme Query ke baad jo comment ha usse check kar lo ek baar
     @Override
-    public boolean isRegistered(String courseId, int studentId) {
+    public boolean isRegistered(String courseId, String studentId) throws SQLException{
 
         try{
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
             Connection conn = DriverManager.getConnection(url,user,pass);
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.REGISTER_IN_ENROLL);
-            preparedStatement.setString(1, String.valueOf(studentId));
+            preparedStatement.setString(1, studentId);
             preparedStatement.setString(2, courseId);
 
             ResultSet result = preparedStatement.executeQuery();
@@ -216,8 +239,11 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
             conn.close();
 
         }
+        catch(SQLException e){
+            logger.info(e.getMessage());
+        }
         catch(Exception e){
-            System.out.println("There is an Error in isRegister : "+ e.getMessage());
+            logger.error("There is an Error in isRegister : "+ e.getMessage());
         }
 
         return false;

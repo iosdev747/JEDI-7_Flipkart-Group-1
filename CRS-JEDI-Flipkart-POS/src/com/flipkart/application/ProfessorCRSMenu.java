@@ -2,26 +2,33 @@ package com.flipkart.application;
 
 import java.util.Scanner;
 import java.util.*;
+import java.sql.*;
 
 import com.flipkart.bean.*;
 import com.flipkart.business.*;
+import com.flipkart.exception.*;
+
+import org.apache.log4j.Logger;
+
 
 public class ProfessorCRSMenu {
 
+    private static Logger logger = Logger.getLogger(ProfessorCRSMenu.class);
+
     Scanner sc = new Scanner(System.in);
 
-    public void createMenu(int professorId){
+    public void createMenu(String professorId){
 
         boolean logginFlag = true;
 
         while(logginFlag) {
 
-            System.out.println("----------Welcome To Professor Menu Professor ID : " + professorId + "----------");
-            System.out.println("1. View Course");
-            System.out.println("2. View Enrolled Students");
-            System.out.println("3. Add grade");
-            System.out.println("4 LogOut");
-            System.out.println("---------------------------------------------------");
+            logger.info("----------Welcome To Professor Menu Professor ID : " + professorId + "----------");
+            logger.info("1. View Course");
+            logger.info("2. View Enrolled Students");
+            logger.info("3. Add grade");
+            logger.info("4 LogOut");
+            logger.info("---------------------------------------------------");
 
             int choice = sc.nextInt();
 
@@ -39,19 +46,19 @@ public class ProfessorCRSMenu {
                     logginFlag = false;
                     break;
                 default:
-                    System.out.println("Wrong Input Given");
+                    logger.info("Wrong Input Given");
                     break;
             }
 
         }
 
-        System.out.println("You are Logged Out");
+        logger.info("You are Logged Out");
 
     }
 
-    private void viewCourse(int profId){ // profId is professorEmpId
+    private void viewCourse(String profId){ // profId is professorEmpId
 
-        System.out.println("-------All Courses Professor have----------");
+        logger.info("-------All Courses Professor have----------");
 
         ProfessorInterface professorInterface = new ProfessorOperation();
 
@@ -62,55 +69,64 @@ public class ProfessorCRSMenu {
             String courseName = course.getCourseName();
             int credit = course.getCredit();
 
-            System.out.println("Course: " + courseId + " , CourseName : " + courseName + " , credit :" + credit);
+            logger.info("Course: " + courseId + " , CourseName : " + courseName + " , credit :" + credit);
         }
-        System.out.println("--------------------------------------------");
+        logger.info("--------------------------------------------");
 
 
     }
 
-    private void viewEnrolledStudent(int profId){
+    private void viewEnrolledStudent(String profId){
 
+        try {
 
-        System.out.println("-------All Student Enroll With Professor----------");
+            logger.info("-------All Student Enroll With Professor----------");
 
-        ProfessorInterface professorInterface = new ProfessorOperation();
+            ProfessorInterface professorInterface = new ProfessorOperation();
 
-        List<EnrolledStudent> enrolList = professorInterface.getEnrolledStudent(profId);
+            List<EnrolledStudent> enrolList = professorInterface.getEnrolledStudent(profId);
 
-        for(EnrolledStudent enrol : enrolList){
-            String courseId = enrol.getCourseId();
-            int studentId = enrol.getStudentId();
-            System.out.println("CourseID : " + courseId + " ----> StudentId : " + studentId);
+            for (EnrolledStudent enrol : enrolList) {
+                String courseId = enrol.getCourseId();
+                String studentId = enrol.getStudentId();
+                logger.info("CourseID : " + courseId + " ----> StudentId : " + studentId);
+            }
+
+            logger.info("----------------------------------------------------");
         }
-
-        System.out.println("----------------------------------------------------");
-
+        catch(SQLException e){
+            logger.error("SQL Exception: " + e.getMessage());
+        }
     }
 
-    private void addGrade(){
+    private void addGrade() {
 
-        System.out.println("-------- Add the Grade to the Student -----------");
+        try {
+            logger.info("-------- Add the Grade to the Student -----------");
 
-        int studentId;
-        String courseId;
-        double mark;
+            String studentId;
+            String courseId;
+            double mark;
 
-        System.out.println("Enter the studentId: ");
-        studentId = sc.nextInt();
-        System.out.println("Enter the courseId: ");
-        courseId = sc.next();
-        System.out.println("Enter the Grade To assign: ");
-        mark = sc.nextDouble();
+            logger.info("Enter the studentId: ");
+            studentId = sc.next();
+            logger.info("Enter the courseId: ");
+            courseId = sc.next();
+            logger.info("Enter the Grade To assign: ");
+            mark = sc.nextDouble();
 
-        ProfessorInterface professorInterface = new ProfessorOperation();
+            ProfessorInterface professorInterface = new ProfessorOperation();
 
-        boolean success = professorInterface.addGrade(studentId, courseId, mark);
+            boolean success = professorInterface.addGrade(studentId, courseId, mark);
 
-        if(success) System.out.println("Grade Added Succesfully");
-        else System.out.println("Grade Added Failed");
+            if (success) logger.info("Grade Added Succesfully");
+            else logger.info("Grade Added Failed");
 
-        System.out.println("-------- ---------------------------- -----------");
+            logger.info("-------- ---------------------------- -----------");
+        }
+        catch(GradeNotAddedException e){
+            logger.error(e.getMessage());
+        }
     }
 
 
