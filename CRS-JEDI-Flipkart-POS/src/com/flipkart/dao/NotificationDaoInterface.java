@@ -1,4 +1,5 @@
 package com.flipkart.dao;
+import java.util.ArrayList;
 
 public interface NotificationDaoInterface {
     /**
@@ -13,5 +14,5 @@ public interface NotificationDaoInterface {
      * @param userID: userID to view all notifications for
      * @return notification message
      */
-    public List<String> readNotification(int userID);
+    public ArrayList<String> readNotification(int userID);
 }
