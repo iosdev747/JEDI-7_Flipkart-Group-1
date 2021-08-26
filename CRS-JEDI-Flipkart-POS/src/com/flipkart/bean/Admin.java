@@ -1,6 +1,6 @@
 package com.flipkart.bean;
 
-public class Admin extends User{
+public class Admin extends User {
     private String empId;
 
     public Admin(int userID, String name, String password, String address, String empId) {
@@ -11,10 +11,20 @@ public class Admin extends User{
     public Admin() {
     }
 
+    /**
+     * Method to get Employee Id
+     *
+     * @return Employee Id
+     */
     public String getEmpId() {
         return empId;
     }
 
+    /**
+     * Method to set Employee Id
+     *
+     * @param Employee Id
+     */
     public void setEmpId(String empId) {
         this.empId = empId;
     }
