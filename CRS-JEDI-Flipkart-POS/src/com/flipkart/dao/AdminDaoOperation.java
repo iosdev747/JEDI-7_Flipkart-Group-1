@@ -8,9 +8,12 @@ import java.util.*;
 
 import com.flipkart.bean.*;
 import com.flipkart.constant.SQLConstant;
+import com.flipkart.exception.CourseNotAssignedToProfessorException;
+import com.flipkart.exception.ProfessorNotAddedException;
+import com.flipkart.exception.UserNotAddedException;
 
 
-public class AdminDaoOperation implements AdminDaoInterface{
+public class AdminDaoOperation implements AdminDaoInterface {
 
     private static String url = "jdbc:mysql://localhost:3306/JEDI-7-CRS";
     private static String user = "root";
@@ -20,26 +23,25 @@ public class AdminDaoOperation implements AdminDaoInterface{
     }
 
     @Override
-    public void deleteCourse(String courseId){
+    public void deleteCourse(String courseId) {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
-            Connection conn = DriverManager.getConnection(url,user,pass);
+            Connection conn = DriverManager.getConnection(url, user, pass);
 
             // Delete the course from Database, it will be cascade to EnrolledStudent
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.DELETE_COURSE);
-            preparedStatement.setString(1,courseId);
+            preparedStatement.setString(1, courseId);
             preparedStatement.executeUpdate();
 
             conn.close();
-        }
-        catch(Exception e){
-            System.out.println("There is an Error : "+ e.getMessage());
+        } catch (Exception e) {
+            System.out.println("There is an Error : " + e.getMessage());
         }
     }
 
-    public void addCourse(Course course){
+    public void addCourse(Course course) {
         // first take details from the course
         String courseId = course.getCourseId();
         String courseName = course.getCourseName();
@@ -50,7 +52,7 @@ public class AdminDaoOperation implements AdminDaoInterface{
         try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
-            Connection conn = DriverManager.getConnection(url,user,pass);
+            Connection conn = DriverManager.getConnection(url, user, pass);
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.ADD_COURSE);
             preparedStatement.setString(1, courseId);
             preparedStatement.setString(2, courseName);
@@ -61,15 +63,14 @@ public class AdminDaoOperation implements AdminDaoInterface{
             preparedStatement.executeUpdate();
 
             conn.close();
-        }
-        catch(Exception e){
-            System.out.println("There is an Error : "+ e.getMessage());
+        } catch (Exception e) {
+            System.out.println("There is an Error : " + e.getMessage());
         }
 
     }
 
     @Override
-    public void addProfessor(Professor professor){
+    public void addProfessor(Professor professor) throws ProfessorNotAddedException {
 
         int userId = professor.getUserID();
         String name = professor.getName();
@@ -81,7 +82,7 @@ public class AdminDaoOperation implements AdminDaoInterface{
         try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
-            Connection conn = DriverManager.getConnection(url,user,pass);
+            Connection conn = DriverManager.getConnection(url, user, pass);
             // since student is dependent on user first insert user
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.ADD_USER);
             preparedStatement.setString(1, String.valueOf(userId));
@@ -91,8 +92,8 @@ public class AdminDaoOperation implements AdminDaoInterface{
 
             // execute it to add to the userDetail table
             int rows = preparedStatement.executeUpdate();
-            if(rows == 1){
-                // now add the Student
+            if (rows == 1) {
+                // now add the Professor
                 PreparedStatement preparedStatement2 = conn.prepareStatement(SQLConstant.ADD_PROFESSOR);
                 preparedStatement2.setString(1, String.valueOf(userId));
                 preparedStatement2.setString(2, String.valueOf(professorEmpId));
@@ -101,15 +102,15 @@ public class AdminDaoOperation implements AdminDaoInterface{
                 preparedStatement2.executeUpdate();
             }
             conn.close();
-        }
-        catch(Exception e){
-            System.out.println("There is an Error : "+ e.getMessage());
+        } catch (Exception e) {
+            System.out.println("There is an Error : " + e.getMessage());
+            throw new ProfessorNotAddedException(Integer.toString(professorEmpId));
         }
 
     }
 
     @Override
-    public void addUser(User userR){
+    public void addUser(User userR) throws UserNotAddedException {
         int userId = userR.getUserID();
         String name = userR.getName();
         String password = userR.getPassword();
@@ -118,7 +119,7 @@ public class AdminDaoOperation implements AdminDaoInterface{
         try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
-            Connection conn = DriverManager.getConnection(url,user,pass);
+            Connection conn = DriverManager.getConnection(url, user, pass);
             // since student is dependent on user first insert user
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.ADD_USER);
             preparedStatement.setString(1, String.valueOf(userId));
@@ -130,20 +131,20 @@ public class AdminDaoOperation implements AdminDaoInterface{
             preparedStatement.executeUpdate();
 
             conn.close();
-        }
-        catch(Exception e){
-            System.out.println("There is an Error : "+ e.getMessage());
+        } catch (Exception e) {
+            System.out.println("There is an Error : " + e.getMessage());
+            throw new UserNotAddedException(userId);
         }
     }
 
 
     @Override
-    public void assignCourse(String courseId, int professorEmpId){
+    public void assignCourse(String courseId, String professorEmpId) {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
-            Connection conn = DriverManager.getConnection(url,user,pass);
+            Connection conn = DriverManager.getConnection(url, user, pass);
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.ASSIGN_COURSE);
             preparedStatement.setString(1, String.valueOf(professorEmpId));
             preparedStatement.setString(2, courseId);
@@ -151,9 +152,9 @@ public class AdminDaoOperation implements AdminDaoInterface{
             preparedStatement.executeUpdate();
 
             conn.close();
-        }
-        catch(Exception e){
-            System.out.println("There is an Error : "+ e.getMessage());
+        } catch (Exception e) {
+            System.out.println("There is an Error : " + e.getMessage());
+            throw new CourseNotAssignedToProfessorException(courseId, professorEmpId)
         }
     }
 
@@ -162,15 +163,15 @@ public class AdminDaoOperation implements AdminDaoInterface{
 
         List<Professor> professorList = new ArrayList<Professor>();
 
-        try{
+        try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
-            Connection conn = DriverManager.getConnection(url,user,pass);
+            Connection conn = DriverManager.getConnection(url, user, pass);
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.VIEW_PROFESSOR);
 
             ResultSet result = preparedStatement.executeQuery();
 
-            while(result.next()){
+            while (result.next()) {
                 // change 1st getInt  to getString   if studentID is String
                 Professor professor = new Professor();
                 professor.setUserID(result.getInt("userID"));
@@ -184,23 +185,22 @@ public class AdminDaoOperation implements AdminDaoInterface{
             }
 
             conn.close();
-        }
-        catch(Exception e){
-            System.out.println("There is an Error : "+ e.getMessage());
+        } catch (Exception e) {
+            System.out.println("There is an Error : " + e.getMessage());
         }
 
         return professorList;
     }
 
     @Override
-    public boolean verifyProfessor(int userId){
+    public boolean verifyProfessor(int userId) {
         boolean flag = false;
 
-        try{
+        try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
-            Connection conn = DriverManager.getConnection(url,user,pass);
-            PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.VERIFY_ADMIN);
+            Connection conn = DriverManager.getConnection(url, user, pass);
+            PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.VERIFY_PROFESSOR);
             preparedStatement.setString(1, String.valueOf(userId));
 
             ResultSet result = preparedStatement.executeQuery();
@@ -209,34 +209,32 @@ public class AdminDaoOperation implements AdminDaoInterface{
 
             int numRow = result.getInt(1);
 
-            if(numRow == 1) flag = true;
+            if (numRow == 1) flag = true;
             conn.close();
 
-        }
-        catch(Exception e){
-            System.out.println("There is an Error : "+ e.getMessage());
+        } catch (Exception e) {
+            System.out.println("There is an Error : " + e.getMessage());
         }
         return flag;
     }
 
     @Override
-    public int getAdminId(int userId){
+    public int getAdminId(int userId) {
         try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
-            Connection conn = DriverManager.getConnection(url,user,pass);
+            Connection conn = DriverManager.getConnection(url, user, pass);
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.GET_ADMIN_ID);
             preparedStatement.setString(1, String.valueOf(userId));
             ResultSet result = preparedStatement.executeQuery();
 
-            if(result.next()){
+            if (result.next()) {
                 conn.close();
                 return result.getInt("empID");  // return result.getString("empID);  //uncomment it otherwise
             }
             conn.close();
-        }
-        catch(Exception e){
-            System.out.println("There is an Error : "+ e.getMessage());
+        } catch (Exception e) {
+            System.out.println("There is an Error : " + e.getMessage());
         }
         return -1; // return "No Admin added"   // uncomment it if string
     }
