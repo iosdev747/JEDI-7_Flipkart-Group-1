@@ -30,6 +30,7 @@ public class CRSApplication {
         logger.info("2. Login as Professor");
         logger.info("3. Login as Admin");
         logger.info("4. Student SignUp");
+        logger.info("5. Update Password");
         logger.info("Enter user input");
     }
 
@@ -198,42 +199,94 @@ public class CRSApplication {
     }
 
 
+    public static void updatePassword(){
+
+        try {
+            logger.info("********* Change Password ***********");
+
+            Scanner sc = new Scanner(System.in);
+
+            int userId;
+            String password;
+
+            logger.info("Enter the userID: ");
+            userId = sc.nextInt();
+            logger.info("Enter the Current Password: ");
+            password = sc.next();
+
+            UserInterface userInterface = new UserOperation();
+
+            if (userInterface.verifyCredentials(userId, password)) {
+
+                logger.info("Credentials Verified Now password can be changed");
+                // studentCRSMenu
+                String newPassword;
+                logger.info("Enter New Password");
+                newPassword = sc.next();
+                boolean success = userInterface.updatePassword(userId,newPassword);
+
+                if(success){
+                    logger.info("Password Change SuccessFull");
+                }
+                else{
+                    logger.info("Password Change UnSuccessFull");
+                }
+
+
+            } else {
+                logger.error("Wrong Credentials");
+            }
+
+
+            logger.info("********* *************** ***********");
+        }
+        catch(UserNotFoundException e){
+            logger.error(e.getMessage());
+        }
+
+    }
+
     public static void main(String[] args){
-        System.out.println("yes");
-        logger.debug("Hi");
-        logger.info("Hi info");
+
+        boolean inside = true;
 
         CRSApplication crsApplication = new CRSApplication();
         Scanner sc = new Scanner(System.in);
 
         int userInput;
+
         //login page
-        createMainMenu();
-        userInput = sc.nextInt();
+        while(inside) {
+            createMainMenu();
+            userInput = sc.nextInt();
+            switch (userInput) {
+                case 1:
+                    // login for student
+                    crsApplication.loginStudent();
+                    break;
 
-        switch(userInput){
-            case 1:
-                // login for student
-                crsApplication.loginStudent();
-                break;
-
-            case 2:
-                // login as Professor
-                crsApplication.loginProfessor();
-                break;
-            case 3:
-                // login as Admin
-                crsApplication.loginAdmin();
-                break;
-            case 4:
-                // register Student
-                crsApplication.registerStudent();
-                break;
-            default:
-                //System.out.println("Invalid Input");
-                break;
+                case 2:
+                    // login as Professor
+                    crsApplication.loginProfessor();
+                    break;
+                case 3:
+                    // login as Admin
+                    crsApplication.loginAdmin();
+                    break;
+                case 4:
+                    // register Student
+                    crsApplication.registerStudent();
+                    break;
+                case 5:
+                    //update password
+                    crsApplication.updatePassword();
+                    break;
+                default:
+                    inside = false;
+                    //System.out.println("Invalid Input");
+                    break;
+            }
         }
-
         sc.close();
     }
 

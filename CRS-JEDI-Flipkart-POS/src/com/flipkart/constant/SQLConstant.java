@@ -9,7 +9,7 @@ public class SQLConstant {
 
 
     // Student Queries
-    public static final String ADD_STUDENT = "INSERT INTO Student (studentID, department, currentYear, userID) values (?, ?, ? ,?)";
+    public static final String ADD_STUDENT = "INSERT INTO Student (studentID, department, currentYear, userID, isApproved) values (?, ?, ? ,?, ?)";
     public static final String GET_STUDENT_ID ="SELECT studentID FROM Student WHERE userID = ?";
     public static final String GET_STUDENT_GRADE = "SELECT studentID, studentID, grade FROM Grade WHERE studentID = ?";
     public static final String IS_APPROVED = "SELECT isApproved FROM Student WHERE studentID = ?";

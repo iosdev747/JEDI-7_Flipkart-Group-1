@@ -33,7 +33,7 @@ public class StudentDaoOperation implements StudentDaoInterface{
         String studentID = student.getStudentId();   // also change this to string if studentId in db is String
         int batch = student.getBatch();
         String branch = student.getBranch();
-        boolean isApproved = student.isApproved();
+        int isApproved = 0;
 
         // now get the user details
         int userID = student.getUserID();
@@ -62,6 +62,7 @@ public class StudentDaoOperation implements StudentDaoInterface{
                 preparedStatement2.setString(2, branch);
                 preparedStatement2.setString(3, String.valueOf(batch));
                 preparedStatement2.setString(4, String.valueOf(userID));
+                preparedStatement2.setString(5, String.valueOf(isApproved));
 
                 preparedStatement2.executeUpdate();
             }
