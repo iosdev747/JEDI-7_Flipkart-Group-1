@@ -20,7 +20,11 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
     public ProfessorDaoOperation() {   // In future may be change to private
     }
 
-    // here also change the professorEmpId to string if it is in db
+    /**
+     * Get courses list taught by professor
+     * @param professorEmpId
+     * @return list of courses taught by professor
+     */
     @Override
     public List<Course> getCoursesByProfessor(String professorEmpId) {
 
@@ -53,7 +57,11 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
         return courseList;
     }
 
-    // here also change it to professorEmpId to string if in db
+    /**
+     * view list of enrolled students
+     * @param professorEmpId
+     * @return list of enrolled students
+     */
     @Override
     public List<EnrolledStudent> getEnrolledStudent(String professorEmpId){
 
@@ -85,7 +93,14 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
         return enrolledList;
     }
 
-    // studentId can be change to String if db is String
+    /**
+     * add grade
+     * @param studentId
+     * @param courseId
+     * @param grade
+     * @return true/false
+     * @throws GradeNotAddedException
+     */
     @Override
     public boolean addGrade(String studentId, String courseId, double grade) throws GradeNotAddedException{
 
@@ -127,7 +142,11 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
         //return false;
     }
 
-    // change professorEmpId to String if in db it is String
+    /**
+     * get professor name
+     * @param professorEmpId
+     * @return professor name
+     */
     @Override
     public String getProfessorName(String professorEmpId) {
         logger.debug("---------Getting Name of Professor--------");
@@ -155,6 +174,11 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
         return "No Professor of ID: "+professorEmpId;
     }
 
+    /**
+     * verify professor
+     * @param userId
+     * @return true/false
+     */
     @Override
     public boolean verifyProfessor(int userId){
         logger.debug("---------Verifying Professor--------");
@@ -183,6 +207,11 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
         return flag;
     }
 
+    /**
+     * get professor ID
+     * @param userId
+     * @return professor id
+     */
     @Override
     public String getProfessorId(int userId){
         logger.debug("---------Getting Professor--------");

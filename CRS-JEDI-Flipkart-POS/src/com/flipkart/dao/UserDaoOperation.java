@@ -15,10 +15,20 @@ public class UserDaoOperation implements UserDaoInterface{
     private static String pass = "12345678";
     private static Logger logger = Logger.getLogger(UserDaoOperation.class);
 
-    public UserDaoOperation(){      // in future may be changed to private
+    /**
+     * Constructor
+     */
+    public UserDaoOperation(){
 
     }
 
+    /**
+     * verify credentials
+     * @param userId
+     * @param password
+     * @return true/false
+     * @throws UserNotFoundException
+     */
     @Override
     public boolean verifyCredentials(int userId, String password) throws UserNotFoundException {
 
@@ -54,6 +64,12 @@ public class UserDaoOperation implements UserDaoInterface{
         return false;
     }
 
+    /**
+     * update password
+     * @param userId
+     * @param newPassword
+     * @return true/false
+     */
     @Override
     public boolean updatePassword(int userId, String newPassword){
 

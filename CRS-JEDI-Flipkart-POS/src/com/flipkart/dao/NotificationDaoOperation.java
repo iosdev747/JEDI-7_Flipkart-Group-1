@@ -16,6 +16,12 @@ public class NotificationDaoOperation implements NotificationDaoInterface{
     private static String pass = "12345678";
     private static Logger logger = Logger.getLogger(NotificationDaoOperation.class);
 
+    /**
+     * send notification
+     * @param userId
+     * @param msg: Message to be sent
+     * @return notification ID
+     */
     public String sendNotification(int userId, String msg) {
         logger.debug("-------------Sending Notification--------");
         int notificationId = 0;
@@ -36,6 +42,11 @@ public class NotificationDaoOperation implements NotificationDaoInterface{
         return Integer.toString(notificationId);
     }
 
+    /**
+     * read notification
+     * @param userID: userID to view all notifications for
+     * @return notification message
+     */
     public ArrayList<String> readNotification(int userID) {
         logger.debug("-------------Reading Notification--------");
         ArrayList<String> notifications = new ArrayList<String>();
