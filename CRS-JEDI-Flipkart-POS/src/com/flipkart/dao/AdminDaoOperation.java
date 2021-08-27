@@ -322,7 +322,7 @@ public class AdminDaoOperation implements AdminDaoInterface{
     }
 
     @Override
-    public boolean verifyProfessor(int userId){
+    public boolean verifyAdmin(int userId){
         logger.debug("-----------Verifying Professor---------");
         boolean flag = false;
 

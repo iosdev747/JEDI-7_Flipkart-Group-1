@@ -30,7 +30,7 @@ public interface AdminDaoInterface {
 
     public List<Professor> viewProfessor();
 
-    public boolean verifyProfessor(int userId);
+    public boolean verifyAdmin(int userId);
 
     public String getAdminId(int userId);
 

@@ -126,7 +126,7 @@ public class CRSApplication {
             AdminInterface adminInterface = new AdminOperation();
             UserInterface userInterface = new UserOperation();
 
-            if (userInterface.verifyCredentials(userId, password) && adminInterface.verifyProfessor(userId)) {
+            if (userInterface.verifyCredentials(userId, password) && adminInterface.verifyAdmin(userId)) {
 
                 // studentCRSMenu
                 String empId = adminInterface.getAdminId(userId);
