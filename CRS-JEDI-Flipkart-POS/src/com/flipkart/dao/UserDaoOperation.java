@@ -10,9 +10,9 @@ import com.flipkart.exception.*;
 
 public class UserDaoOperation implements UserDaoInterface{
 
-    private static String url = "jdbc:mysql://localhost:3306/JEDI-7-CRS";
-    private static String user = "root";
-    private static String pass = "12345678";
+    private static String url = SQLConstant.DB_URL;
+    private static String user = SQLConstant.DB_USER;
+    private static String pass = SQLConstant.DB_PASS;
     private static Logger logger = Logger.getLogger(UserDaoOperation.class);
 
     /**

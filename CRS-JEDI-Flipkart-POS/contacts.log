@@ -1535,3 +1535,15 @@
 11:03:48,751 DEBUG StudentOperation,main:42 - Getting Student ID for user ID: 2
 11:03:58,191 DEBUG RegistrationOperation,main:59 -  Viewing Registerd Courses for Student with ID : 1
 11:04:13,244 DEBUG RegistrationOperation,main:67 - Calculating fees for Student with ID : 1
+15:19:00,338 DEBUG StudentOperation,main:25 - Initiating Registration for Student with ID : 2
+15:19:14,158 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 5
+15:19:14,615 DEBUG StudentOperation,main:76 - Verifying Student with ID : 5
+15:19:14,721 DEBUG StudentOperation,main:42 - Getting Student ID for user ID: 5
+15:19:20,138  INFO StudentCRSMenu,main:152 - You are Not Approved by Admin
+15:21:16,562 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 5
+15:21:17,922 DEBUG StudentOperation,main:76 - Verifying Student with ID : 5
+15:21:17,990 DEBUG StudentOperation,main:42 - Getting Student ID for user ID: 5
+15:21:21,589  INFO StudentCRSMenu,main:154 - You are Not Approved by Admin
+15:21:43,113 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 2
+15:21:43,242 DEBUG StudentOperation,main:76 - Verifying Student with ID : 2
+15:21:43,320 DEBUG StudentOperation,main:42 - Getting Student ID for user ID: 2

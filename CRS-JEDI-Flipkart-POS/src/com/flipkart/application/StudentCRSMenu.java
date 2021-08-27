@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import com.flipkart.bean.*;
 import com.flipkart.business.*;
 import com.flipkart.exception.*;
+
 import org.apache.log4j.Logger;
 
 public class StudentCRSMenu {
@@ -71,6 +72,14 @@ public class StudentCRSMenu {
     }
 
     private void makePayment(String studentId){
+
+        StudentInterface studentInterface = new StudentOperation();
+
+        if(!studentInterface.isApproved(studentId)){
+            System.out.println("You are Not Approved by Admin");
+            logger.info("You are Not Approved by Admin");
+            return;
+        }
 
         try {
 
@@ -138,6 +147,14 @@ public class StudentCRSMenu {
 
     private void addCourse(String studentId){
 
+        StudentInterface studentInterface = new StudentOperation();
+
+        if(!studentInterface.isApproved(studentId)){
+            System.out.println("You are Not Approved by Admin");
+            logger.info("You are Not Approved by Admin");
+            return;
+        }
+
         try {
 
             System.out.println("-----You can Enter Add Course Window------");
@@ -165,6 +182,16 @@ public class StudentCRSMenu {
     }
 
     private void viewRegisteredCourse(String studentId){
+
+
+        StudentInterface studentInterface = new StudentOperation();
+
+        if(!studentInterface.isApproved(studentId)){
+            System.out.println("You are Not Approved by Admin");
+            logger.info("You are Not Approved by Admin");
+            return;
+        }
+
 
         try {
 
@@ -196,6 +223,14 @@ public class StudentCRSMenu {
     }
 
     private void dropCourse(String studentId){
+
+        StudentInterface studentInterface = new StudentOperation();
+
+        if(!studentInterface.isApproved(studentId)){
+            System.out.println("You are Not Approved by Admin");
+            logger.info("You are Not Approved by Admin");
+            return;
+        }
 
         try {
 
@@ -229,11 +264,19 @@ public class StudentCRSMenu {
 
     private void viewGradeCard(String studentId){
 
+        StudentInterface studentInterface = new StudentOperation();
+
+        if(!studentInterface.isApproved(studentId)){
+            System.out.println("You are Not Approved by Admin");
+            logger.info("You are Not Approved by Admin");
+            return;
+        }
+
         try {
 
             System.out.println("--------View Your Grade Card----------");
 
-            StudentInterface studentInterface = new StudentOperation();
+            studentInterface = new StudentOperation();
 
             List<Grade> gradeList = studentInterface.getGrade(studentId);
 

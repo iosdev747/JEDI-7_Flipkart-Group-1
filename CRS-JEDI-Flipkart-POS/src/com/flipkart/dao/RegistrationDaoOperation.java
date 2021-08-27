@@ -17,9 +17,9 @@ import org.apache.log4j.Logger;
 
 public class RegistrationDaoOperation implements RegistrationDaoInterface {
 
-    private static String url = "jdbc:mysql://localhost:3306/JEDI-7-CRS";
-    private static String user = "root";
-    private static String pass = "12345678";
+    private static String url = SQLConstant.DB_URL;
+    private static String user = SQLConstant.DB_USER;
+    private static String pass = SQLConstant.DB_PASS;
     private static Logger logger = Logger.getLogger(RegistrationDaoOperation.class);
 
     /**
@@ -38,6 +38,8 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
      */
     @Override
     public boolean addCourse(String courseId, String studentId) throws SQLException{
+
+
 
         try{
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
@@ -70,6 +72,7 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
      */
     @Override
     public boolean dropCourse(String courseId, String studentId) throws SQLException{
+
 
         try{
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
@@ -146,6 +149,7 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
     public List<Course> viewRegisterCourse(String studentId) throws SQLException{
         logger.debug("-----------Viewing Registered Courses----------");
         List<Course> courseList = new ArrayList<Course>();
+
 
         try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used

@@ -1,5 +1,6 @@
 package com.flipkart.dao;
 
+import com.flipkart.constant.SQLConstant;
 import org.apache.log4j.Logger;
 
 import java.sql.Connection;
@@ -11,9 +12,9 @@ import java.util.List ;
 
 public class NotificationDaoOperation implements NotificationDaoInterface{
 
-    private static String url = "jdbc:mysql://localhost:3306/JEDI-7-CRS";
-    private static String user = "root";
-    private static String pass = "12345678";
+    private static String url = SQLConstant.DB_URL;
+    private static String user = SQLConstant.DB_USER;
+    private static String pass = SQLConstant.DB_PASS;
     private static Logger logger = Logger.getLogger(NotificationDaoOperation.class);
 
     /**
