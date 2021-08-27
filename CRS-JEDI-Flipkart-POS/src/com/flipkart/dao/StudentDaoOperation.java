@@ -23,9 +23,18 @@ public class StudentDaoOperation implements StudentDaoInterface{
     private static String pass = SQLConstant.DB_PASS;
     private static Logger logger = Logger.getLogger(StudentDaoOperation.class);
 
-    public StudentDaoOperation() {    // In future may be change to private
+    /**
+     * Constructor
+     */
+    public StudentDaoOperation() {
     }
 
+    /**
+     * Add student
+     * @param student
+     * @return
+     * @throws StudentNotRegisteredException
+     */
     @Override
     public boolean addStudent(Student student) throws StudentNotRegisteredException {
         logger.debug("---------Adding Student--------");
@@ -78,7 +87,11 @@ public class StudentDaoOperation implements StudentDaoInterface{
     }
 
 
-    // also change it to string is studentId is String in db
+    /**
+     * get student ID
+     * @param userId
+     * @return student ID
+     */
     @Override
     public String getStudentId(int userId){
         logger.debug("---------Get Student Details--------");
@@ -104,6 +117,12 @@ public class StudentDaoOperation implements StudentDaoInterface{
         return "No such student"; // return "No student added"   // uncomment it if string
     }
 
+    /**
+     * get grade card
+     * @param studentId
+     * @return grade card
+     * @throws SQLException
+     */
     @Override
     public List<Grade> getGrade(String studentId) throws SQLException{
         logger.debug("---------Get Grade Card--------");
@@ -142,6 +161,11 @@ public class StudentDaoOperation implements StudentDaoInterface{
 
     // uncomment it if is Approved is implemented and added to Student database
     // the sql command is already there
+    /**
+     * is student approved?
+     * @param studentId
+     * @return true/false
+     */
     @Override
     public boolean isApproved(String studentId){
         logger.debug("---------Checking if Student is Approved or NOT--------");
@@ -169,7 +193,11 @@ public class StudentDaoOperation implements StudentDaoInterface{
     }
 
 
-
+    /**
+     * verify student
+     * @param userId
+     * @return true/false
+     */
     @Override
     public boolean verifyStudent(int userId){
 

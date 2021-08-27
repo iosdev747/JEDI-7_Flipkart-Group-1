@@ -22,10 +22,20 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
     private static String pass = SQLConstant.DB_PASS;
     private static Logger logger = Logger.getLogger(RegistrationDaoOperation.class);
 
-    public RegistrationDaoOperation(){ // In future may be change to private
+    /**
+     * Constructor
+     */
+    public RegistrationDaoOperation(){
 
     }
 
+    /**
+     * Add course
+     * @param courseId
+     * @param studentId
+     * @return true/false
+     * @throws SQLException
+     */
     @Override
     public boolean addCourse(String courseId, String studentId) throws SQLException{
 
@@ -53,6 +63,13 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
         return false;
     }
 
+    /**
+     * Drop Course
+     * @param courseId
+     * @param studentId
+     * @return true/false
+     * @throws SQLException
+     */
     @Override
     public boolean dropCourse(String courseId, String studentId) throws SQLException{
 
@@ -79,7 +96,11 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
         return false;
     }
 
-
+    /**
+     * View courses
+     * @return list of courses
+     * @throws SQLException
+     */
     @Override
     public List<Course> viewCourse() throws SQLException{
 
@@ -118,6 +139,12 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
         return courseList;
     }
 
+    /**
+     * view registered courses
+     * @param studentId
+     * @return list of registered courses
+     * @throws SQLException
+     */
     @Override
     public List<Course> viewRegisterCourse(String studentId) throws SQLException{
         logger.debug("-----------Viewing Registered Courses----------");
@@ -159,6 +186,12 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
     }
 
 
+    /**
+     * calculate fees
+     * @param studentId
+     * @return fees
+     * @throws SQLException
+     */
     @Override
     public double calculate(String studentId) throws SQLException{
         double amount = 0;
@@ -187,6 +220,12 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
         return amount;
     }
 
+    /**
+     * view number of registered courses
+     * @param studentId
+     * @return number of registered courses
+     * @throws SQLException
+     */
     @Override
     public int numOfRegisteredCourses(String studentId) throws SQLException{
 
@@ -219,6 +258,14 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
 
 
     // Isme Query ke baad jo comment ha usse check kar lo ek baar
+
+    /**
+     * check if student is registered or not
+     * @param courseId
+     * @param studentId
+     * @return true/false
+     * @throws SQLException
+     */
     @Override
     public boolean isRegistered(String courseId, String studentId) throws SQLException{
 

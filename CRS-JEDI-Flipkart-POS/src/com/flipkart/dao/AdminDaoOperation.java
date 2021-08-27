@@ -19,6 +19,12 @@ public class AdminDaoOperation implements AdminDaoInterface{
     public AdminDaoOperation() {    // In future may be change to private
     }
 
+    /**
+     * Method to delete course
+     * @param courseId
+     * @throws CourseNotDeletedException
+     * @throws CourseNotFoundException
+     */
     @Override
     public void deleteCourse(String courseId) throws CourseNotDeletedException, CourseNotFoundException {
 
@@ -53,6 +59,11 @@ public class AdminDaoOperation implements AdminDaoInterface{
         }
     }
 
+    /**
+     * Method to add course
+     * @param course
+     * @throws CourseFoundException
+     */
     public void addCourse(Course course) throws CourseFoundException {
 
         // first take details from the course
@@ -93,6 +104,10 @@ public class AdminDaoOperation implements AdminDaoInterface{
 
     }
 
+    /**
+     * Method to view pending admissions
+     * @return list of students
+     */
     @Override
     public List<Student> viewPendingAdmissions(){
 
@@ -130,6 +145,11 @@ public class AdminDaoOperation implements AdminDaoInterface{
         return studentList;
     }
 
+    /**
+     * Method to approve student registration
+     * @param studentId
+     * @throws StudentNotFoundForApprovalException
+     */
     @Override
     public void approveStudent(String studentId) throws StudentNotFoundForApprovalException {
         logger.debug("-----------Student Approval---------");
@@ -158,7 +178,12 @@ public class AdminDaoOperation implements AdminDaoInterface{
         }
     }
 
-
+    /**
+     * Method to add professor
+     * @param professor
+     * @throws ProfessorNotAddedException
+     * @throws UserIdAlreadyInUseException
+     */
     @Override
     public void addProfessor(Professor professor) throws ProfessorNotAddedException, UserIdAlreadyInUseException {
         logger.debug("----------Adding Professor------------");
@@ -215,6 +240,12 @@ public class AdminDaoOperation implements AdminDaoInterface{
 
     }
 
+    /**
+     * Method to add user
+     * @param user
+     * @throws UserNotAddedException
+     * @throws UserIdAlreadyInUseException
+     */
     @Override
     public void addUser(User userR) throws UserNotAddedException, UserIdAlreadyInUseException{
         logger.debug("------------Adding User----------");
@@ -254,7 +285,13 @@ public class AdminDaoOperation implements AdminDaoInterface{
         }
     }
 
-
+    /**
+     * Method to assign course
+     * @param courseId
+     * @param professorEmpId
+     * @throws CourseNotFoundException
+     * @throws UserNotFoundException
+     */
     @Override
     public void assignCourse(String courseId, String professorEmpId) throws CourseNotFoundException, UserNotFoundException{
         logger.debug("-----------Assigning Course to Professor---------");
@@ -285,6 +322,10 @@ public class AdminDaoOperation implements AdminDaoInterface{
         }
     }
 
+    /**
+     * Method to view professors list
+     * @return list of professors
+     */
     @Override
     public List<Professor> viewProfessor() {
         logger.debug("-----------Viewing Professor---------");
@@ -320,6 +361,11 @@ public class AdminDaoOperation implements AdminDaoInterface{
         return professorList;
     }
 
+    /**
+     * Method to verify professor
+     * @param userId
+     * @return true/false
+     */
     @Override
     public boolean verifyAdmin(int userId){
         logger.debug("-----------Verifying Professor---------");
@@ -348,6 +394,11 @@ public class AdminDaoOperation implements AdminDaoInterface{
         return flag;
     }
 
+    /**
+     * Method to get admin ID
+     * @param userId
+     * @return admin id
+     */
     @Override
     public String getAdminId(int userId){
         logger.debug("---------Getting Admin---------");
