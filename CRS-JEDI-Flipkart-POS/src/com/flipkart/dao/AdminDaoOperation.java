@@ -311,7 +311,6 @@ public class AdminDaoOperation implements AdminDaoInterface{
                 conn.close();
                 throw new CourseNotFoundException(courseId);
             }
-
             conn.close();
         }
         catch(SQLException se) {

@@ -23,16 +23,16 @@ public class AdminCRSMenu {
 
         while(logginFlag) {
 
-            logger.info("----------Welcome To Admin Menu AdminID : " + adminId + "----------");
-            logger.info("1. View Course in Catalog");
-            logger.info("2. Add Course to catalog");
-            logger.info("3. Delete Course From catalog");
-            logger.info("4. Add Professor");
-            logger.info("5. Assign Course To Professor");
-            logger.info("6. Check All UnApproved");
-            logger.info("7. Approve Student");
-            logger.info("8. LogOut");
-            logger.info("---------------------------------------------");
+            System.out.println("----------Welcome To Admin Menu AdminID : " + adminId + "----------");
+            System.out.println("1. View Course in Catalog");
+            System.out.println("2. Add Course to catalog");
+            System.out.println("3. Delete Course From catalog");
+            System.out.println("4. Add Professor");
+            System.out.println("5. Assign Course To Professor");
+            System.out.println("6. Check All UnApproved");
+            System.out.println("7. Approve Student");
+            System.out.println("8. LogOut");
+            System.out.println("---------------------------------------------");
 
             int choice = sc.nextInt();
 
@@ -63,17 +63,17 @@ public class AdminCRSMenu {
                     logginFlag = false;
                     break;
                 default:
-                    logger.info("Wrong Option selected");
+                    System.out.println("Wrong Option selected");
                     break;
             }
 
         }
 
-        logger.info("You Are Logged Out");
+        System.out.println("You Are Logged Out");
     }
 
     private void listUnapprovedStudent(){
-        logger.info("-------All Unapproved Student list---------");
+        System.out.println("-------All Unapproved Student list---------");
 
         AdminInterface adminInterface = new AdminOperation();
 
@@ -83,28 +83,28 @@ public class AdminCRSMenu {
             String studentId = student.getStudentId();
             String name = student.getName();
 
-            logger.info("StudentID: "+studentId +" , Student Name: "+name);
+            System.out.println("StudentID: "+studentId +" , Student Name: "+name);
         }
 
-        logger.info("-------------------------------------------");
+        System.out.println("-------------------------------------------");
 
     }
 
 
     private void approveStudent(){
         try {
-            logger.info("-------Approve a Student Registration---------");
+            System.out.println("-------Approve a Student Registration---------");
 
             String studentId;
 
-            logger.info("Enter the studentId to Approve: ");
+            System.out.println("Enter the studentId to Approve: ");
             studentId = sc.next();
 
             AdminInterface adminInterface = new AdminOperation();
 
             adminInterface.approveStudent(studentId);
 
-            logger.info("----------------------------------------------");
+            System.out.println("----------------------------------------------");
         }
         catch(StudentNotFoundForApprovalException e){
             logger.error(e.getMessage());
@@ -115,7 +115,7 @@ public class AdminCRSMenu {
     private void viewCourse(){
 
         try {
-            logger.info("-------All Courses In Catalog---------");
+            System.out.println("-------All Courses In Catalog---------");
 
             RegistrationInterface registrationInterface = new RegistrationOperation();
             List<Course> courseList = registrationInterface.viewCourse();
@@ -127,10 +127,10 @@ public class AdminCRSMenu {
                 int credit = course.getCredit();
                 String professorEmpId = course.getProfessorEmpId();
                 double fee = course.getFee();
-                logger.info("CourseId : " + courseId + " , CourseName : " + courseName + " , credit : " + credit + " , ProfessorEmpId: " + professorEmpId + " , fee: " + fee);
+                System.out.println("CourseId : " + courseId + " , CourseName : " + courseName + " , credit : " + credit + " , ProfessorEmpId: " + professorEmpId + " , fee: " + fee);
             }
 
-            logger.info("---------------------------------------");
+            System.out.println("---------------------------------------");
         }
         catch(SQLException e){
             logger.error(e.getMessage());
@@ -140,9 +140,9 @@ public class AdminCRSMenu {
     private void addCourse(){
 
         try {
-            logger.info("-------Add A course to Catalog---------");
+            System.out.println("-------Add A course to Catalog---------");
 
-            logger.info("Enter The Details of New Course");
+            System.out.println("Enter The Details of New Course");
             String courseId;
             String courseName;
             int credit;
@@ -150,22 +150,22 @@ public class AdminCRSMenu {
             double fee;
 
 
-            logger.info("Enter the CourseID:");
+            System.out.println("Enter the CourseID:");
             courseId = sc.next();
-            logger.info("Enter the CourseName:");
+            System.out.println("Enter the CourseName:");
             courseName = sc.next();
-            logger.info("Enter the CourseCredit:");
+            System.out.println("Enter the CourseCredit:");
             credit = sc.nextInt();
-            logger.info("Enter the CourseFee:");
+            System.out.println("Enter the CourseFee:");
             fee = sc.nextDouble();
-            logger.info("Enter the ProfessorId:");
+            System.out.println("Enter the ProfessorId:");
             professorEmpId = sc.next();
 
             AdminInterface adminInterface = new AdminOperation();
             adminInterface.addCourse(courseId, courseName, credit, professorEmpId, fee);
 
 
-            logger.info("---------------------------------------");
+            System.out.println("---------------------------------------");
         }
         catch(CourseFoundException e){
             logger.error(e.getMessage());
@@ -176,16 +176,16 @@ public class AdminCRSMenu {
 
         try {
 
-            logger.info("-------Delete Course from Catalog---------");
+            System.out.println("-------Delete Course from Catalog---------");
 
             String courseId;
-            logger.info("Enter the CourseID to Delete:");
+            System.out.println("Enter the CourseID to Delete:");
             courseId = sc.next();
 
             AdminInterface adminInterface = new AdminOperation();
             adminInterface.deleteCourse(courseId);
 
-            logger.info("------------------------------------------");
+            System.out.println("------------------------------------------");
         }
         catch(CourseNotFoundException | CourseNotDeletedException e){
             logger.error(e.getMessage());
@@ -197,9 +197,9 @@ public class AdminCRSMenu {
 
         try {
 
-            logger.info("-------Add A Professor---------");
+            System.out.println("-------Add A Professor---------");
 
-            logger.info("Enter The details for the professor");
+            System.out.println("Enter The details for the professor");
 
             int userId;
             String name;
@@ -208,22 +208,22 @@ public class AdminCRSMenu {
             String department;
             String professorEmpId;
 
-            logger.info("Enter the UserId for Professor:");
+            System.out.println("Enter the UserId for Professor:");
             userId = sc.nextInt();
 
-            logger.info("Enter the Name for Professor:");
+            System.out.println("Enter the Name for Professor:");
             name = sc.next();
 
-            logger.info("Enter the password for Professor:");
+            System.out.println("Enter the password for Professor:");
             password = sc.next();
 
-            logger.info("Enter the password for Address:");
+            System.out.println("Enter the password for Address:");
             address = sc.next();
 
-            logger.info("Enter the Department for Professor:");
+            System.out.println("Enter the Department for Professor:");
             department = sc.next();
 
-            logger.info("Enter the ProfessorId for Professor:");
+            System.out.println("Enter the ProfessorId for Professor:");
             professorEmpId = sc.next();
 
             Professor professor = new Professor(userId, name, password, address, department, professorEmpId);
@@ -232,7 +232,7 @@ public class AdminCRSMenu {
 
             adminInterface.addProfessor(professor);
 
-            logger.info("---------------------------------");
+            System.out.println("---------------------------------");
         }
         catch(ProfessorNotAddedException | UserIdAlreadyInUseException e){
             logger.error(e.getMessage());
@@ -242,15 +242,15 @@ public class AdminCRSMenu {
     private void assignCourseToProfessor(){
 
         try {
-            logger.info("-------Assign Course to Professor---------");
+            System.out.println("-------Assign Course to Professor---------");
 
             String courseId;
             String professorId;
 
-            logger.info("Enter the courseId for Professor:");
+            System.out.println("Enter the courseId for Professor:");
             courseId = sc.next();
 
-            logger.info("Enter the ProfessorId:");
+            System.out.println("Enter the ProfessorId:");
             professorId = sc.next();
 
             AdminInterface adminInterface = new AdminOperation();
@@ -258,7 +258,7 @@ public class AdminCRSMenu {
             adminInterface.assignCourse(courseId, professorId);
 
 
-            logger.info("------------------------------------------");
+            System.out.println("------------------------------------------");
         }
         catch(CourseNotFoundException | UserNotFoundException e){
             logger.error(e.getMessage());

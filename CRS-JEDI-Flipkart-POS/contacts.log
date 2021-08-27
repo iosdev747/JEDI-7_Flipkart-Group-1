@@ -1502,3 +1502,36 @@
 02:06:04,482  INFO CRSApplication,main:32 - 4. Student SignUp
 02:06:04,488  INFO CRSApplication,main:33 - 5. Update Password
 02:06:04,491  INFO CRSApplication,main:34 - Enter user input
+02:12:11,974  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+02:12:11,983  INFO CRSApplication,main:29 - 1. Login as Student
+02:12:11,984  INFO CRSApplication,main:30 - 2. Login as Professor
+02:12:11,985  INFO CRSApplication,main:31 - 3. Login as Admin
+02:12:11,986  INFO CRSApplication,main:32 - 4. Student SignUp
+02:12:11,986  INFO CRSApplication,main:33 - 5. Update Password
+02:12:11,987  INFO CRSApplication,main:34 - Enter user input
+09:27:02,613  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+09:27:03,802  INFO CRSApplication,main:29 - 1. Login as Student
+09:27:03,806  INFO CRSApplication,main:30 - 2. Login as Professor
+09:27:03,823  INFO CRSApplication,main:31 - 3. Login as Admin
+09:27:03,843  INFO CRSApplication,main:32 - 4. Student SignUp
+09:27:03,850  INFO CRSApplication,main:33 - 5. Update Password
+09:27:03,861  INFO CRSApplication,main:34 - Enter user input
+09:28:30,207  INFO CRSApplication,main:39 - ********* Student Login ***********
+09:28:30,210  INFO CRSApplication,main:46 - Enter the userID: 
+09:28:34,035  INFO CRSApplication,main:48 - Enter the password: 
+09:28:37,694 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 6
+09:28:44,169 ERROR UserDaoOperation,main:49 - There is an Error verifyCredential : User with userId: 6 not found.
+09:28:44,170 ERROR CRSApplication,main:62 - Wrong Credentials For Student check again
+09:28:44,171  INFO CRSApplication,main:65 - ********* ************ ***********
+09:28:44,172  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+09:28:44,172  INFO CRSApplication,main:29 - 1. Login as Student
+09:28:44,173  INFO CRSApplication,main:30 - 2. Login as Professor
+09:28:44,173  INFO CRSApplication,main:31 - 3. Login as Admin
+09:28:44,174  INFO CRSApplication,main:32 - 4. Student SignUp
+09:28:44,174  INFO CRSApplication,main:33 - 5. Update Password
+09:28:44,174  INFO CRSApplication,main:34 - Enter user input
+11:03:45,535 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 2
+11:03:48,520 DEBUG StudentOperation,main:76 - Verifying Student with ID : 2
+11:03:48,751 DEBUG StudentOperation,main:42 - Getting Student ID for user ID: 2
+11:03:58,191 DEBUG RegistrationOperation,main:59 -  Viewing Registerd Courses for Student with ID : 1
+11:04:13,244 DEBUG RegistrationOperation,main:67 - Calculating fees for Student with ID : 1

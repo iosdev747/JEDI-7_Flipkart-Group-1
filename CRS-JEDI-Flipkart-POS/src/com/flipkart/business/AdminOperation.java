@@ -157,11 +157,11 @@ public class AdminOperation implements AdminInterface{
      * @return
      */
     @Override
-    public boolean verifyProfessor(int userId){
+    public boolean verifyAdmin(int userId){
         Logger logger = Logger.getLogger(AdminOperation.class);
         logger.debug("Verifying Professor " + userId);
         AdminDaoInterface adminInterface = new AdminDaoOperation();
-        return adminInterface.verifyProfessor(userId);
+        return adminInterface.verifyAdmin(userId);
     }
 
     /**

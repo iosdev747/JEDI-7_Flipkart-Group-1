@@ -21,16 +21,16 @@ public class StudentCRSMenu {
 
         while(logginFlag) {
 
-            logger.info("----------Welcome To Student Menu StudentID : " + studentId + "----------");
-            logger.info("1. Add Course");
-            logger.info("2. Drop Course");
-            logger.info("3. View Course");
-            logger.info("4. View Registered Course");
-            logger.info("5. View Grade Card");
-            logger.info("6. Check If Approved");
-            logger.info("7. Make Payment");
-            logger.info("8. LogOut");
-            logger.info("---------------------------------------------");
+            System.out.println("----------Welcome To Student Menu StudentID : " + studentId + "----------");
+            System.out.println("1. Add Course");
+            System.out.println("2. Drop Course");
+            System.out.println("3. View Course");
+            System.out.println("4. View Registered Course");
+            System.out.println("5. View Grade Card");
+            System.out.println("6. Check If Approved");
+            System.out.println("7. Make Payment");
+            System.out.println("8. LogOut");
+            System.out.println("---------------------------------------------");
 
             int choice = sc.nextInt();
 
@@ -67,23 +67,23 @@ public class StudentCRSMenu {
 
         }
 
-        logger.info("You Are Logged Out");
+        System.out.println("You Are Logged Out");
     }
 
     private void makePayment(String studentId){
 
         try {
 
-            logger.info("----------Make Payment ------------");
+            System.out.println("----------Make Payment ------------");
 
             RegistrationInterface registrationInterface = new RegistrationOperation();
 
             double amount = registrationInterface.calculate(studentId);
             //int numOfCourse = registrationInterface.numOfRegisteredCourses(studentId);
 
-            logger.info("Your total amount is : " + amount);
+            System.out.println("Your total amount is : " + amount);
 
-            logger.info("------------------------------------");
+            System.out.println("------------------------------------");
         }
         catch (SQLException e){
             logger.error(e.getMessage());
@@ -97,14 +97,14 @@ public class StudentCRSMenu {
         boolean check = studentInterface.isApproved(studentId);
 
         if(check){
-            logger.info("--------------------------------------");
-            logger.info("Your Registration is Approved by Admin");
-            logger.info("--------------------------------------");
+            System.out.println("--------------------------------------");
+            System.out.println("Your Registration is Approved by Admin");
+            System.out.println("--------------------------------------");
         }
         else{
-            logger.info("------------------------------------------");
-            logger.info("Your Registration is Not Approved by Admin");
-            logger.info("------------------------------------------");
+            System.out.println("------------------------------------------");
+            System.out.println("Your Registration is Not Approved by Admin");
+            System.out.println("------------------------------------------");
         }
 
     }
@@ -114,7 +114,7 @@ public class StudentCRSMenu {
 
         try {
 
-            logger.info("-------All Courses Available----------");
+            System.out.println("-------All Courses Available----------");
 
             RegistrationInterface registrationInterface = new RegistrationOperation();
             List<Course> courseList = registrationInterface.viewCourse();
@@ -126,10 +126,10 @@ public class StudentCRSMenu {
                 int credit = course.getCredit();
                 String professorEmpId = course.getProfessorEmpId();
                 double fee = course.getFee();
-                logger.info("CourseId : " + courseId + " , CourseName : " + courseName + " , credit : " + credit + " , ProfessorEmpId: " + professorEmpId + " , fee: " + fee);
+                System.out.println("CourseId : " + courseId + " , CourseName : " + courseName + " , credit : " + credit + " , ProfessorEmpId: " + professorEmpId + " , fee: " + fee);
             }
 
-            logger.info("---------------------------------------");
+            System.out.println("---------------------------------------");
         }
         catch (SQLException e){
             logger.error(e.getMessage());
@@ -140,12 +140,12 @@ public class StudentCRSMenu {
 
         try {
 
-            logger.info("-----You can Enter Add Course Window------");
-            logger.info("Do you Want to view courses press 1 else 0");
+            System.out.println("-----You can Enter Add Course Window------");
+            System.out.println("Do you Want to view courses press 1 else 0");
 
             int choice = sc.nextInt();
             if (choice == 1) viewCourse(studentId);
-            logger.info("Enter the CourseId you selected: ");
+            System.out.println("Enter the CourseId you selected: ");
 
             String courseId = sc.next();
 
@@ -172,17 +172,22 @@ public class StudentCRSMenu {
 
             List<Course> courseList = registrationInterface.viewRegisterCourse(studentId);
 
-            logger.info("---Your Registered Courses Are----");
-            for (Course course : courseList) {
-                String courseId = course.getCourseId();
-                String courseName = course.getCourseName();
-                int credit = course.getCredit();
-                String professorEmpId = course.getProfessorEmpId();
-                double fee = course.getFee();
-                logger.info("CourseId : " + courseId + " , CourseName : " + courseName + " , credit : " + credit + " : ProfID : " + professorEmpId);
+            System.out.println("---Your Registered Courses Are----");
+            if(courseList.size()==0){
+                System.out.println("No Course SelectedBy you");
+            }
+            else {
+                for (Course course : courseList) {
+                    String courseId = course.getCourseId();
+                    String courseName = course.getCourseName();
+                    int credit = course.getCredit();
+                    String professorEmpId = course.getProfessorEmpId();
+                    double fee = course.getFee();
+                    System.out.println("CourseId : " + courseId + " , CourseName : " + courseName + " , credit : " + credit + " : ProfID : " + professorEmpId);
+                }
             }
 
-            logger.info("----------------------------------");
+            System.out.println("----------------------------------");
         }
         catch(SQLException e){
             logger.error(e.getMessage());
@@ -194,14 +199,14 @@ public class StudentCRSMenu {
 
         try {
 
-            logger.info("-----You can Enter Drop Course Window------");
-            logger.info("To View all your Courses Press 1 else 0 : ");
+            System.out.println("-----You can Enter Drop Course Window------");
+            System.out.println("To View all your Courses Press 1 else 0 : ");
 
             int choice = sc.nextInt();
 
             if (choice == 1) viewRegisteredCourse(studentId);
 
-            logger.info("Enter The courseID of course to be Dropped:");
+            System.out.println("Enter The courseID of course to be Dropped:");
 
             String courseId = sc.next();
 
@@ -211,10 +216,10 @@ public class StudentCRSMenu {
 
             if (success) System.out.println("Course Drop Successful");
             else {
-                logger.info("Course Drop fail");
+                System.out.println("Course Drop fail");
             }
 
-            logger.info("---------------------------------------------");
+            System.out.println("---------------------------------------------");
         }
         catch(CourseNotFoundException | SQLException e){
             logger.error(e.getMessage());
@@ -226,7 +231,7 @@ public class StudentCRSMenu {
 
         try {
 
-            logger.info("--------View Your Grade Card----------");
+            System.out.println("--------View Your Grade Card----------");
 
             StudentInterface studentInterface = new StudentOperation();
 
@@ -236,10 +241,10 @@ public class StudentCRSMenu {
                 String courseId = grade.getCourseId();
                 double mark = grade.getGrade();
 
-                logger.info("courseId : " + courseId + " ---> " + mark);
+                System.out.println("courseId : " + courseId + " ---> " + mark);
             }
 
-            logger.info("---------------------------------------");
+            System.out.println("---------------------------------------");
         }
         catch (SQLException e){
             logger.error(e.getMessage());
