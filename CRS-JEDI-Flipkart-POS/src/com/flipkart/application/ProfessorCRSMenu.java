@@ -23,12 +23,12 @@ public class ProfessorCRSMenu {
 
         while(logginFlag) {
 
-            logger.info("----------Welcome To Professor Menu Professor ID : " + professorId + "----------");
-            logger.info("1. View Course");
-            logger.info("2. View Enrolled Students");
-            logger.info("3. Add grade");
-            logger.info("4 LogOut");
-            logger.info("---------------------------------------------------");
+            System.out.println("----------Welcome To Professor Menu Professor ID : " + professorId + "----------");
+            System.out.println("1. View Course");
+            System.out.println("2. View Enrolled Students");
+            System.out.println("3. Add grade");
+            System.out.println("4 LogOut");
+            System.out.println("---------------------------------------------------");
 
             int choice = sc.nextInt();
 
@@ -52,13 +52,13 @@ public class ProfessorCRSMenu {
 
         }
 
-        logger.info("You are Logged Out");
+        System.out.println("You are Logged Out");
 
     }
 
     private void viewCourse(String profId){ // profId is professorEmpId
 
-        logger.info("-------All Courses Professor have----------");
+        System.out.println("-------All Courses Professor have----------");
 
         ProfessorInterface professorInterface = new ProfessorOperation();
 
@@ -69,9 +69,9 @@ public class ProfessorCRSMenu {
             String courseName = course.getCourseName();
             int credit = course.getCredit();
 
-            logger.info("Course: " + courseId + " , CourseName : " + courseName + " , credit :" + credit);
+            System.out.println("Course: " + courseId + " , CourseName : " + courseName + " , credit :" + credit);
         }
-        logger.info("--------------------------------------------");
+        System.out.println("--------------------------------------------");
 
 
     }
@@ -80,7 +80,7 @@ public class ProfessorCRSMenu {
 
         try {
 
-            logger.info("-------All Student Enroll With Professor----------");
+            System.out.println("-------All Student Enroll With Professor----------");
 
             ProfessorInterface professorInterface = new ProfessorOperation();
 
@@ -89,10 +89,10 @@ public class ProfessorCRSMenu {
             for (EnrolledStudent enrol : enrolList) {
                 String courseId = enrol.getCourseId();
                 String studentId = enrol.getStudentId();
-                logger.info("CourseID : " + courseId + " ----> StudentId : " + studentId);
+                System.out.println("CourseID : " + courseId + " ----> StudentId : " + studentId);
             }
 
-            logger.info("----------------------------------------------------");
+            System.out.println("----------------------------------------------------");
         }
         catch(SQLException e){
             logger.error("SQL Exception: " + e.getMessage());
@@ -102,17 +102,17 @@ public class ProfessorCRSMenu {
     private void addGrade() {
 
         try {
-            logger.info("-------- Add the Grade to the Student -----------");
+            System.out.println("-------- Add the Grade to the Student -----------");
 
             String studentId;
             String courseId;
             double mark;
 
-            logger.info("Enter the studentId: ");
+            System.out.println("Enter the studentId: ");
             studentId = sc.next();
-            logger.info("Enter the courseId: ");
+            System.out.println("Enter the courseId: ");
             courseId = sc.next();
-            logger.info("Enter the Grade To assign: ");
+            System.out.println("Enter the Grade To assign: ");
             mark = sc.nextDouble();
 
             ProfessorInterface professorInterface = new ProfessorOperation();
@@ -122,7 +122,7 @@ public class ProfessorCRSMenu {
             if (success) logger.info("Grade Added Succesfully");
             else logger.info("Grade Added Failed");
 
-            logger.info("-------- ---------------------------- -----------");
+            System.out.println("-------- ---------------------------- -----------");
         }
         catch(GradeNotAddedException e){
             logger.error(e.getMessage());

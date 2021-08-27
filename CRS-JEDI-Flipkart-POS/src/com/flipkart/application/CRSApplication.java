@@ -25,27 +25,28 @@ public class CRSApplication {
 
     public static void createMainMenu(){
 
-        logger.info("-----------Welcome to Course Management System--------------");
-        logger.info("1. Login as Student");
-        logger.info("2. Login as Professor");
-        logger.info("3. Login as Admin");
-        logger.info("4. Student SignUp");
-        logger.info("5. Update Password");
-        logger.info("Enter user input");
+        System.out.println("-----------Welcome to Course Management System--------------");
+        System.out.println("1. Login as Student");
+        System.out.println("2. Login as Professor");
+        System.out.println("3. Login as Admin");
+        System.out.println("4. Student SignUp");
+        System.out.println("5. Update Password");
+        System.out.println("6. Exit");
+        System.out.println("Enter user input");
     }
 
     public static void loginStudent(){
         try {
-            logger.info("********* Student Login ***********");
+            System.out.println("********* Student Login ***********");
 
             Scanner sc = new Scanner(System.in);
 
             int userId;
             String password;
 
-            logger.info("Enter the userID: ");
+            System.out.println("Enter the userID: ");
             userId = sc.nextInt();
-            logger.info("Enter the password: ");
+            System.out.println("Enter the password: ");
             password = sc.next();
 
             StudentInterface studentInterface = new StudentOperation();
@@ -59,10 +60,10 @@ public class CRSApplication {
                 studentCRSMenu.createMenu(studentId);
 
             } else {
-                logger.error("Wrong Credentials For Student check again");
+                System.out.println("Wrong Credentials For Student check again");
             }
 
-            logger.info("********* ************ ***********");
+            System.out.println("********* ************ ***********");
         }
         catch(UserNotFoundException e){
             logger.error(e.getMessage());
@@ -74,16 +75,16 @@ public class CRSApplication {
 
         try {
 
-            logger.info("********* Professor Login ***********");
+            System.out.println("********* Professor Login ***********");
 
             Scanner sc = new Scanner(System.in);
 
             int userId;
             String password;
 
-            logger.info("Enter the userID: ");
+            System.out.println("Enter the userID: ");
             userId = sc.nextInt();
-            logger.info("Enter the password: ");
+            System.out.println("Enter the password: ");
             password = sc.next();
 
             ProfessorInterface professorInterface = new ProfessorOperation();
@@ -97,11 +98,11 @@ public class CRSApplication {
                 professorCRSMenu.createMenu(professorId);
 
             } else {
-                logger.error("Wrong Credentials For Professor check again");
+                System.out.println("Wrong Credentials For Professor check again");
             }
 
 
-            logger.info("********* *************** ***********");
+            System.out.println("********* *************** ***********");
         }
         catch(UserNotFoundException e){
             logger.error(e.getMessage());
@@ -111,16 +112,16 @@ public class CRSApplication {
     public static void loginAdmin(){
 
         try {
-            logger.info("********* Admin Login ***********");
+            System.out.println("********* Admin Login ***********");
 
             Scanner sc = new Scanner(System.in);
 
             int userId;
             String password;
 
-            logger.info("Enter the userID: ");
+            System.out.println("Enter the userID: ");
             userId = sc.nextInt();
-            logger.info("Enter the password: ");
+            System.out.println("Enter the password: ");
             password = sc.next();
 
             AdminInterface adminInterface = new AdminOperation();
@@ -134,11 +135,11 @@ public class CRSApplication {
                 adminCRSMenu.createMenu(empId);
 
             } else {
-                logger.error("Wrong Credentials For Admin check again");
+                System.out.println("Wrong Credentials For Admin check again");
             }
 
 
-            logger.info("********* *************** ***********");
+            System.out.println("********* *************** ***********");
         }
         catch(UserNotFoundException e){
             logger.error(e.getMessage());
@@ -148,7 +149,7 @@ public class CRSApplication {
     public static void registerStudent(){
 
         try {
-            logger.info("********* Student Register Window ***********");
+            System.out.println("********* Student Register Window ***********");
 
             Scanner sc = new Scanner(System.in);
             int userId;
@@ -159,25 +160,25 @@ public class CRSApplication {
             int batch;
             String branch;
 
-            logger.info("Enter your the userID: ");
+            System.out.println("Enter your the userID: ");
             userId = sc.nextInt();
 
-            logger.info("Enter your the name: ");
+            System.out.println("Enter your the name: ");
             name = sc.next();
 
-            logger.info("Enter your the password: ");
+            System.out.println("Enter your the password: ");
             password = sc.next();
 
-            logger.info("Enter your the address: ");
+            System.out.println("Enter your the address: ");
             address = sc.next();
 
-            logger.info("Enter your the studentID: ");
+            System.out.println("Enter your the studentID: ");
             studentId = sc.next();
 
-            logger.info("Enter your the batch: ");
+            System.out.println("Enter your the batch: ");
             batch = sc.nextInt();
 
-            logger.info("Enter your the branch: ");
+            System.out.println("Enter your the branch: ");
             branch = sc.next();
 
             StudentInterface studentInterface = new StudentOperation();
@@ -185,13 +186,13 @@ public class CRSApplication {
             boolean success = studentInterface.register(userId, name, password, address, studentId, batch, branch, false);
 
             if (success) {
-                logger.info("You have successfully Login, Wait for Admin Approval!");
+                System.out.println("You have successfully Login, Wait for Admin Approval!");
             } else {
-                logger.info("Student Registration failed");
+                System.out.println("Student Registration failed");
             }
 
 
-            logger.info("********* *********************** ***********");
+            System.out.println("********* *********************** ***********");
         }
         catch(StudentNotRegisteredException e){
             logger.error(e.getMessage());
@@ -202,16 +203,16 @@ public class CRSApplication {
     public static void updatePassword(){
 
         try {
-            logger.info("********* Change Password ***********");
+            System.out.println("********* Change Password ***********");
 
             Scanner sc = new Scanner(System.in);
 
             int userId;
             String password;
 
-            logger.info("Enter the userID: ");
+            System.out.println("Enter the userID: ");
             userId = sc.nextInt();
-            logger.info("Enter the Current Password: ");
+            System.out.println("Enter the Current Password: ");
             password = sc.next();
 
             UserInterface userInterface = new UserOperation();
@@ -221,24 +222,24 @@ public class CRSApplication {
                 logger.info("Credentials Verified Now password can be changed");
                 // studentCRSMenu
                 String newPassword;
-                logger.info("Enter New Password");
+                System.out.println("Enter New Password");
                 newPassword = sc.next();
                 boolean success = userInterface.updatePassword(userId,newPassword);
 
                 if(success){
-                    logger.info("Password Change SuccessFull");
+                    System.out.println("Password Change SuccessFull");
                 }
                 else{
-                    logger.info("Password Change UnSuccessFull");
+                    System.out.println("Password Change UnSuccessFull");
                 }
 
 
             } else {
-                logger.error("Wrong Credentials");
+                System.out.println("Wrong Credentials");
             }
 
 
-            logger.info("********* *************** ***********");
+            System.out.println("********* *************** ***********");
         }
         catch(UserNotFoundException e){
             logger.error(e.getMessage());

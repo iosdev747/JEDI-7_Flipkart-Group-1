@@ -1530,3 +1530,8 @@
 09:28:44,174  INFO CRSApplication,main:32 - 4. Student SignUp
 09:28:44,174  INFO CRSApplication,main:33 - 5. Update Password
 09:28:44,174  INFO CRSApplication,main:34 - Enter user input
+11:03:45,535 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 2
+11:03:48,520 DEBUG StudentOperation,main:76 - Verifying Student with ID : 2
+11:03:48,751 DEBUG StudentOperation,main:42 - Getting Student ID for user ID: 2
+11:03:58,191 DEBUG RegistrationOperation,main:59 -  Viewing Registerd Courses for Student with ID : 1
+11:04:13,244 DEBUG RegistrationOperation,main:67 - Calculating fees for Student with ID : 1
