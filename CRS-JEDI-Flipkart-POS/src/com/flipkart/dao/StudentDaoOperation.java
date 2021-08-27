@@ -18,9 +18,9 @@ import org.apache.log4j.Logger;
 
 public class StudentDaoOperation implements StudentDaoInterface{
 
-    private static String url = "jdbc:mysql://localhost:3306/JEDI-7-CRS";
-    private static String user = "root";
-    private static String pass = "12345678";
+    private static String url = SQLConstant.DB_URL;
+    private static String user = SQLConstant.DB_USER;
+    private static String pass = SQLConstant.DB_PASS;
     private static Logger logger = Logger.getLogger(StudentDaoOperation.class);
 
     public StudentDaoOperation() {    // In future may be change to private

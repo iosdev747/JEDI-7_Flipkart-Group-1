@@ -48,4 +48,10 @@ public class SQLConstant {
     public static final String GET_ADMIN_ID ="SELECT empID FROM Admin WHERE userID = ?";
     public static final String VIEW_PENDING_ADMISSION_QUERY = "SELECT u.userID, u.userName, u.paswrd, u.address, s.studentID, s.department, s.currentYear FROM UserDetail u, Student s WHERE s.isApproved = 0 AND u.userID = s.userID";
     public static final String APPROVE_STUDENT_QUERY = "update Student set isApproved = 1 where studentId = ?";
+
+    // database access credentials
+    public static String DB_URL = "jdbc:mysql://localhost:3306/JEDI-7-CRS";
+    public static String DB_USER = "root";
+    public static String DB_PASS = "12345678";
+
 }
