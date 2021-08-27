@@ -1,0 +1,21 @@
+02:20:57,618  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+02:20:57,620  INFO CRSApplication,main:29 - 1. Login as Student
+02:20:57,620  INFO CRSApplication,main:30 - 2. Login as Professor
+02:20:57,620  INFO CRSApplication,main:31 - 3. Login as Admin
+02:20:57,620  INFO CRSApplication,main:32 - 4. Student SignUp
+02:20:57,621  INFO CRSApplication,main:33 - 5. Update Password
+02:20:57,621  INFO CRSApplication,main:34 - Enter user input
+02:21:19,780  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+02:21:19,782  INFO CRSApplication,main:29 - 1. Login as Student
+02:21:19,782  INFO CRSApplication,main:30 - 2. Login as Professor
+02:21:19,783  INFO CRSApplication,main:31 - 3. Login as Admin
+02:21:19,783  INFO CRSApplication,main:32 - 4. Student SignUp
+02:21:19,784  INFO CRSApplication,main:33 - 5. Update Password
+02:21:19,784  INFO CRSApplication,main:34 - Enter user input
+03:06:48,218  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+03:06:48,220  INFO CRSApplication,main:29 - 1. Login as Student
+03:06:48,220  INFO CRSApplication,main:30 - 2. Login as Professor
+03:06:48,221  INFO CRSApplication,main:31 - 3. Login as Admin
+03:06:48,221  INFO CRSApplication,main:32 - 4. Student SignUp
+03:06:48,221  INFO CRSApplication,main:33 - 5. Update Password
+03:06:48,221  INFO CRSApplication,main:34 - Enter user input
