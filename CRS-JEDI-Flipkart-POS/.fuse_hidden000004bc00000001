@@ -1,0 +1,1625 @@
+00:11:53,282  INFO CRSApplication,main:204 - Hi info
+00:11:53,391  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+00:11:53,393  INFO CRSApplication,main:29 - 1. Login as Student
+00:11:53,396  INFO CRSApplication,main:30 - 2. Login as Professor
+00:11:53,399  INFO CRSApplication,main:31 - 3. Login as Admin
+00:11:53,402  INFO CRSApplication,main:32 - 4. Student SignUp
+00:11:53,403  INFO CRSApplication,main:33 - Enter user input
+00:12:40,193  INFO CRSApplication,main:204 - Hi info
+00:12:40,209  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+00:12:40,210  INFO CRSApplication,main:29 - 1. Login as Student
+00:12:40,211  INFO CRSApplication,main:30 - 2. Login as Professor
+00:12:40,211  INFO CRSApplication,main:31 - 3. Login as Admin
+00:12:40,212  INFO CRSApplication,main:32 - 4. Student SignUp
+00:12:40,213  INFO CRSApplication,main:33 - Enter user input
+00:24:58,012  INFO CRSApplication,main:204 - Hi info
+00:24:58,030  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+00:24:58,031  INFO CRSApplication,main:29 - 1. Login as Student
+00:24:58,031  INFO CRSApplication,main:30 - 2. Login as Professor
+00:24:58,032  INFO CRSApplication,main:31 - 3. Login as Admin
+00:24:58,033  INFO CRSApplication,main:32 - 4. Student SignUp
+00:24:58,034  INFO CRSApplication,main:33 - Enter user input
+00:25:01,968  INFO CRSApplication,main:113 - ********* Admin Login ***********
+00:25:01,977  INFO CRSApplication,main:120 - Enter the userID: 
+00:25:19,789  INFO CRSApplication,main:122 - Enter the password: 
+00:25:24,944 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 1
+00:25:26,039 DEBUG AdminOperation,main:162 - Verifying Professor 1
+00:25:26,257 DEBUG AdminOperation,main:175 - Getting Admin with ID : 1
+00:25:26,449  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+00:25:26,450  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+00:25:26,451  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+00:25:26,452  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+00:25:26,452  INFO AdminCRSMenu,main:30 - 4. Add Professor
+00:25:26,453  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+00:25:26,455  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+00:25:26,455  INFO AdminCRSMenu,main:33 - 7. Approve Student
+00:25:26,456  INFO AdminCRSMenu,main:34 - 8. LogOut
+00:25:26,458  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+00:25:41,790  INFO AdminCRSMenu,main:200 - -------Add A Professor---------
+00:25:41,793  INFO AdminCRSMenu,main:202 - Enter The details for the professor
+00:25:41,799  INFO AdminCRSMenu,main:211 - Enter the UserId for Professor:
+00:25:48,372  INFO AdminCRSMenu,main:214 - Enter the Name for Professor:
+00:26:01,440  INFO AdminCRSMenu,main:217 - Enter the password for Professor:
+00:26:09,726  INFO AdminCRSMenu,main:220 - Enter the password for Address:
+00:26:22,186  INFO AdminCRSMenu,main:223 - Enter the Department for Professor:
+00:26:36,307  INFO AdminCRSMenu,main:226 - Enter the ProfessorId for Professor:
+00:26:41,846 DEBUG AdminOperation,main:91 - Adding Professor 1
+00:26:42,541 ERROR AdminDaoOperation,main:208 - Unknown column 'professorID' in 'field list'
+00:26:42,542 ERROR AdminCRSMenu,main:238 - userId: 1 is already in use.
+00:26:42,543  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+00:26:42,544  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+00:26:42,544  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+00:26:42,545  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+00:26:42,545  INFO AdminCRSMenu,main:30 - 4. Add Professor
+00:26:42,546  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+00:26:42,547  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+00:26:42,548  INFO AdminCRSMenu,main:33 - 7. Approve Student
+00:26:42,548  INFO AdminCRSMenu,main:34 - 8. LogOut
+00:26:42,549  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+00:30:13,340  INFO AdminCRSMenu,main:72 - You Are Logged Out
+00:30:13,344  INFO CRSApplication,main:140 - ********* *************** ***********
+00:30:23,229  INFO CRSApplication,main:204 - Hi info
+00:30:23,250  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+00:30:23,250  INFO CRSApplication,main:29 - 1. Login as Student
+00:30:23,251  INFO CRSApplication,main:30 - 2. Login as Professor
+00:30:23,252  INFO CRSApplication,main:31 - 3. Login as Admin
+00:30:23,252  INFO CRSApplication,main:32 - 4. Student SignUp
+00:30:23,253  INFO CRSApplication,main:33 - Enter user input
+00:30:30,438  INFO CRSApplication,main:113 - ********* Admin Login ***********
+00:30:30,440  INFO CRSApplication,main:120 - Enter the userID: 
+00:30:33,380  INFO CRSApplication,main:122 - Enter the password: 
+00:30:43,459 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 1
+00:30:44,320 DEBUG AdminOperation,main:162 - Verifying Professor 1
+00:30:44,475 DEBUG AdminOperation,main:175 - Getting Admin with ID : 1
+00:30:44,614  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+00:30:44,615  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+00:30:44,615  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+00:30:44,616  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+00:30:44,617  INFO AdminCRSMenu,main:30 - 4. Add Professor
+00:30:44,617  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+00:30:44,618  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+00:30:44,619  INFO AdminCRSMenu,main:33 - 7. Approve Student
+00:30:44,619  INFO AdminCRSMenu,main:34 - 8. LogOut
+00:30:44,620  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+00:30:48,687  INFO AdminCRSMenu,main:200 - -------Add A Professor---------
+00:30:48,690  INFO AdminCRSMenu,main:202 - Enter The details for the professor
+00:30:48,698  INFO AdminCRSMenu,main:211 - Enter the UserId for Professor:
+00:30:53,761  INFO AdminCRSMenu,main:214 - Enter the Name for Professor:
+00:30:58,376  INFO AdminCRSMenu,main:217 - Enter the password for Professor:
+00:31:02,074  INFO AdminCRSMenu,main:220 - Enter the password for Address:
+00:31:10,527  INFO AdminCRSMenu,main:223 - Enter the Department for Professor:
+00:31:22,941  INFO AdminCRSMenu,main:226 - Enter the ProfessorId for Professor:
+00:31:25,977 DEBUG AdminOperation,main:91 - Adding Professor 1
+00:31:26,370 ERROR AdminDaoOperation,main:208 - Duplicate entry '2' for key 'UserDetail.PRIMARY'
+00:31:26,373 ERROR AdminCRSMenu,main:238 - userId: 1 is already in use.
+00:31:26,378  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+00:31:26,390  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+00:31:26,395  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+00:31:26,399  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+00:31:26,417  INFO AdminCRSMenu,main:30 - 4. Add Professor
+00:31:26,421  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+00:31:26,423  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+00:31:26,426  INFO AdminCRSMenu,main:33 - 7. Approve Student
+00:31:26,429  INFO AdminCRSMenu,main:34 - 8. LogOut
+00:31:26,430  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+00:32:25,209  INFO AdminCRSMenu,main:72 - You Are Logged Out
+00:32:25,211  INFO CRSApplication,main:140 - ********* *************** ***********
+00:35:13,983  INFO CRSApplication,main:204 - Hi info
+00:35:14,006  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+00:35:14,007  INFO CRSApplication,main:29 - 1. Login as Student
+00:35:14,008  INFO CRSApplication,main:30 - 2. Login as Professor
+00:35:14,009  INFO CRSApplication,main:31 - 3. Login as Admin
+00:35:14,010  INFO CRSApplication,main:32 - 4. Student SignUp
+00:35:14,011  INFO CRSApplication,main:33 - Enter user input
+00:35:20,418  INFO CRSApplication,main:113 - ********* Admin Login ***********
+00:35:20,422  INFO CRSApplication,main:120 - Enter the userID: 
+00:35:22,913  INFO CRSApplication,main:122 - Enter the password: 
+00:35:25,192 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 1
+00:35:25,885 DEBUG AdminOperation,main:162 - Verifying Professor 1
+00:35:25,935 DEBUG AdminOperation,main:175 - Getting Admin with ID : 1
+00:35:26,001  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+00:35:26,001  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+00:35:26,002  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+00:35:26,003  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+00:35:26,004  INFO AdminCRSMenu,main:30 - 4. Add Professor
+00:35:26,005  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+00:35:26,006  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+00:35:26,006  INFO AdminCRSMenu,main:33 - 7. Approve Student
+00:35:26,007  INFO AdminCRSMenu,main:34 - 8. LogOut
+00:35:26,008  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+00:35:28,640  INFO AdminCRSMenu,main:200 - -------Add A Professor---------
+00:35:28,643  INFO AdminCRSMenu,main:202 - Enter The details for the professor
+00:35:28,652  INFO AdminCRSMenu,main:211 - Enter the UserId for Professor:
+00:35:40,244  INFO AdminCRSMenu,main:214 - Enter the Name for Professor:
+00:35:45,051  INFO AdminCRSMenu,main:217 - Enter the password for Professor:
+00:35:48,362  INFO AdminCRSMenu,main:220 - Enter the password for Address:
+00:35:53,309  INFO AdminCRSMenu,main:223 - Enter the Department for Professor:
+00:35:55,820  INFO AdminCRSMenu,main:226 - Enter the ProfessorId for Professor:
+00:35:58,756 DEBUG AdminOperation,main:91 - Adding Professor 1
+00:35:59,339  INFO AdminCRSMenu,main:235 - ---------------------------------
+00:35:59,343  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+00:35:59,345  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+00:35:59,347  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+00:35:59,350  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+00:35:59,352  INFO AdminCRSMenu,main:30 - 4. Add Professor
+00:35:59,355  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+00:35:59,358  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+00:35:59,361  INFO AdminCRSMenu,main:33 - 7. Approve Student
+00:35:59,361  INFO AdminCRSMenu,main:34 - 8. LogOut
+00:35:59,363  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+00:36:25,800  INFO AdminCRSMenu,main:72 - You Are Logged Out
+00:36:25,802  INFO CRSApplication,main:140 - ********* *************** ***********
+00:42:26,208  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+00:42:26,213  INFO CRSApplication,main:29 - 1. Login as Student
+00:42:26,214  INFO CRSApplication,main:30 - 2. Login as Professor
+00:42:26,221  INFO CRSApplication,main:31 - 3. Login as Admin
+00:42:26,223  INFO CRSApplication,main:32 - 4. Student SignUp
+00:42:26,225  INFO CRSApplication,main:33 - Enter user input
+00:42:32,277  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+00:42:32,281  INFO CRSApplication,main:29 - 1. Login as Student
+00:42:32,283  INFO CRSApplication,main:30 - 2. Login as Professor
+00:42:32,287  INFO CRSApplication,main:31 - 3. Login as Admin
+00:42:32,290  INFO CRSApplication,main:32 - 4. Student SignUp
+00:42:32,293  INFO CRSApplication,main:33 - Enter user input
+00:43:04,563  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+00:43:04,573  INFO CRSApplication,main:29 - 1. Login as Student
+00:43:04,575  INFO CRSApplication,main:30 - 2. Login as Professor
+00:43:04,576  INFO CRSApplication,main:31 - 3. Login as Admin
+00:43:04,578  INFO CRSApplication,main:32 - 4. Student SignUp
+00:43:04,580  INFO CRSApplication,main:33 - Enter user input
+00:54:16,662  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+00:54:16,667  INFO CRSApplication,main:29 - 1. Login as Student
+00:54:16,668  INFO CRSApplication,main:30 - 2. Login as Professor
+00:54:16,669  INFO CRSApplication,main:31 - 3. Login as Admin
+00:54:16,670  INFO CRSApplication,main:32 - 4. Student SignUp
+00:54:16,671  INFO CRSApplication,main:33 - 5. UpdatePassword
+00:54:16,672  INFO CRSApplication,main:34 - Enter user input
+00:54:28,217  INFO CRSApplication,main:39 - ********* Student Login ***********
+00:54:28,218  INFO CRSApplication,main:46 - Enter the userID: 
+00:54:42,906  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+00:54:42,916  INFO CRSApplication,main:29 - 1. Login as Student
+00:54:42,917  INFO CRSApplication,main:30 - 2. Login as Professor
+00:54:42,918  INFO CRSApplication,main:31 - 3. Login as Admin
+00:54:42,919  INFO CRSApplication,main:32 - 4. Student SignUp
+00:54:42,920  INFO CRSApplication,main:33 - 5. UpdatePassword
+00:54:42,922  INFO CRSApplication,main:34 - Enter user input
+00:55:01,800  INFO CRSApplication,main:205 - ********* Change Password ***********
+00:55:01,804  INFO CRSApplication,main:212 - Enter the userID: 
+00:55:03,591  INFO CRSApplication,main:214 - Enter the Current Password: 
+00:55:06,164 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 1
+00:55:06,906  INFO CRSApplication,main:221 - Credentials Verified Now password can be changed
+00:55:06,906  INFO CRSApplication,main:224 - Enter New Password
+00:55:17,202 DEBUG UserOperation,main:21 - Updating Password for User with ID : 1
+00:55:17,455  INFO CRSApplication,main:229 - Password Change SuccessFull
+00:55:17,457  INFO CRSApplication,main:241 - ********* *************** ***********
+00:56:06,305  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+00:56:06,310  INFO CRSApplication,main:29 - 1. Login as Student
+00:56:06,313  INFO CRSApplication,main:30 - 2. Login as Professor
+00:56:06,315  INFO CRSApplication,main:31 - 3. Login as Admin
+00:56:06,316  INFO CRSApplication,main:32 - 4. Student SignUp
+00:56:06,317  INFO CRSApplication,main:33 - 5. Update Password
+00:56:06,318  INFO CRSApplication,main:34 - Enter user input
+00:56:09,190  INFO CRSApplication,main:205 - ********* Change Password ***********
+00:56:09,199  INFO CRSApplication,main:212 - Enter the userID: 
+00:56:11,293  INFO CRSApplication,main:214 - Enter the Current Password: 
+00:56:14,612 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 1
+00:56:15,040  INFO CRSApplication,main:221 - Credentials Verified Now password can be changed
+00:56:15,041  INFO CRSApplication,main:224 - Enter New Password
+00:56:17,665 DEBUG UserOperation,main:21 - Updating Password for User with ID : 1
+00:56:18,019  INFO CRSApplication,main:229 - Password Change SuccessFull
+00:56:18,022  INFO CRSApplication,main:241 - ********* *************** ***********
+00:56:18,024  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+00:56:18,027  INFO CRSApplication,main:29 - 1. Login as Student
+00:56:18,030  INFO CRSApplication,main:30 - 2. Login as Professor
+00:56:18,036  INFO CRSApplication,main:31 - 3. Login as Admin
+00:56:18,040  INFO CRSApplication,main:32 - 4. Student SignUp
+00:56:18,046  INFO CRSApplication,main:33 - 5. Update Password
+00:56:18,048  INFO CRSApplication,main:34 - Enter user input
+00:57:00,495  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+00:57:00,500  INFO CRSApplication,main:29 - 1. Login as Student
+00:57:00,501  INFO CRSApplication,main:30 - 2. Login as Professor
+00:57:00,501  INFO CRSApplication,main:31 - 3. Login as Admin
+00:57:00,502  INFO CRSApplication,main:32 - 4. Student SignUp
+00:57:00,503  INFO CRSApplication,main:33 - 5. Update Password
+00:57:00,505  INFO CRSApplication,main:34 - Enter user input
+00:57:05,570  INFO CRSApplication,main:151 - ********* Student Register Window ***********
+00:57:05,575  INFO CRSApplication,main:162 - Enter your the userID: 
+00:57:08,263  INFO CRSApplication,main:165 - Enter your the name: 
+00:57:20,439  INFO CRSApplication,main:168 - Enter your the password: 
+00:57:25,334  INFO CRSApplication,main:171 - Enter your the address: 
+00:57:29,695  INFO CRSApplication,main:174 - Enter your the studentID: 
+00:57:31,901  INFO CRSApplication,main:177 - Enter your the batch: 
+00:57:36,636  INFO CRSApplication,main:180 - Enter your the branch: 
+00:57:49,801 DEBUG StudentOperation,main:25 - Initiating Registration for Student with ID : 1
+00:57:50,726  INFO CRSApplication,main:188 - You have successfully Login, Wait for Admin Approval!
+00:57:50,728  INFO CRSApplication,main:194 - ********* *********************** ***********
+00:57:50,730  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+00:57:50,743  INFO CRSApplication,main:29 - 1. Login as Student
+00:57:50,745  INFO CRSApplication,main:30 - 2. Login as Professor
+00:57:50,747  INFO CRSApplication,main:31 - 3. Login as Admin
+00:57:50,764  INFO CRSApplication,main:32 - 4. Student SignUp
+00:57:50,766  INFO CRSApplication,main:33 - 5. Update Password
+00:57:50,770  INFO CRSApplication,main:34 - Enter user input
+00:58:27,812  INFO CRSApplication,main:39 - ********* Student Login ***********
+00:58:27,816  INFO CRSApplication,main:46 - Enter the userID: 
+00:58:29,493  INFO CRSApplication,main:48 - Enter the password: 
+00:58:40,268  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+00:58:40,278  INFO CRSApplication,main:29 - 1. Login as Student
+00:58:40,279  INFO CRSApplication,main:30 - 2. Login as Professor
+00:58:40,279  INFO CRSApplication,main:31 - 3. Login as Admin
+00:58:40,280  INFO CRSApplication,main:32 - 4. Student SignUp
+00:58:40,281  INFO CRSApplication,main:33 - 5. Update Password
+00:58:40,281  INFO CRSApplication,main:34 - Enter user input
+00:58:43,242  INFO CRSApplication,main:39 - ********* Student Login ***********
+00:58:43,245  INFO CRSApplication,main:46 - Enter the userID: 
+00:58:47,300  INFO CRSApplication,main:48 - Enter the password: 
+00:58:49,459 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 2
+00:58:50,078 DEBUG StudentOperation,main:76 - Verifying Student with ID : 2
+00:58:50,137 DEBUG StudentOperation,main:42 - Getting Student ID for user ID: 2
+00:58:50,178  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+00:58:50,178  INFO StudentCRSMenu,main:25 - 1. Add Course
+00:58:50,178  INFO StudentCRSMenu,main:26 - 2. Drop Course
+00:58:50,179  INFO StudentCRSMenu,main:27 - 3. View Course
+00:58:50,179  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+00:58:50,180  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+00:58:50,180  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+00:58:50,181  INFO StudentCRSMenu,main:31 - 7. Make Payment
+00:58:50,181  INFO StudentCRSMenu,main:32 - 8. LogOut
+00:58:50,182  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+00:58:57,076 ERROR StudentDaoOperation,main:162 - There is an Error : Unknown column 'isApproved' in 'field list'
+00:58:57,076  INFO StudentCRSMenu,main:105 - ------------------------------------------
+00:58:57,077  INFO StudentCRSMenu,main:106 - Your Registration is Not Approved by Admin
+00:58:57,077  INFO StudentCRSMenu,main:107 - ------------------------------------------
+00:58:57,078  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+00:58:57,078  INFO StudentCRSMenu,main:25 - 1. Add Course
+00:58:57,079  INFO StudentCRSMenu,main:26 - 2. Drop Course
+00:58:57,079  INFO StudentCRSMenu,main:27 - 3. View Course
+00:58:57,080  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+00:58:57,081  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+00:58:57,081  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+00:58:57,082  INFO StudentCRSMenu,main:31 - 7. Make Payment
+00:58:57,082  INFO StudentCRSMenu,main:32 - 8. LogOut
+00:58:57,083  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+00:59:05,203  INFO StudentCRSMenu,main:70 - You Are Logged Out
+00:59:05,206  INFO CRSApplication,main:65 - ********* ************ ***********
+00:59:05,211  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+00:59:05,214  INFO CRSApplication,main:29 - 1. Login as Student
+00:59:05,217  INFO CRSApplication,main:30 - 2. Login as Professor
+00:59:05,220  INFO CRSApplication,main:31 - 3. Login as Admin
+00:59:05,224  INFO CRSApplication,main:32 - 4. Student SignUp
+00:59:05,225  INFO CRSApplication,main:33 - 5. Update Password
+00:59:05,226  INFO CRSApplication,main:34 - Enter user input
+00:59:10,218  INFO CRSApplication,main:114 - ********* Admin Login ***********
+00:59:10,223  INFO CRSApplication,main:121 - Enter the userID: 
+00:59:11,952  INFO CRSApplication,main:123 - Enter the password: 
+00:59:13,998 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 1
+00:59:14,058 DEBUG AdminOperation,main:162 - Verifying Professor 1
+00:59:14,217 DEBUG AdminOperation,main:175 - Getting Admin with ID : 1
+00:59:14,252  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+00:59:14,253  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+00:59:14,253  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+00:59:14,254  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+00:59:14,254  INFO AdminCRSMenu,main:30 - 4. Add Professor
+00:59:14,255  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+00:59:14,256  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+00:59:14,256  INFO AdminCRSMenu,main:33 - 7. Approve Student
+00:59:14,257  INFO AdminCRSMenu,main:34 - 8. LogOut
+00:59:14,257  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+00:59:24,864  INFO AdminCRSMenu,main:76 - -------All Unapproved Student list---------
+00:59:24,935 ERROR AdminDaoOperation,main:126 - There is an Error in viewPending : Unknown column 's.isApproved' in 'where clause'
+00:59:24,935  INFO AdminCRSMenu,main:89 - -------------------------------------------
+00:59:24,936  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+00:59:24,937  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+00:59:24,938  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+00:59:24,938  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+00:59:24,939  INFO AdminCRSMenu,main:30 - 4. Add Professor
+00:59:24,939  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+00:59:24,939  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+00:59:24,940  INFO AdminCRSMenu,main:33 - 7. Approve Student
+00:59:24,941  INFO AdminCRSMenu,main:34 - 8. LogOut
+00:59:24,942  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+01:00:12,214  INFO AdminCRSMenu,main:72 - You Are Logged Out
+01:00:12,217  INFO CRSApplication,main:141 - ********* *************** ***********
+01:00:12,219  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+01:00:12,223  INFO CRSApplication,main:29 - 1. Login as Student
+01:00:12,225  INFO CRSApplication,main:30 - 2. Login as Professor
+01:00:12,228  INFO CRSApplication,main:31 - 3. Login as Admin
+01:00:12,235  INFO CRSApplication,main:32 - 4. Student SignUp
+01:00:12,237  INFO CRSApplication,main:33 - 5. Update Password
+01:00:12,238  INFO CRSApplication,main:34 - Enter user input
+01:08:03,638  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+01:08:03,644  INFO CRSApplication,main:29 - 1. Login as Student
+01:08:03,646  INFO CRSApplication,main:30 - 2. Login as Professor
+01:08:03,647  INFO CRSApplication,main:31 - 3. Login as Admin
+01:08:03,647  INFO CRSApplication,main:32 - 4. Student SignUp
+01:08:03,648  INFO CRSApplication,main:33 - 5. Update Password
+01:08:03,654  INFO CRSApplication,main:34 - Enter user input
+01:08:10,092  INFO CRSApplication,main:151 - ********* Student Register Window ***********
+01:08:10,096  INFO CRSApplication,main:162 - Enter your the userID: 
+01:08:13,483  INFO CRSApplication,main:165 - Enter your the name: 
+01:08:18,601  INFO CRSApplication,main:168 - Enter your the password: 
+01:08:24,049  INFO CRSApplication,main:171 - Enter your the address: 
+01:08:28,920  INFO CRSApplication,main:174 - Enter your the studentID: 
+01:08:33,468  INFO CRSApplication,main:177 - Enter your the batch: 
+01:08:37,613  INFO CRSApplication,main:180 - Enter your the branch: 
+01:08:41,073 DEBUG StudentOperation,main:25 - Initiating Registration for Student with ID : 1
+01:08:42,141  INFO CRSApplication,main:188 - You have successfully Login, Wait for Admin Approval!
+01:08:42,143  INFO CRSApplication,main:194 - ********* *********************** ***********
+01:08:42,145  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+01:08:42,147  INFO CRSApplication,main:29 - 1. Login as Student
+01:08:42,148  INFO CRSApplication,main:30 - 2. Login as Professor
+01:08:42,150  INFO CRSApplication,main:31 - 3. Login as Admin
+01:08:42,152  INFO CRSApplication,main:32 - 4. Student SignUp
+01:08:42,153  INFO CRSApplication,main:33 - 5. Update Password
+01:08:42,155  INFO CRSApplication,main:34 - Enter user input
+01:08:54,427  INFO CRSApplication,main:77 - ********* Professor Login ***********
+01:08:54,431  INFO CRSApplication,main:84 - Enter the userID: 
+01:08:57,885  INFO CRSApplication,main:86 - Enter the password: 
+01:09:01,444 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 1
+01:09:01,579 DEBUG ProfessorOperation,main:73 - Verifying Professor with userID : 1
+01:09:01,733 ERROR CRSApplication,main:100 - Wrong Credentials For Professor check again
+01:09:01,733  INFO CRSApplication,main:104 - ********* *************** ***********
+01:09:01,733  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+01:09:01,734  INFO CRSApplication,main:29 - 1. Login as Student
+01:09:01,735  INFO CRSApplication,main:30 - 2. Login as Professor
+01:09:01,735  INFO CRSApplication,main:31 - 3. Login as Admin
+01:09:01,735  INFO CRSApplication,main:32 - 4. Student SignUp
+01:09:01,736  INFO CRSApplication,main:33 - 5. Update Password
+01:09:01,736  INFO CRSApplication,main:34 - Enter user input
+01:09:13,871  INFO CRSApplication,main:114 - ********* Admin Login ***********
+01:09:13,874  INFO CRSApplication,main:121 - Enter the userID: 
+01:09:14,712  INFO CRSApplication,main:123 - Enter the password: 
+01:09:17,110 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 1
+01:09:17,278 DEBUG AdminOperation,main:162 - Verifying Professor 1
+01:09:17,456 ERROR CRSApplication,main:137 - Wrong Credentials For Admin check again
+01:09:17,457  INFO CRSApplication,main:141 - ********* *************** ***********
+01:09:17,459  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+01:09:17,461  INFO CRSApplication,main:29 - 1. Login as Student
+01:09:17,463  INFO CRSApplication,main:30 - 2. Login as Professor
+01:09:17,464  INFO CRSApplication,main:31 - 3. Login as Admin
+01:09:17,466  INFO CRSApplication,main:32 - 4. Student SignUp
+01:09:17,467  INFO CRSApplication,main:33 - 5. Update Password
+01:09:17,469  INFO CRSApplication,main:34 - Enter user input
+01:09:34,803  INFO CRSApplication,main:114 - ********* Admin Login ***********
+01:09:34,805  INFO CRSApplication,main:121 - Enter the userID: 
+01:09:36,646  INFO CRSApplication,main:123 - Enter the password: 
+01:09:38,714 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 1
+01:09:38,780 DEBUG AdminOperation,main:162 - Verifying Professor 1
+01:09:38,823 DEBUG AdminOperation,main:175 - Getting Admin with ID : 1
+01:09:39,050  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+01:09:39,050  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+01:09:39,051  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+01:09:39,052  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+01:09:39,052  INFO AdminCRSMenu,main:30 - 4. Add Professor
+01:09:39,053  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+01:09:39,053  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+01:09:39,055  INFO AdminCRSMenu,main:33 - 7. Approve Student
+01:09:39,056  INFO AdminCRSMenu,main:34 - 8. LogOut
+01:09:39,056  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+01:09:46,580  INFO AdminCRSMenu,main:76 - -------All Unapproved Student list---------
+01:09:46,650  INFO AdminCRSMenu,main:89 - -------------------------------------------
+01:09:46,650  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+01:09:46,650  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+01:09:46,651  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+01:09:46,651  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+01:09:46,652  INFO AdminCRSMenu,main:30 - 4. Add Professor
+01:09:46,652  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+01:09:46,652  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+01:09:46,655  INFO AdminCRSMenu,main:33 - 7. Approve Student
+01:09:46,656  INFO AdminCRSMenu,main:34 - 8. LogOut
+01:09:46,656  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+01:10:17,721  INFO AdminCRSMenu,main:72 - You Are Logged Out
+01:10:17,722  INFO CRSApplication,main:141 - ********* *************** ***********
+01:10:17,724  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+01:10:17,729  INFO CRSApplication,main:29 - 1. Login as Student
+01:10:17,732  INFO CRSApplication,main:30 - 2. Login as Professor
+01:10:17,735  INFO CRSApplication,main:31 - 3. Login as Admin
+01:10:17,737  INFO CRSApplication,main:32 - 4. Student SignUp
+01:10:17,739  INFO CRSApplication,main:33 - 5. Update Password
+01:10:17,740  INFO CRSApplication,main:34 - Enter user input
+01:16:14,613  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+01:16:14,618  INFO CRSApplication,main:29 - 1. Login as Student
+01:16:14,619  INFO CRSApplication,main:30 - 2. Login as Professor
+01:16:14,624  INFO CRSApplication,main:31 - 3. Login as Admin
+01:16:14,624  INFO CRSApplication,main:32 - 4. Student SignUp
+01:16:14,625  INFO CRSApplication,main:33 - 5. Update Password
+01:16:14,626  INFO CRSApplication,main:34 - Enter user input
+01:16:19,582  INFO CRSApplication,main:151 - ********* Student Register Window ***********
+01:16:19,587  INFO CRSApplication,main:162 - Enter your the userID: 
+01:16:21,842  INFO CRSApplication,main:165 - Enter your the name: 
+01:16:26,483  INFO CRSApplication,main:168 - Enter your the password: 
+01:16:28,716  INFO CRSApplication,main:171 - Enter your the address: 
+01:16:31,907  INFO CRSApplication,main:174 - Enter your the studentID: 
+01:16:33,875  INFO CRSApplication,main:177 - Enter your the batch: 
+01:16:46,066  INFO CRSApplication,main:180 - Enter your the branch: 
+01:16:49,960 DEBUG StudentOperation,main:25 - Initiating Registration for Student with ID : 1
+01:16:50,780 ERROR StudentDaoOperation,main:73 - There is an Error : No value specified for parameter 5
+01:16:50,781 ERROR CRSApplication,main:197 - 
+01:16:50,782  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+01:16:50,782  INFO CRSApplication,main:29 - 1. Login as Student
+01:16:50,783  INFO CRSApplication,main:30 - 2. Login as Professor
+01:16:50,785  INFO CRSApplication,main:31 - 3. Login as Admin
+01:16:50,786  INFO CRSApplication,main:32 - 4. Student SignUp
+01:16:50,786  INFO CRSApplication,main:33 - 5. Update Password
+01:16:50,787  INFO CRSApplication,main:34 - Enter user input
+01:18:09,029  INFO CRSApplication,main:151 - ********* Student Register Window ***********
+01:18:09,032  INFO CRSApplication,main:162 - Enter your the userID: 
+01:18:11,027  INFO CRSApplication,main:165 - Enter your the name: 
+01:18:17,666  INFO CRSApplication,main:168 - Enter your the password: 
+01:18:31,967  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+01:18:31,972  INFO CRSApplication,main:29 - 1. Login as Student
+01:18:31,972  INFO CRSApplication,main:30 - 2. Login as Professor
+01:18:31,973  INFO CRSApplication,main:31 - 3. Login as Admin
+01:18:31,974  INFO CRSApplication,main:32 - 4. Student SignUp
+01:18:31,974  INFO CRSApplication,main:33 - 5. Update Password
+01:18:31,975  INFO CRSApplication,main:34 - Enter user input
+01:18:34,835  INFO CRSApplication,main:151 - ********* Student Register Window ***********
+01:18:34,839  INFO CRSApplication,main:162 - Enter your the userID: 
+01:18:37,912  INFO CRSApplication,main:165 - Enter your the name: 
+01:18:46,125  INFO CRSApplication,main:168 - Enter your the password: 
+01:18:48,297  INFO CRSApplication,main:171 - Enter your the address: 
+01:18:51,882  INFO CRSApplication,main:174 - Enter your the studentID: 
+01:18:53,645  INFO CRSApplication,main:177 - Enter your the batch: 
+01:18:56,675  INFO CRSApplication,main:180 - Enter your the branch: 
+01:19:00,383 DEBUG StudentOperation,main:25 - Initiating Registration for Student with ID : 1
+01:19:02,417 ERROR StudentDaoOperation,main:73 - There is an Error : Incorrect integer value: 'false' for column 'isApproved' at row 1
+01:19:02,417 ERROR CRSApplication,main:197 - 
+01:19:02,418  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+01:19:02,418  INFO CRSApplication,main:29 - 1. Login as Student
+01:19:02,419  INFO CRSApplication,main:30 - 2. Login as Professor
+01:19:02,419  INFO CRSApplication,main:31 - 3. Login as Admin
+01:19:02,419  INFO CRSApplication,main:32 - 4. Student SignUp
+01:19:02,420  INFO CRSApplication,main:33 - 5. Update Password
+01:19:02,420  INFO CRSApplication,main:34 - Enter user input
+01:21:30,360  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+01:21:30,366  INFO CRSApplication,main:29 - 1. Login as Student
+01:21:30,368  INFO CRSApplication,main:30 - 2. Login as Professor
+01:21:30,369  INFO CRSApplication,main:31 - 3. Login as Admin
+01:21:30,370  INFO CRSApplication,main:32 - 4. Student SignUp
+01:21:30,371  INFO CRSApplication,main:33 - 5. Update Password
+01:21:30,373  INFO CRSApplication,main:34 - Enter user input
+01:21:33,146  INFO CRSApplication,main:151 - ********* Student Register Window ***********
+01:21:33,149  INFO CRSApplication,main:162 - Enter your the userID: 
+01:21:34,931  INFO CRSApplication,main:165 - Enter your the name: 
+01:21:39,934  INFO CRSApplication,main:168 - Enter your the password: 
+01:21:43,471  INFO CRSApplication,main:171 - Enter your the address: 
+01:21:47,814  INFO CRSApplication,main:174 - Enter your the studentID: 
+01:21:49,849  INFO CRSApplication,main:177 - Enter your the batch: 
+01:21:52,688  INFO CRSApplication,main:180 - Enter your the branch: 
+01:21:56,106 DEBUG StudentOperation,main:25 - Initiating Registration for Student with ID : 1
+01:21:56,978  INFO CRSApplication,main:188 - You have successfully Login, Wait for Admin Approval!
+01:21:56,980  INFO CRSApplication,main:194 - ********* *********************** ***********
+01:21:56,982  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+01:21:56,983  INFO CRSApplication,main:29 - 1. Login as Student
+01:21:56,986  INFO CRSApplication,main:30 - 2. Login as Professor
+01:21:56,988  INFO CRSApplication,main:31 - 3. Login as Admin
+01:21:56,989  INFO CRSApplication,main:32 - 4. Student SignUp
+01:21:56,991  INFO CRSApplication,main:33 - 5. Update Password
+01:21:56,993  INFO CRSApplication,main:34 - Enter user input
+01:22:05,703  INFO CRSApplication,main:114 - ********* Admin Login ***********
+01:22:05,707  INFO CRSApplication,main:121 - Enter the userID: 
+01:22:07,522  INFO CRSApplication,main:123 - Enter the password: 
+01:22:11,022 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 1
+01:22:11,153 DEBUG AdminOperation,main:162 - Verifying Professor 1
+01:22:11,333 DEBUG AdminOperation,main:175 - Getting Admin with ID : 1
+01:22:11,484  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+01:22:11,484  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+01:22:11,484  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+01:22:11,485  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+01:22:11,485  INFO AdminCRSMenu,main:30 - 4. Add Professor
+01:22:11,486  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+01:22:11,487  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+01:22:11,487  INFO AdminCRSMenu,main:33 - 7. Approve Student
+01:22:11,488  INFO AdminCRSMenu,main:34 - 8. LogOut
+01:22:11,488  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+01:22:14,270  INFO AdminCRSMenu,main:76 - -------All Unapproved Student list---------
+01:22:14,333  INFO AdminCRSMenu,main:86 - StudentID: 1 , Student Name: stud1
+01:22:14,333  INFO AdminCRSMenu,main:89 - -------------------------------------------
+01:22:14,334  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+01:22:14,334  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+01:22:14,335  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+01:22:14,335  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+01:22:14,335  INFO AdminCRSMenu,main:30 - 4. Add Professor
+01:22:14,336  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+01:22:14,336  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+01:22:14,337  INFO AdminCRSMenu,main:33 - 7. Approve Student
+01:22:14,337  INFO AdminCRSMenu,main:34 - 8. LogOut
+01:22:14,338  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+01:22:26,012  INFO AdminCRSMenu,main:96 - -------Approve a Student Registration---------
+01:22:26,013  INFO AdminCRSMenu,main:100 - Enter the studentId to Approve: 
+01:22:31,117  INFO AdminCRSMenu,main:107 - ----------------------------------------------
+01:22:31,120  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+01:22:31,121  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+01:22:31,123  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+01:22:31,125  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+01:22:31,126  INFO AdminCRSMenu,main:30 - 4. Add Professor
+01:22:31,128  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+01:22:31,129  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+01:22:31,132  INFO AdminCRSMenu,main:33 - 7. Approve Student
+01:22:31,135  INFO AdminCRSMenu,main:34 - 8. LogOut
+01:22:31,138  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+01:22:36,009  INFO AdminCRSMenu,main:72 - You Are Logged Out
+01:22:36,010  INFO CRSApplication,main:141 - ********* *************** ***********
+01:22:36,012  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+01:22:36,016  INFO CRSApplication,main:29 - 1. Login as Student
+01:22:36,018  INFO CRSApplication,main:30 - 2. Login as Professor
+01:22:36,019  INFO CRSApplication,main:31 - 3. Login as Admin
+01:22:36,021  INFO CRSApplication,main:32 - 4. Student SignUp
+01:22:36,023  INFO CRSApplication,main:33 - 5. Update Password
+01:22:36,025  INFO CRSApplication,main:34 - Enter user input
+01:22:38,586  INFO CRSApplication,main:39 - ********* Student Login ***********
+01:22:38,588  INFO CRSApplication,main:46 - Enter the userID: 
+01:22:40,418  INFO CRSApplication,main:48 - Enter the password: 
+01:22:42,604 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 2
+01:22:42,661 DEBUG StudentOperation,main:76 - Verifying Student with ID : 2
+01:22:42,690 DEBUG StudentOperation,main:42 - Getting Student ID for user ID: 2
+01:22:42,731  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+01:22:42,731  INFO StudentCRSMenu,main:25 - 1. Add Course
+01:22:42,733  INFO StudentCRSMenu,main:26 - 2. Drop Course
+01:22:42,735  INFO StudentCRSMenu,main:27 - 3. View Course
+01:22:42,737  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+01:22:42,738  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+01:22:42,740  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+01:22:42,741  INFO StudentCRSMenu,main:31 - 7. Make Payment
+01:22:42,741  INFO StudentCRSMenu,main:32 - 8. LogOut
+01:22:42,743  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+01:22:46,503  INFO StudentCRSMenu,main:100 - --------------------------------------
+01:22:46,504  INFO StudentCRSMenu,main:101 - Your Registration is Approved by Admin
+01:22:46,504  INFO StudentCRSMenu,main:102 - --------------------------------------
+01:22:46,504  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+01:22:46,505  INFO StudentCRSMenu,main:25 - 1. Add Course
+01:22:46,505  INFO StudentCRSMenu,main:26 - 2. Drop Course
+01:22:46,505  INFO StudentCRSMenu,main:27 - 3. View Course
+01:22:46,505  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+01:22:46,506  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+01:22:46,506  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+01:22:46,507  INFO StudentCRSMenu,main:31 - 7. Make Payment
+01:22:46,508  INFO StudentCRSMenu,main:32 - 8. LogOut
+01:22:46,509  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+01:22:52,188  INFO StudentCRSMenu,main:70 - You Are Logged Out
+01:22:52,190  INFO CRSApplication,main:65 - ********* ************ ***********
+01:22:52,192  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+01:22:52,196  INFO CRSApplication,main:29 - 1. Login as Student
+01:22:52,198  INFO CRSApplication,main:30 - 2. Login as Professor
+01:22:52,200  INFO CRSApplication,main:31 - 3. Login as Admin
+01:22:52,202  INFO CRSApplication,main:32 - 4. Student SignUp
+01:22:52,208  INFO CRSApplication,main:33 - 5. Update Password
+01:22:52,210  INFO CRSApplication,main:34 - Enter user input
+01:25:09,106  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+01:25:09,111  INFO CRSApplication,main:29 - 1. Login as Student
+01:25:09,112  INFO CRSApplication,main:30 - 2. Login as Professor
+01:25:09,113  INFO CRSApplication,main:31 - 3. Login as Admin
+01:25:09,113  INFO CRSApplication,main:32 - 4. Student SignUp
+01:25:09,114  INFO CRSApplication,main:33 - 5. Update Password
+01:25:09,117  INFO CRSApplication,main:34 - Enter user input
+01:25:13,492  INFO CRSApplication,main:151 - ********* Student Register Window ***********
+01:25:13,496  INFO CRSApplication,main:162 - Enter your the userID: 
+01:25:16,311  INFO CRSApplication,main:165 - Enter your the name: 
+01:25:20,532  INFO CRSApplication,main:168 - Enter your the password: 
+01:25:22,695  INFO CRSApplication,main:171 - Enter your the address: 
+01:25:28,474  INFO CRSApplication,main:174 - Enter your the studentID: 
+01:25:32,078  INFO CRSApplication,main:177 - Enter your the batch: 
+01:25:35,173  INFO CRSApplication,main:180 - Enter your the branch: 
+01:25:43,585 DEBUG StudentOperation,main:25 - Initiating Registration for Student with ID : 1
+01:25:44,689  INFO CRSApplication,main:188 - You have successfully Login, Wait for Admin Approval!
+01:25:44,692  INFO CRSApplication,main:194 - ********* *********************** ***********
+01:25:44,694  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+01:25:44,695  INFO CRSApplication,main:29 - 1. Login as Student
+01:25:44,697  INFO CRSApplication,main:30 - 2. Login as Professor
+01:25:44,699  INFO CRSApplication,main:31 - 3. Login as Admin
+01:25:44,700  INFO CRSApplication,main:32 - 4. Student SignUp
+01:25:44,701  INFO CRSApplication,main:33 - 5. Update Password
+01:25:44,703  INFO CRSApplication,main:34 - Enter user input
+01:26:16,064  INFO CRSApplication,main:114 - ********* Admin Login ***********
+01:26:16,068  INFO CRSApplication,main:121 - Enter the userID: 
+01:26:19,750  INFO CRSApplication,main:123 - Enter the password: 
+01:26:22,524 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 1
+01:26:22,716 DEBUG AdminOperation,main:162 - Verifying Professor 1
+01:26:22,785 DEBUG AdminOperation,main:175 - Getting Admin with ID : 1
+01:26:22,852  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+01:26:22,852  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+01:26:22,853  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+01:26:22,855  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+01:26:22,856  INFO AdminCRSMenu,main:30 - 4. Add Professor
+01:26:22,858  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+01:26:22,858  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+01:26:22,860  INFO AdminCRSMenu,main:33 - 7. Approve Student
+01:26:22,860  INFO AdminCRSMenu,main:34 - 8. LogOut
+01:26:22,864  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+01:26:31,174  INFO AdminCRSMenu,main:200 - -------Add A Professor---------
+01:26:31,177  INFO AdminCRSMenu,main:202 - Enter The details for the professor
+01:26:31,182  INFO AdminCRSMenu,main:211 - Enter the UserId for Professor:
+01:26:35,701  INFO AdminCRSMenu,main:214 - Enter the Name for Professor:
+01:26:40,589  INFO AdminCRSMenu,main:217 - Enter the password for Professor:
+01:26:45,723  INFO AdminCRSMenu,main:220 - Enter the password for Address:
+01:26:51,111  INFO AdminCRSMenu,main:223 - Enter the Department for Professor:
+01:26:59,047  INFO AdminCRSMenu,main:226 - Enter the ProfessorId for Professor:
+01:27:01,666 DEBUG AdminOperation,main:91 - Adding Professor 1
+01:27:01,998  INFO AdminCRSMenu,main:235 - ---------------------------------
+01:27:02,000  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+01:27:02,002  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+01:27:02,004  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+01:27:02,006  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+01:27:02,008  INFO AdminCRSMenu,main:30 - 4. Add Professor
+01:27:02,010  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+01:27:02,012  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+01:27:02,013  INFO AdminCRSMenu,main:33 - 7. Approve Student
+01:27:02,015  INFO AdminCRSMenu,main:34 - 8. LogOut
+01:27:02,016  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+01:27:44,203  INFO AdminCRSMenu,main:143 - -------Add A course to Catalog---------
+01:27:44,204  INFO AdminCRSMenu,main:145 - Enter The Details of New Course
+01:27:44,205  INFO AdminCRSMenu,main:153 - Enter the CourseID:
+01:28:11,081  INFO AdminCRSMenu,main:155 - Enter the CourseName:
+01:28:19,715  INFO AdminCRSMenu,main:157 - Enter the CourseCredit:
+01:28:24,196  INFO AdminCRSMenu,main:159 - Enter the CourseFee:
+01:28:27,297  INFO AdminCRSMenu,main:161 - Enter the ProfessorId:
+01:28:31,431 DEBUG AdminOperation,main:49 - Adding Course cr1
+01:28:31,576  INFO AdminDaoOperation,main:78 - 1 Course added
+01:28:31,578  INFO AdminCRSMenu,main:168 - ---------------------------------------
+01:28:31,580  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+01:28:31,581  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+01:28:31,589  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+01:28:31,590  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+01:28:31,592  INFO AdminCRSMenu,main:30 - 4. Add Professor
+01:28:31,595  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+01:28:31,598  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+01:28:31,600  INFO AdminCRSMenu,main:33 - 7. Approve Student
+01:28:31,601  INFO AdminCRSMenu,main:34 - 8. LogOut
+01:28:31,603  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+01:29:02,360  INFO AdminCRSMenu,main:118 - -------All Courses In Catalog---------
+01:29:02,486 DEBUG RegistrationOperation,main:50 - Viewing Course list 
+01:29:02,555  INFO AdminCRSMenu,main:130 - CourseId : cr1 , CourseName : crN1 , credit : 3 , ProfessorEmpId: 1 , fee: 10.0
+01:29:02,556  INFO AdminCRSMenu,main:133 - ---------------------------------------
+01:29:02,556  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+01:29:02,556  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+01:29:02,557  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+01:29:02,557  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+01:29:02,557  INFO AdminCRSMenu,main:30 - 4. Add Professor
+01:29:02,558  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+01:29:02,558  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+01:29:02,559  INFO AdminCRSMenu,main:33 - 7. Approve Student
+01:29:02,559  INFO AdminCRSMenu,main:34 - 8. LogOut
+01:29:02,559  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+01:29:26,415  INFO AdminCRSMenu,main:200 - -------Add A Professor---------
+01:29:26,416  INFO AdminCRSMenu,main:202 - Enter The details for the professor
+01:29:26,421  INFO AdminCRSMenu,main:211 - Enter the UserId for Professor:
+01:29:39,602  INFO AdminCRSMenu,main:214 - Enter the Name for Professor:
+01:29:44,621  INFO AdminCRSMenu,main:217 - Enter the password for Professor:
+01:29:48,793  INFO AdminCRSMenu,main:220 - Enter the password for Address:
+01:29:52,225  INFO AdminCRSMenu,main:223 - Enter the Department for Professor:
+01:29:59,708  INFO AdminCRSMenu,main:226 - Enter the ProfessorId for Professor:
+01:30:02,472 DEBUG AdminOperation,main:91 - Adding Professor 2
+01:30:03,446  INFO AdminCRSMenu,main:235 - ---------------------------------
+01:30:03,447  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+01:30:03,448  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+01:30:03,450  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+01:30:03,453  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+01:30:03,454  INFO AdminCRSMenu,main:30 - 4. Add Professor
+01:30:03,456  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+01:30:03,457  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+01:30:03,460  INFO AdminCRSMenu,main:33 - 7. Approve Student
+01:30:03,461  INFO AdminCRSMenu,main:34 - 8. LogOut
+01:30:03,463  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+01:30:25,499  INFO AdminCRSMenu,main:245 - -------Assign Course to Professor---------
+01:30:25,501  INFO AdminCRSMenu,main:250 - Enter the courseId for Professor:
+01:30:29,793  INFO AdminCRSMenu,main:253 - Enter the ProfessorId:
+01:30:31,589 DEBUG AdminOperation,main:130 - Assigning Course 1 to professor with ID 2
+01:30:31,743  INFO AdminDaoOperation,main:271 - 0 course assigned.
+01:30:31,743 ERROR AdminDaoOperation,main:273 - 1 not found
+01:30:31,745 ERROR AdminDaoOperation,main:285 - There is an Error : Course with courseCode: 1 not found.
+01:30:31,748  INFO AdminCRSMenu,main:261 - ------------------------------------------
+01:30:31,748  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+01:30:31,750  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+01:30:31,750  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+01:30:31,751  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+01:30:31,751  INFO AdminCRSMenu,main:30 - 4. Add Professor
+01:30:31,752  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+01:30:31,753  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+01:30:31,754  INFO AdminCRSMenu,main:33 - 7. Approve Student
+01:30:31,755  INFO AdminCRSMenu,main:34 - 8. LogOut
+01:30:31,755  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+01:31:08,219  INFO AdminCRSMenu,main:245 - -------Assign Course to Professor---------
+01:31:08,222  INFO AdminCRSMenu,main:250 - Enter the courseId for Professor:
+01:31:11,090  INFO AdminCRSMenu,main:253 - Enter the ProfessorId:
+01:31:14,616 DEBUG AdminOperation,main:130 - Assigning Course 2 to professor with ID 1
+01:31:14,675  INFO AdminDaoOperation,main:271 - 0 course assigned.
+01:31:14,675 ERROR AdminDaoOperation,main:273 - 2 not found
+01:31:14,676 ERROR AdminDaoOperation,main:285 - There is an Error : Course with courseCode: 2 not found.
+01:31:14,676  INFO AdminCRSMenu,main:261 - ------------------------------------------
+01:31:14,676  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+01:31:14,677  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+01:31:14,677  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+01:31:14,677  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+01:31:14,677  INFO AdminCRSMenu,main:30 - 4. Add Professor
+01:31:14,678  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+01:31:14,678  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+01:31:14,678  INFO AdminCRSMenu,main:33 - 7. Approve Student
+01:31:14,679  INFO AdminCRSMenu,main:34 - 8. LogOut
+01:31:14,680  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+01:31:20,401  INFO AdminCRSMenu,main:245 - -------Assign Course to Professor---------
+01:31:20,404  INFO AdminCRSMenu,main:250 - Enter the courseId for Professor:
+01:31:24,075  INFO AdminCRSMenu,main:253 - Enter the ProfessorId:
+01:31:25,785 DEBUG AdminOperation,main:130 - Assigning Course cr1 to professor with ID 2
+01:31:26,311  INFO AdminDaoOperation,main:271 - 1 course assigned.
+01:31:26,315  INFO AdminCRSMenu,main:261 - ------------------------------------------
+01:31:26,318  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+01:31:26,320  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+01:31:26,322  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+01:31:26,324  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+01:31:26,328  INFO AdminCRSMenu,main:30 - 4. Add Professor
+01:31:26,329  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+01:31:26,331  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+01:31:26,333  INFO AdminCRSMenu,main:33 - 7. Approve Student
+01:31:26,334  INFO AdminCRSMenu,main:34 - 8. LogOut
+01:31:26,335  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+01:31:34,831  INFO AdminCRSMenu,main:118 - -------All Courses In Catalog---------
+01:31:34,833 DEBUG RegistrationOperation,main:50 - Viewing Course list 
+01:31:34,890  INFO AdminCRSMenu,main:130 - CourseId : cr1 , CourseName : crN1 , credit : 3 , ProfessorEmpId: 2 , fee: 10.0
+01:31:34,891  INFO AdminCRSMenu,main:133 - ---------------------------------------
+01:31:34,891  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+01:31:34,891  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+01:31:34,895  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+01:31:34,896  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+01:31:34,900  INFO AdminCRSMenu,main:30 - 4. Add Professor
+01:31:34,901  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+01:31:34,902  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+01:31:34,903  INFO AdminCRSMenu,main:33 - 7. Approve Student
+01:31:34,904  INFO AdminCRSMenu,main:34 - 8. LogOut
+01:31:34,905  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+01:31:59,671  INFO AdminCRSMenu,main:76 - -------All Unapproved Student list---------
+01:31:59,712  INFO AdminCRSMenu,main:86 - StudentID: 1 , Student Name: stud1
+01:31:59,713  INFO AdminCRSMenu,main:89 - -------------------------------------------
+01:31:59,713  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+01:31:59,714  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+01:31:59,714  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+01:31:59,715  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+01:31:59,715  INFO AdminCRSMenu,main:30 - 4. Add Professor
+01:31:59,716  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+01:31:59,716  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+01:31:59,716  INFO AdminCRSMenu,main:33 - 7. Approve Student
+01:31:59,718  INFO AdminCRSMenu,main:34 - 8. LogOut
+01:31:59,719  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+01:32:15,213  INFO AdminCRSMenu,main:96 - -------Approve a Student Registration---------
+01:32:15,213  INFO AdminCRSMenu,main:100 - Enter the studentId to Approve: 
+01:32:16,840  INFO AdminCRSMenu,main:107 - ----------------------------------------------
+01:32:16,842  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+01:32:16,844  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+01:32:16,846  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+01:32:16,850  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+01:32:16,852  INFO AdminCRSMenu,main:30 - 4. Add Professor
+01:32:16,854  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+01:32:16,858  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+01:32:16,861  INFO AdminCRSMenu,main:33 - 7. Approve Student
+01:32:16,864  INFO AdminCRSMenu,main:34 - 8. LogOut
+01:32:16,866  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+01:32:36,162  INFO AdminCRSMenu,main:179 - -------Delete Course from Catalog---------
+01:32:36,164  INFO AdminCRSMenu,main:182 - Enter the CourseID to Delete:
+01:32:39,007 DEBUG AdminOperation,main:30 - Deleting Course cr1
+01:32:39,264  INFO AdminDaoOperation,main:36 - 1 entries deleted.
+01:32:39,267  INFO AdminCRSMenu,main:188 - ------------------------------------------
+01:32:39,269  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+01:32:39,273  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+01:32:39,275  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+01:32:39,279  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+01:32:39,281  INFO AdminCRSMenu,main:30 - 4. Add Professor
+01:32:39,284  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+01:32:39,285  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+01:32:39,287  INFO AdminCRSMenu,main:33 - 7. Approve Student
+01:32:39,288  INFO AdminCRSMenu,main:34 - 8. LogOut
+01:32:39,293  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+01:33:00,867  INFO AdminCRSMenu,main:143 - -------Add A course to Catalog---------
+01:33:00,869  INFO AdminCRSMenu,main:145 - Enter The Details of New Course
+01:33:00,869  INFO AdminCRSMenu,main:153 - Enter the CourseID:
+01:33:03,261  INFO AdminCRSMenu,main:155 - Enter the CourseName:
+01:33:07,698  INFO AdminCRSMenu,main:157 - Enter the CourseCredit:
+01:33:10,106  INFO AdminCRSMenu,main:159 - Enter the CourseFee:
+01:33:11,560  INFO AdminCRSMenu,main:161 - Enter the ProfessorId:
+01:33:13,032 DEBUG AdminOperation,main:49 - Adding Course 1
+01:33:13,270  INFO AdminDaoOperation,main:78 - 1 Course added
+01:33:13,273  INFO AdminCRSMenu,main:168 - ---------------------------------------
+01:33:13,276  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+01:33:13,279  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+01:33:13,280  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+01:33:13,281  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+01:33:13,282  INFO AdminCRSMenu,main:30 - 4. Add Professor
+01:33:13,284  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+01:33:13,286  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+01:33:13,288  INFO AdminCRSMenu,main:33 - 7. Approve Student
+01:33:13,289  INFO AdminCRSMenu,main:34 - 8. LogOut
+01:33:13,291  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+01:33:20,385  INFO AdminCRSMenu,main:118 - -------All Courses In Catalog---------
+01:33:20,388 DEBUG RegistrationOperation,main:50 - Viewing Course list 
+01:33:20,442  INFO AdminCRSMenu,main:130 - CourseId : 1 , CourseName : cr1 , credit : 4 , ProfessorEmpId: 1 , fee: 10.0
+01:33:20,442  INFO AdminCRSMenu,main:133 - ---------------------------------------
+01:33:20,443  INFO AdminCRSMenu,main:26 - ----------Welcome To Admin Menu AdminID : 1----------
+01:33:20,443  INFO AdminCRSMenu,main:27 - 1. View Course in Catalog
+01:33:20,444  INFO AdminCRSMenu,main:28 - 2. Add Course to catalog
+01:33:20,444  INFO AdminCRSMenu,main:29 - 3. Delete Course From catalog
+01:33:20,445  INFO AdminCRSMenu,main:30 - 4. Add Professor
+01:33:20,445  INFO AdminCRSMenu,main:31 - 5. Assign Course To Professor
+01:33:20,446  INFO AdminCRSMenu,main:32 - 6. Check All UnApproved
+01:33:20,447  INFO AdminCRSMenu,main:33 - 7. Approve Student
+01:33:20,447  INFO AdminCRSMenu,main:34 - 8. LogOut
+01:33:20,449  INFO AdminCRSMenu,main:35 - ---------------------------------------------
+01:33:28,673  INFO AdminCRSMenu,main:72 - You Are Logged Out
+01:33:28,675  INFO CRSApplication,main:141 - ********* *************** ***********
+01:33:28,681  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+01:33:28,683  INFO CRSApplication,main:29 - 1. Login as Student
+01:33:28,685  INFO CRSApplication,main:30 - 2. Login as Professor
+01:33:28,686  INFO CRSApplication,main:31 - 3. Login as Admin
+01:33:28,690  INFO CRSApplication,main:32 - 4. Student SignUp
+01:33:28,693  INFO CRSApplication,main:33 - 5. Update Password
+01:33:28,698  INFO CRSApplication,main:34 - Enter user input
+01:33:48,599  INFO CRSApplication,main:39 - ********* Student Login ***********
+01:33:48,602  INFO CRSApplication,main:46 - Enter the userID: 
+01:33:49,995  INFO CRSApplication,main:48 - Enter the password: 
+01:33:52,141 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 2
+01:33:52,201 DEBUG StudentOperation,main:76 - Verifying Student with ID : 2
+01:33:52,223 DEBUG StudentOperation,main:42 - Getting Student ID for user ID: 2
+01:33:52,248  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+01:33:52,248  INFO StudentCRSMenu,main:25 - 1. Add Course
+01:33:52,248  INFO StudentCRSMenu,main:26 - 2. Drop Course
+01:33:52,249  INFO StudentCRSMenu,main:27 - 3. View Course
+01:33:52,249  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+01:33:52,249  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+01:33:52,249  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+01:33:52,251  INFO StudentCRSMenu,main:31 - 7. Make Payment
+01:33:52,252  INFO StudentCRSMenu,main:32 - 8. LogOut
+01:33:52,252  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+01:34:01,988  INFO StudentCRSMenu,main:117 - -------All Courses Available----------
+01:34:01,990 DEBUG RegistrationOperation,main:50 - Viewing Course list 
+01:34:02,299  INFO StudentCRSMenu,main:129 - CourseId : 1 , CourseName : cr1 , credit : 4 , ProfessorEmpId: 1 , fee: 10.0
+01:34:02,300  INFO StudentCRSMenu,main:132 - ---------------------------------------
+01:34:02,300  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+01:34:02,301  INFO StudentCRSMenu,main:25 - 1. Add Course
+01:34:02,301  INFO StudentCRSMenu,main:26 - 2. Drop Course
+01:34:02,301  INFO StudentCRSMenu,main:27 - 3. View Course
+01:34:02,302  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+01:34:02,302  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+01:34:02,303  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+01:34:02,303  INFO StudentCRSMenu,main:31 - 7. Make Payment
+01:34:02,303  INFO StudentCRSMenu,main:32 - 8. LogOut
+01:34:02,303  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+01:34:13,292  INFO StudentCRSMenu,main:100 - --------------------------------------
+01:34:13,292  INFO StudentCRSMenu,main:101 - Your Registration is Approved by Admin
+01:34:13,292  INFO StudentCRSMenu,main:102 - --------------------------------------
+01:34:13,293  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+01:34:13,293  INFO StudentCRSMenu,main:25 - 1. Add Course
+01:34:13,294  INFO StudentCRSMenu,main:26 - 2. Drop Course
+01:34:13,294  INFO StudentCRSMenu,main:27 - 3. View Course
+01:34:13,295  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+01:34:13,296  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+01:34:13,297  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+01:34:13,297  INFO StudentCRSMenu,main:31 - 7. Make Payment
+01:34:13,298  INFO StudentCRSMenu,main:32 - 8. LogOut
+01:34:13,299  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+01:34:25,809 DEBUG RegistrationOperation,main:59 -  Viewing Registerd Courses for Student with ID : 1
+01:34:25,852  INFO StudentCRSMenu,main:175 - ---Your Registered Courses Are----
+01:34:25,852  INFO StudentCRSMenu,main:185 - ----------------------------------
+01:34:25,852  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+01:34:25,853  INFO StudentCRSMenu,main:25 - 1. Add Course
+01:34:25,853  INFO StudentCRSMenu,main:26 - 2. Drop Course
+01:34:25,854  INFO StudentCRSMenu,main:27 - 3. View Course
+01:34:25,854  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+01:34:25,854  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+01:34:25,855  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+01:34:25,855  INFO StudentCRSMenu,main:31 - 7. Make Payment
+01:34:25,856  INFO StudentCRSMenu,main:32 - 8. LogOut
+01:34:25,856  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+01:34:37,163  INFO StudentCRSMenu,main:117 - -------All Courses Available----------
+01:34:37,165 DEBUG RegistrationOperation,main:50 - Viewing Course list 
+01:34:37,305  INFO StudentCRSMenu,main:129 - CourseId : 1 , CourseName : cr1 , credit : 4 , ProfessorEmpId: 1 , fee: 10.0
+01:34:37,307  INFO StudentCRSMenu,main:132 - ---------------------------------------
+01:34:37,311  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+01:34:37,314  INFO StudentCRSMenu,main:25 - 1. Add Course
+01:34:37,319  INFO StudentCRSMenu,main:26 - 2. Drop Course
+01:34:37,320  INFO StudentCRSMenu,main:27 - 3. View Course
+01:34:37,323  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+01:34:37,326  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+01:34:37,328  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+01:34:37,329  INFO StudentCRSMenu,main:31 - 7. Make Payment
+01:34:37,330  INFO StudentCRSMenu,main:32 - 8. LogOut
+01:34:37,334  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+01:34:39,685  INFO StudentCRSMenu,main:143 - -----You can Enter Add Course Window------
+01:34:39,689  INFO StudentCRSMenu,main:144 - Do you Want to view courses press 1 else 0
+01:34:46,912  INFO StudentCRSMenu,main:148 - Enter the Course you selected: 
+01:34:53,046 DEBUG RegistrationOperation,main:20 - Adding Course with ID: 1 for Student with ID : 1
+01:34:53,491  INFO StudentCRSMenu,main:157 - Course Registration Successful
+01:34:53,492  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+01:34:53,494  INFO StudentCRSMenu,main:25 - 1. Add Course
+01:34:53,495  INFO StudentCRSMenu,main:26 - 2. Drop Course
+01:34:53,497  INFO StudentCRSMenu,main:27 - 3. View Course
+01:34:53,498  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+01:34:53,500  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+01:34:53,501  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+01:34:53,502  INFO StudentCRSMenu,main:31 - 7. Make Payment
+01:34:53,504  INFO StudentCRSMenu,main:32 - 8. LogOut
+01:34:53,505  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+01:35:29,679  INFO StudentCRSMenu,main:77 - ----------Make Payment ------------
+01:35:29,681 DEBUG RegistrationOperation,main:67 - Calculating fees for Student with ID : 1
+01:35:29,735  INFO RegistrationDaoOperation,main:177 - Table 'JEDI-7-CRS.course' doesn't exist
+01:35:29,735  INFO StudentCRSMenu,main:84 - Your total amount is : 0.0
+01:35:29,736  INFO StudentCRSMenu,main:86 - ------------------------------------
+01:35:29,736  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+01:35:29,736  INFO StudentCRSMenu,main:25 - 1. Add Course
+01:35:29,736  INFO StudentCRSMenu,main:26 - 2. Drop Course
+01:35:29,737  INFO StudentCRSMenu,main:27 - 3. View Course
+01:35:29,737  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+01:35:29,738  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+01:35:29,738  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+01:35:29,739  INFO StudentCRSMenu,main:31 - 7. Make Payment
+01:35:29,739  INFO StudentCRSMenu,main:32 - 8. LogOut
+01:35:29,739  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+01:36:58,548  INFO StudentCRSMenu,main:70 - You Are Logged Out
+01:36:58,553  INFO CRSApplication,main:65 - ********* ************ ***********
+01:36:58,553  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+01:36:58,556  INFO CRSApplication,main:29 - 1. Login as Student
+01:36:58,558  INFO CRSApplication,main:30 - 2. Login as Professor
+01:36:58,559  INFO CRSApplication,main:31 - 3. Login as Admin
+01:36:58,561  INFO CRSApplication,main:32 - 4. Student SignUp
+01:36:58,562  INFO CRSApplication,main:33 - 5. Update Password
+01:36:58,564  INFO CRSApplication,main:34 - Enter user input
+01:37:13,331  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+01:37:13,337  INFO CRSApplication,main:29 - 1. Login as Student
+01:37:13,338  INFO CRSApplication,main:30 - 2. Login as Professor
+01:37:13,341  INFO CRSApplication,main:31 - 3. Login as Admin
+01:37:13,342  INFO CRSApplication,main:32 - 4. Student SignUp
+01:37:13,344  INFO CRSApplication,main:33 - 5. Update Password
+01:37:13,346  INFO CRSApplication,main:34 - Enter user input
+01:37:17,005  INFO CRSApplication,main:39 - ********* Student Login ***********
+01:37:17,011  INFO CRSApplication,main:46 - Enter the userID: 
+01:37:21,181  INFO CRSApplication,main:48 - Enter the password: 
+01:37:23,737 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 2
+01:37:24,407 DEBUG StudentOperation,main:76 - Verifying Student with ID : 2
+01:37:24,462 DEBUG StudentOperation,main:42 - Getting Student ID for user ID: 2
+01:37:24,524  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+01:37:24,524  INFO StudentCRSMenu,main:25 - 1. Add Course
+01:37:24,524  INFO StudentCRSMenu,main:26 - 2. Drop Course
+01:37:24,525  INFO StudentCRSMenu,main:27 - 3. View Course
+01:37:24,525  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+01:37:24,525  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+01:37:24,526  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+01:37:24,526  INFO StudentCRSMenu,main:31 - 7. Make Payment
+01:37:24,526  INFO StudentCRSMenu,main:32 - 8. LogOut
+01:37:24,526  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+01:37:32,539  INFO StudentCRSMenu,main:77 - ----------Make Payment ------------
+01:37:32,544 DEBUG RegistrationOperation,main:67 - Calculating fees for Student with ID : 1
+01:37:32,700  INFO StudentCRSMenu,main:84 - Your total amount is : 10.0
+01:37:32,701  INFO StudentCRSMenu,main:86 - ------------------------------------
+01:37:32,704  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+01:37:32,705  INFO StudentCRSMenu,main:25 - 1. Add Course
+01:37:32,708  INFO StudentCRSMenu,main:26 - 2. Drop Course
+01:37:32,709  INFO StudentCRSMenu,main:27 - 3. View Course
+01:37:32,710  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+01:37:32,712  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+01:37:32,713  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+01:37:32,716  INFO StudentCRSMenu,main:31 - 7. Make Payment
+01:37:32,718  INFO StudentCRSMenu,main:32 - 8. LogOut
+01:37:32,721  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+01:37:46,045  INFO StudentCRSMenu,main:197 - -----You can Enter Drop Course Window------
+01:37:46,047  INFO StudentCRSMenu,main:198 - To View all your Courses Press 1 else 0 : 
+01:37:49,523 DEBUG RegistrationOperation,main:59 -  Viewing Registerd Courses for Student with ID : 1
+01:37:49,642  INFO StudentCRSMenu,main:175 - ---Your Registered Courses Are----
+01:37:49,643  INFO StudentCRSMenu,main:182 - CourseId : 1 , CourseName : cr1 , credit : 4 : ProfID : 1
+01:37:49,645  INFO StudentCRSMenu,main:185 - ----------------------------------
+01:37:49,645  INFO StudentCRSMenu,main:204 - Enter The courseID of course to be Dropped:
+01:37:55,761 DEBUG RegistrationOperation,main:36 - Dropping Course with ID: 1 for Student with ID : 1
+01:37:56,079  INFO StudentCRSMenu,main:217 - ---------------------------------------------
+01:37:56,081  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+01:37:56,082  INFO StudentCRSMenu,main:25 - 1. Add Course
+01:37:56,084  INFO StudentCRSMenu,main:26 - 2. Drop Course
+01:37:56,086  INFO StudentCRSMenu,main:27 - 3. View Course
+01:37:56,088  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+01:37:56,090  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+01:37:56,092  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+01:37:56,094  INFO StudentCRSMenu,main:31 - 7. Make Payment
+01:37:56,095  INFO StudentCRSMenu,main:32 - 8. LogOut
+01:37:56,097  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+01:38:14,216  INFO StudentCRSMenu,main:143 - -----You can Enter Add Course Window------
+01:38:14,220  INFO StudentCRSMenu,main:144 - Do you Want to view courses press 1 else 0
+01:38:25,708  INFO StudentCRSMenu,main:117 - -------All Courses Available----------
+01:38:25,710 DEBUG RegistrationOperation,main:50 - Viewing Course list 
+01:38:25,927  INFO StudentCRSMenu,main:129 - CourseId : 1 , CourseName : cr1 , credit : 4 , ProfessorEmpId: 1 , fee: 10.0
+01:38:25,927  INFO StudentCRSMenu,main:132 - ---------------------------------------
+01:38:25,928  INFO StudentCRSMenu,main:148 - Enter the CourseId you selected: 
+01:38:28,431 DEBUG RegistrationOperation,main:20 - Adding Course with ID: 1 for Student with ID : 1
+01:38:28,698  INFO StudentCRSMenu,main:157 - Course Registration Successful
+01:38:28,700  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+01:38:28,701  INFO StudentCRSMenu,main:25 - 1. Add Course
+01:38:28,703  INFO StudentCRSMenu,main:26 - 2. Drop Course
+01:38:28,705  INFO StudentCRSMenu,main:27 - 3. View Course
+01:38:28,708  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+01:38:28,709  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+01:38:28,711  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+01:38:28,714  INFO StudentCRSMenu,main:31 - 7. Make Payment
+01:38:28,715  INFO StudentCRSMenu,main:32 - 8. LogOut
+01:38:28,716  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+01:38:35,777  INFO StudentCRSMenu,main:70 - You Are Logged Out
+01:38:35,780  INFO CRSApplication,main:65 - ********* ************ ***********
+01:38:35,783  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+01:38:35,785  INFO CRSApplication,main:29 - 1. Login as Student
+01:38:35,788  INFO CRSApplication,main:30 - 2. Login as Professor
+01:38:35,790  INFO CRSApplication,main:31 - 3. Login as Admin
+01:38:35,792  INFO CRSApplication,main:32 - 4. Student SignUp
+01:38:35,795  INFO CRSApplication,main:33 - 5. Update Password
+01:38:35,797  INFO CRSApplication,main:34 - Enter user input
+01:38:43,852  INFO CRSApplication,main:77 - ********* Professor Login ***********
+01:38:43,855  INFO CRSApplication,main:84 - Enter the userID: 
+01:38:47,518  INFO CRSApplication,main:86 - Enter the password: 
+01:38:54,524 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 3
+01:38:54,573 DEBUG ProfessorOperation,main:73 - Verifying Professor with userID : 3
+01:38:54,769 DEBUG ProfessorOperation,main:87 - Viewing Professor with userID : 3
+01:38:54,807  INFO ProfessorCRSMenu,main:26 - ----------Welcome To Professor Menu Professor ID : 1----------
+01:38:54,808  INFO ProfessorCRSMenu,main:27 - 1. View Course
+01:38:54,808  INFO ProfessorCRSMenu,main:28 - 2. View Enrolled Students
+01:38:54,808  INFO ProfessorCRSMenu,main:29 - 3. Add grade
+01:38:54,809  INFO ProfessorCRSMenu,main:30 - 4 LogOut
+01:38:54,809  INFO ProfessorCRSMenu,main:31 - ---------------------------------------------------
+01:39:01,820  INFO ProfessorCRSMenu,main:61 - -------All Courses Professor have----------
+01:39:01,822 DEBUG ProfessorOperation,main:21 - Viewing Courses 
+01:39:02,002  INFO ProfessorCRSMenu,main:72 - Course: 1 , CourseName : cr1 , credit :4
+01:39:02,004  INFO ProfessorCRSMenu,main:74 - --------------------------------------------
+01:39:02,007  INFO ProfessorCRSMenu,main:26 - ----------Welcome To Professor Menu Professor ID : 1----------
+01:39:02,011  INFO ProfessorCRSMenu,main:27 - 1. View Course
+01:39:02,013  INFO ProfessorCRSMenu,main:28 - 2. View Enrolled Students
+01:39:02,015  INFO ProfessorCRSMenu,main:29 - 3. Add grade
+01:39:02,020  INFO ProfessorCRSMenu,main:30 - 4 LogOut
+01:39:02,022  INFO ProfessorCRSMenu,main:31 - ---------------------------------------------------
+01:39:09,692  INFO ProfessorCRSMenu,main:83 - -------All Student Enroll With Professor----------
+01:39:09,694 DEBUG ProfessorOperation,main:30 - Viewing List of Enrolled Students 
+01:39:09,864  INFO ProfessorCRSMenu,main:92 - CourseID : 1 ----> StudentId : 1
+01:39:09,866  INFO ProfessorCRSMenu,main:95 - ----------------------------------------------------
+01:39:09,867  INFO ProfessorCRSMenu,main:26 - ----------Welcome To Professor Menu Professor ID : 1----------
+01:39:09,869  INFO ProfessorCRSMenu,main:27 - 1. View Course
+01:39:09,870  INFO ProfessorCRSMenu,main:28 - 2. View Enrolled Students
+01:39:09,872  INFO ProfessorCRSMenu,main:29 - 3. Add grade
+01:39:09,873  INFO ProfessorCRSMenu,main:30 - 4 LogOut
+01:39:09,874  INFO ProfessorCRSMenu,main:31 - ---------------------------------------------------
+01:39:21,995  INFO ProfessorCRSMenu,main:105 - -------- Add the Grade to the Student -----------
+01:39:21,997  INFO ProfessorCRSMenu,main:111 - Enter the studentId: 
+01:39:26,343  INFO ProfessorCRSMenu,main:113 - Enter the courseId: 
+01:39:27,566  INFO ProfessorCRSMenu,main:115 - Enter the Grade To assign: 
+01:39:30,179 DEBUG ProfessorOperation,main:47 - Adding Grade : 5.0 for Student : 1 for course : 1
+01:39:30,227  INFO ProfessorCRSMenu,main:122 - Grade Added Succesfully
+01:39:30,227  INFO ProfessorCRSMenu,main:125 - -------- ---------------------------- -----------
+01:39:30,228  INFO ProfessorCRSMenu,main:26 - ----------Welcome To Professor Menu Professor ID : 1----------
+01:39:30,228  INFO ProfessorCRSMenu,main:27 - 1. View Course
+01:39:30,229  INFO ProfessorCRSMenu,main:28 - 2. View Enrolled Students
+01:39:30,229  INFO ProfessorCRSMenu,main:29 - 3. Add grade
+01:39:30,230  INFO ProfessorCRSMenu,main:30 - 4 LogOut
+01:39:30,230  INFO ProfessorCRSMenu,main:31 - ---------------------------------------------------
+01:39:32,826  INFO ProfessorCRSMenu,main:55 - You are Logged Out
+01:39:32,828  INFO CRSApplication,main:104 - ********* *************** ***********
+01:39:32,830  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+01:39:32,831  INFO CRSApplication,main:29 - 1. Login as Student
+01:39:32,834  INFO CRSApplication,main:30 - 2. Login as Professor
+01:39:32,838  INFO CRSApplication,main:31 - 3. Login as Admin
+01:39:32,841  INFO CRSApplication,main:32 - 4. Student SignUp
+01:39:32,844  INFO CRSApplication,main:33 - 5. Update Password
+01:39:32,846  INFO CRSApplication,main:34 - Enter user input
+01:39:35,519  INFO CRSApplication,main:39 - ********* Student Login ***********
+01:39:35,523  INFO CRSApplication,main:46 - Enter the userID: 
+01:39:37,329  INFO CRSApplication,main:48 - Enter the password: 
+01:39:39,144 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 2
+01:39:39,200 DEBUG StudentOperation,main:76 - Verifying Student with ID : 2
+01:39:39,334 DEBUG StudentOperation,main:42 - Getting Student ID for user ID: 2
+01:39:39,419  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+01:39:39,419  INFO StudentCRSMenu,main:25 - 1. Add Course
+01:39:39,420  INFO StudentCRSMenu,main:26 - 2. Drop Course
+01:39:39,420  INFO StudentCRSMenu,main:27 - 3. View Course
+01:39:39,421  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+01:39:39,421  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+01:39:39,422  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+01:39:39,422  INFO StudentCRSMenu,main:31 - 7. Make Payment
+01:39:39,423  INFO StudentCRSMenu,main:32 - 8. LogOut
+01:39:39,423  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+01:39:48,316  INFO StudentCRSMenu,main:229 - --------View Your Grade Card----------
+01:39:48,319 DEBUG StudentOperation,main:50 - Grade Card for Student with ID : 1
+01:39:48,377  INFO StudentCRSMenu,main:242 - ---------------------------------------
+01:39:48,377  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+01:39:48,377  INFO StudentCRSMenu,main:25 - 1. Add Course
+01:39:48,378  INFO StudentCRSMenu,main:26 - 2. Drop Course
+01:39:48,378  INFO StudentCRSMenu,main:27 - 3. View Course
+01:39:48,379  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+01:39:48,379  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+01:39:48,379  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+01:39:48,380  INFO StudentCRSMenu,main:31 - 7. Make Payment
+01:39:48,380  INFO StudentCRSMenu,main:32 - 8. LogOut
+01:39:48,381  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+01:40:11,514  INFO StudentCRSMenu,main:70 - You Are Logged Out
+01:40:11,515  INFO CRSApplication,main:65 - ********* ************ ***********
+01:40:11,518  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+01:40:11,522  INFO CRSApplication,main:29 - 1. Login as Student
+01:40:11,524  INFO CRSApplication,main:30 - 2. Login as Professor
+01:40:11,526  INFO CRSApplication,main:31 - 3. Login as Admin
+01:40:11,528  INFO CRSApplication,main:32 - 4. Student SignUp
+01:40:11,531  INFO CRSApplication,main:33 - 5. Update Password
+01:40:11,533  INFO CRSApplication,main:34 - Enter user input
+01:40:41,625  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+01:40:41,630  INFO CRSApplication,main:29 - 1. Login as Student
+01:40:41,633  INFO CRSApplication,main:30 - 2. Login as Professor
+01:40:41,634  INFO CRSApplication,main:31 - 3. Login as Admin
+01:40:41,635  INFO CRSApplication,main:32 - 4. Student SignUp
+01:40:41,635  INFO CRSApplication,main:33 - 5. Update Password
+01:40:41,636  INFO CRSApplication,main:34 - Enter user input
+01:40:45,218  INFO CRSApplication,main:77 - ********* Professor Login ***********
+01:40:45,222  INFO CRSApplication,main:84 - Enter the userID: 
+01:40:48,999  INFO CRSApplication,main:86 - Enter the password: 
+01:40:51,444 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 3
+01:40:51,868 DEBUG ProfessorOperation,main:73 - Verifying Professor with userID : 3
+01:40:51,921 DEBUG ProfessorOperation,main:87 - Viewing Professor with userID : 3
+01:40:52,065  INFO ProfessorCRSMenu,main:26 - ----------Welcome To Professor Menu Professor ID : 1----------
+01:40:52,065  INFO ProfessorCRSMenu,main:27 - 1. View Course
+01:40:52,066  INFO ProfessorCRSMenu,main:28 - 2. View Enrolled Students
+01:40:52,066  INFO ProfessorCRSMenu,main:29 - 3. Add grade
+01:40:52,067  INFO ProfessorCRSMenu,main:30 - 4 LogOut
+01:40:52,067  INFO ProfessorCRSMenu,main:31 - ---------------------------------------------------
+01:40:54,096  INFO ProfessorCRSMenu,main:105 - -------- Add the Grade to the Student -----------
+01:40:54,098  INFO ProfessorCRSMenu,main:111 - Enter the studentId: 
+01:40:56,543  INFO ProfessorCRSMenu,main:113 - Enter the courseId: 
+01:40:57,463  INFO ProfessorCRSMenu,main:115 - Enter the Grade To assign: 
+01:40:59,994 DEBUG ProfessorOperation,main:47 - Adding Grade : 4.0 for Student : 1 for course : 1
+01:41:00,068  INFO ProfessorCRSMenu,main:122 - Grade Added Succesfully
+01:41:00,068  INFO ProfessorCRSMenu,main:125 - -------- ---------------------------- -----------
+01:41:00,069  INFO ProfessorCRSMenu,main:26 - ----------Welcome To Professor Menu Professor ID : 1----------
+01:41:00,069  INFO ProfessorCRSMenu,main:27 - 1. View Course
+01:41:00,069  INFO ProfessorCRSMenu,main:28 - 2. View Enrolled Students
+01:41:00,070  INFO ProfessorCRSMenu,main:29 - 3. Add grade
+01:41:00,070  INFO ProfessorCRSMenu,main:30 - 4 LogOut
+01:41:00,070  INFO ProfessorCRSMenu,main:31 - ---------------------------------------------------
+01:41:05,552  INFO ProfessorCRSMenu,main:55 - You are Logged Out
+01:41:05,553  INFO CRSApplication,main:104 - ********* *************** ***********
+01:41:05,556  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+01:41:05,559  INFO CRSApplication,main:29 - 1. Login as Student
+01:41:05,561  INFO CRSApplication,main:30 - 2. Login as Professor
+01:41:05,563  INFO CRSApplication,main:31 - 3. Login as Admin
+01:41:05,567  INFO CRSApplication,main:32 - 4. Student SignUp
+01:41:05,569  INFO CRSApplication,main:33 - 5. Update Password
+01:41:05,572  INFO CRSApplication,main:34 - Enter user input
+01:41:06,628  INFO CRSApplication,main:151 - ********* Student Register Window ***********
+01:41:06,635  INFO CRSApplication,main:162 - Enter your the userID: 
+01:52:56,788  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+01:52:56,793  INFO CRSApplication,main:29 - 1. Login as Student
+01:52:56,794  INFO CRSApplication,main:30 - 2. Login as Professor
+01:52:56,796  INFO CRSApplication,main:31 - 3. Login as Admin
+01:52:56,797  INFO CRSApplication,main:32 - 4. Student SignUp
+01:52:56,798  INFO CRSApplication,main:33 - 5. Update Password
+01:52:56,799  INFO CRSApplication,main:34 - Enter user input
+01:53:01,152  INFO CRSApplication,main:77 - ********* Professor Login ***********
+01:53:01,154  INFO CRSApplication,main:84 - Enter the userID: 
+01:53:03,388  INFO CRSApplication,main:86 - Enter the password: 
+01:53:05,479 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 3
+01:53:06,007 DEBUG ProfessorOperation,main:73 - Verifying Professor with userID : 3
+01:53:06,081 DEBUG ProfessorOperation,main:87 - Viewing Professor with userID : 3
+01:53:06,204  INFO ProfessorCRSMenu,main:26 - ----------Welcome To Professor Menu Professor ID : 1----------
+01:53:06,206  INFO ProfessorCRSMenu,main:27 - 1. View Course
+01:53:06,207  INFO ProfessorCRSMenu,main:28 - 2. View Enrolled Students
+01:53:06,209  INFO ProfessorCRSMenu,main:29 - 3. Add grade
+01:53:06,212  INFO ProfessorCRSMenu,main:30 - 4 LogOut
+01:53:06,213  INFO ProfessorCRSMenu,main:31 - ---------------------------------------------------
+01:53:08,305  INFO ProfessorCRSMenu,main:105 - -------- Add the Grade to the Student -----------
+01:53:08,308  INFO ProfessorCRSMenu,main:111 - Enter the studentId: 
+01:53:12,266  INFO ProfessorCRSMenu,main:113 - Enter the courseId: 
+01:53:13,437  INFO ProfessorCRSMenu,main:115 - Enter the Grade To assign: 
+01:53:14,790 DEBUG ProfessorOperation,main:47 - Adding Grade : 4.0 for Student : 1 for course : 1
+01:53:15,028  INFO ProfessorCRSMenu,main:122 - Grade Added Succesfully
+01:53:15,029  INFO ProfessorCRSMenu,main:125 - -------- ---------------------------- -----------
+01:53:15,031  INFO ProfessorCRSMenu,main:26 - ----------Welcome To Professor Menu Professor ID : 1----------
+01:53:15,035  INFO ProfessorCRSMenu,main:27 - 1. View Course
+01:53:15,037  INFO ProfessorCRSMenu,main:28 - 2. View Enrolled Students
+01:53:15,040  INFO ProfessorCRSMenu,main:29 - 3. Add grade
+01:53:15,041  INFO ProfessorCRSMenu,main:30 - 4 LogOut
+01:53:15,043  INFO ProfessorCRSMenu,main:31 - ---------------------------------------------------
+01:53:18,977  INFO ProfessorCRSMenu,main:55 - You are Logged Out
+01:53:18,980  INFO CRSApplication,main:104 - ********* *************** ***********
+01:53:18,983  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+01:53:18,986  INFO CRSApplication,main:29 - 1. Login as Student
+01:53:18,987  INFO CRSApplication,main:30 - 2. Login as Professor
+01:53:18,990  INFO CRSApplication,main:31 - 3. Login as Admin
+01:53:18,996  INFO CRSApplication,main:32 - 4. Student SignUp
+01:53:18,999  INFO CRSApplication,main:33 - 5. Update Password
+01:53:19,003  INFO CRSApplication,main:34 - Enter user input
+01:53:21,222  INFO CRSApplication,main:39 - ********* Student Login ***********
+01:53:21,225  INFO CRSApplication,main:46 - Enter the userID: 
+01:53:22,345  INFO CRSApplication,main:48 - Enter the password: 
+01:53:24,646 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 2
+01:53:24,713 DEBUG StudentOperation,main:76 - Verifying Student with ID : 2
+01:53:24,849 DEBUG StudentOperation,main:42 - Getting Student ID for user ID: 2
+01:53:24,948  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+01:53:24,948  INFO StudentCRSMenu,main:25 - 1. Add Course
+01:53:24,948  INFO StudentCRSMenu,main:26 - 2. Drop Course
+01:53:24,949  INFO StudentCRSMenu,main:27 - 3. View Course
+01:53:24,950  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+01:53:24,950  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+01:53:24,951  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+01:53:24,952  INFO StudentCRSMenu,main:31 - 7. Make Payment
+01:53:24,952  INFO StudentCRSMenu,main:32 - 8. LogOut
+01:53:24,953  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+01:53:30,389  INFO StudentCRSMenu,main:229 - --------View Your Grade Card----------
+01:53:30,392 DEBUG StudentOperation,main:50 - Grade Card for Student with ID : 1
+01:53:30,503 ERROR StudentDaoOperation,main:130 - Column 'courseID' not found.
+01:53:30,504  INFO StudentCRSMenu,main:242 - ---------------------------------------
+01:53:30,505  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+01:53:30,506  INFO StudentCRSMenu,main:25 - 1. Add Course
+01:53:30,506  INFO StudentCRSMenu,main:26 - 2. Drop Course
+01:53:30,508  INFO StudentCRSMenu,main:27 - 3. View Course
+01:53:30,508  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+01:53:30,509  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+01:53:30,510  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+01:53:30,512  INFO StudentCRSMenu,main:31 - 7. Make Payment
+01:53:30,512  INFO StudentCRSMenu,main:32 - 8. LogOut
+01:53:30,513  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+02:01:13,785  INFO StudentCRSMenu,main:70 - You Are Logged Out
+02:01:13,786  INFO CRSApplication,main:65 - ********* ************ ***********
+02:01:13,787  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+02:01:13,788  INFO CRSApplication,main:29 - 1. Login as Student
+02:01:13,788  INFO CRSApplication,main:30 - 2. Login as Professor
+02:01:13,789  INFO CRSApplication,main:31 - 3. Login as Admin
+02:01:13,790  INFO CRSApplication,main:32 - 4. Student SignUp
+02:01:13,790  INFO CRSApplication,main:33 - 5. Update Password
+02:01:13,792  INFO CRSApplication,main:34 - Enter user input
+02:01:25,370  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+02:01:25,387  INFO CRSApplication,main:29 - 1. Login as Student
+02:01:25,390  INFO CRSApplication,main:30 - 2. Login as Professor
+02:01:25,392  INFO CRSApplication,main:31 - 3. Login as Admin
+02:01:25,397  INFO CRSApplication,main:32 - 4. Student SignUp
+02:01:25,398  INFO CRSApplication,main:33 - 5. Update Password
+02:01:25,400  INFO CRSApplication,main:34 - Enter user input
+02:01:31,937  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+02:01:31,948  INFO CRSApplication,main:29 - 1. Login as Student
+02:01:31,951  INFO CRSApplication,main:30 - 2. Login as Professor
+02:01:31,954  INFO CRSApplication,main:31 - 3. Login as Admin
+02:01:31,955  INFO CRSApplication,main:32 - 4. Student SignUp
+02:01:31,956  INFO CRSApplication,main:33 - 5. Update Password
+02:01:31,959  INFO CRSApplication,main:34 - Enter user input
+02:01:34,772  INFO CRSApplication,main:39 - ********* Student Login ***********
+02:01:34,779  INFO CRSApplication,main:46 - Enter the userID: 
+02:01:35,742  INFO CRSApplication,main:48 - Enter the password: 
+02:01:38,316 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 2
+02:01:38,916 DEBUG StudentOperation,main:76 - Verifying Student with ID : 2
+02:01:39,058 DEBUG StudentOperation,main:42 - Getting Student ID for user ID: 2
+02:01:39,172  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+02:01:39,172  INFO StudentCRSMenu,main:25 - 1. Add Course
+02:01:39,172  INFO StudentCRSMenu,main:26 - 2. Drop Course
+02:01:39,173  INFO StudentCRSMenu,main:27 - 3. View Course
+02:01:39,173  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+02:01:39,173  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+02:01:39,174  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+02:01:39,174  INFO StudentCRSMenu,main:31 - 7. Make Payment
+02:01:39,174  INFO StudentCRSMenu,main:32 - 8. LogOut
+02:01:39,175  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+02:01:48,658  INFO StudentCRSMenu,main:229 - --------View Your Grade Card----------
+02:01:48,661 DEBUG StudentOperation,main:50 - Grade Card for Student with ID : 1
+02:01:48,747 ERROR StudentDaoOperation,main:130 - Column 'courseID' not found.
+02:01:48,747  INFO StudentCRSMenu,main:242 - ---------------------------------------
+02:01:48,747  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+02:01:48,750  INFO StudentCRSMenu,main:25 - 1. Add Course
+02:01:48,750  INFO StudentCRSMenu,main:26 - 2. Drop Course
+02:01:48,750  INFO StudentCRSMenu,main:27 - 3. View Course
+02:01:48,751  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+02:01:48,751  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+02:01:48,752  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+02:01:48,752  INFO StudentCRSMenu,main:31 - 7. Make Payment
+02:01:48,752  INFO StudentCRSMenu,main:32 - 8. LogOut
+02:01:48,752  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+02:03:04,587  INFO StudentCRSMenu,main:70 - You Are Logged Out
+02:03:04,589  INFO CRSApplication,main:65 - ********* ************ ***********
+02:03:04,592  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+02:03:04,594  INFO CRSApplication,main:29 - 1. Login as Student
+02:03:04,599  INFO CRSApplication,main:30 - 2. Login as Professor
+02:03:04,602  INFO CRSApplication,main:31 - 3. Login as Admin
+02:03:04,604  INFO CRSApplication,main:32 - 4. Student SignUp
+02:03:04,609  INFO CRSApplication,main:33 - 5. Update Password
+02:03:04,610  INFO CRSApplication,main:34 - Enter user input
+02:03:14,054  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+02:03:14,061  INFO CRSApplication,main:29 - 1. Login as Student
+02:03:14,062  INFO CRSApplication,main:30 - 2. Login as Professor
+02:03:14,063  INFO CRSApplication,main:31 - 3. Login as Admin
+02:03:14,063  INFO CRSApplication,main:32 - 4. Student SignUp
+02:03:14,066  INFO CRSApplication,main:33 - 5. Update Password
+02:03:14,067  INFO CRSApplication,main:34 - Enter user input
+02:03:16,144  INFO CRSApplication,main:39 - ********* Student Login ***********
+02:03:16,156  INFO CRSApplication,main:46 - Enter the userID: 
+02:03:18,180  INFO CRSApplication,main:48 - Enter the password: 
+02:03:20,888 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 2
+02:03:21,291 DEBUG StudentOperation,main:76 - Verifying Student with ID : 2
+02:03:21,327 DEBUG StudentOperation,main:42 - Getting Student ID for user ID: 2
+02:03:21,562  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+02:03:21,562  INFO StudentCRSMenu,main:25 - 1. Add Course
+02:03:21,563  INFO StudentCRSMenu,main:26 - 2. Drop Course
+02:03:21,563  INFO StudentCRSMenu,main:27 - 3. View Course
+02:03:21,567  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+02:03:21,567  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+02:03:21,568  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+02:03:21,569  INFO StudentCRSMenu,main:31 - 7. Make Payment
+02:03:21,569  INFO StudentCRSMenu,main:32 - 8. LogOut
+02:03:21,569  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+02:03:36,094  INFO StudentCRSMenu,main:229 - --------View Your Grade Card----------
+02:03:36,097 DEBUG StudentOperation,main:50 - Grade Card for Student with ID : 1
+02:03:36,327  INFO StudentCRSMenu,main:239 - courseId : 1 ---> 4.0
+02:03:36,328  INFO StudentCRSMenu,main:242 - ---------------------------------------
+02:03:36,331  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+02:03:36,332  INFO StudentCRSMenu,main:25 - 1. Add Course
+02:03:36,335  INFO StudentCRSMenu,main:26 - 2. Drop Course
+02:03:36,337  INFO StudentCRSMenu,main:27 - 3. View Course
+02:03:36,339  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+02:03:36,342  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+02:03:36,343  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+02:03:36,344  INFO StudentCRSMenu,main:31 - 7. Make Payment
+02:03:36,347  INFO StudentCRSMenu,main:32 - 8. LogOut
+02:03:36,350  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+02:03:50,296  INFO StudentCRSMenu,main:197 - -----You can Enter Drop Course Window------
+02:03:50,298  INFO StudentCRSMenu,main:198 - To View all your Courses Press 1 else 0 : 
+02:03:51,988 DEBUG RegistrationOperation,main:59 -  Viewing Registerd Courses for Student with ID : 1
+02:03:52,067  INFO StudentCRSMenu,main:175 - ---Your Registered Courses Are----
+02:03:52,067  INFO StudentCRSMenu,main:182 - CourseId : 1 , CourseName : cr1 , credit : 4 : ProfID : 1
+02:03:52,068  INFO StudentCRSMenu,main:185 - ----------------------------------
+02:03:52,068  INFO StudentCRSMenu,main:204 - Enter The courseID of course to be Dropped:
+02:03:58,068 DEBUG RegistrationOperation,main:36 - Dropping Course with ID: 1 for Student with ID : 1
+02:03:58,478  INFO StudentCRSMenu,main:217 - ---------------------------------------------
+02:03:58,479  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+02:03:58,482  INFO StudentCRSMenu,main:25 - 1. Add Course
+02:03:58,484  INFO StudentCRSMenu,main:26 - 2. Drop Course
+02:03:58,485  INFO StudentCRSMenu,main:27 - 3. View Course
+02:03:58,487  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+02:03:58,489  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+02:03:58,491  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+02:03:58,493  INFO StudentCRSMenu,main:31 - 7. Make Payment
+02:03:58,496  INFO StudentCRSMenu,main:32 - 8. LogOut
+02:03:58,498  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+02:04:17,669  INFO StudentCRSMenu,main:229 - --------View Your Grade Card----------
+02:04:17,671 DEBUG StudentOperation,main:50 - Grade Card for Student with ID : 1
+02:04:17,770  INFO StudentCRSMenu,main:239 - courseId : 1 ---> 4.0
+02:04:17,771  INFO StudentCRSMenu,main:242 - ---------------------------------------
+02:04:17,771  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+02:04:17,772  INFO StudentCRSMenu,main:25 - 1. Add Course
+02:04:17,772  INFO StudentCRSMenu,main:26 - 2. Drop Course
+02:04:17,773  INFO StudentCRSMenu,main:27 - 3. View Course
+02:04:17,773  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+02:04:17,774  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+02:04:17,774  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+02:04:17,774  INFO StudentCRSMenu,main:31 - 7. Make Payment
+02:04:17,778  INFO StudentCRSMenu,main:32 - 8. LogOut
+02:04:17,779  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+02:04:42,450  INFO StudentCRSMenu,main:143 - -----You can Enter Add Course Window------
+02:04:42,450  INFO StudentCRSMenu,main:144 - Do you Want to view courses press 1 else 0
+02:04:47,110  INFO StudentCRSMenu,main:117 - -------All Courses Available----------
+02:04:47,113 DEBUG RegistrationOperation,main:50 - Viewing Course list 
+02:04:47,270  INFO StudentCRSMenu,main:129 - CourseId : 1 , CourseName : cr1 , credit : 4 , ProfessorEmpId: 1 , fee: 10.0
+02:04:47,272  INFO StudentCRSMenu,main:132 - ---------------------------------------
+02:04:47,274  INFO StudentCRSMenu,main:148 - Enter the CourseId you selected: 
+02:04:49,321 DEBUG RegistrationOperation,main:20 - Adding Course with ID: 2 for Student with ID : 1
+02:04:50,595  INFO RegistrationDaoOperation,main:45 - Cannot add or update a child row: a foreign key constraint fails (`JEDI-7-CRS`.`EnrolledStudent`, CONSTRAINT `EnrolledStudent_ibfk_1` FOREIGN KEY (`courseID`) REFERENCES `Course` (`courseID`) ON DELETE CASCADE)
+02:04:50,596  INFO StudentCRSMenu,main:159 - Course Registration fail
+02:04:50,596  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+02:04:50,597  INFO StudentCRSMenu,main:25 - 1. Add Course
+02:04:50,598  INFO StudentCRSMenu,main:26 - 2. Drop Course
+02:04:50,598  INFO StudentCRSMenu,main:27 - 3. View Course
+02:04:50,599  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+02:04:50,599  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+02:04:50,600  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+02:04:50,600  INFO StudentCRSMenu,main:31 - 7. Make Payment
+02:04:50,601  INFO StudentCRSMenu,main:32 - 8. LogOut
+02:04:50,601  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+02:05:12,209  INFO StudentCRSMenu,main:143 - -----You can Enter Add Course Window------
+02:05:12,211  INFO StudentCRSMenu,main:144 - Do you Want to view courses press 1 else 0
+02:05:14,317  INFO StudentCRSMenu,main:117 - -------All Courses Available----------
+02:05:14,319 DEBUG RegistrationOperation,main:50 - Viewing Course list 
+02:05:14,406  INFO StudentCRSMenu,main:129 - CourseId : 1 , CourseName : cr1 , credit : 4 , ProfessorEmpId: 1 , fee: 10.0
+02:05:14,408  INFO StudentCRSMenu,main:132 - ---------------------------------------
+02:05:14,410  INFO StudentCRSMenu,main:148 - Enter the CourseId you selected: 
+02:05:15,958 DEBUG RegistrationOperation,main:20 - Adding Course with ID: 1 for Student with ID : 1
+02:05:16,437  INFO StudentCRSMenu,main:157 - Course Registration Successful
+02:05:16,438  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+02:05:16,440  INFO StudentCRSMenu,main:25 - 1. Add Course
+02:05:16,442  INFO StudentCRSMenu,main:26 - 2. Drop Course
+02:05:16,447  INFO StudentCRSMenu,main:27 - 3. View Course
+02:05:16,449  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+02:05:16,451  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+02:05:16,454  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+02:05:16,456  INFO StudentCRSMenu,main:31 - 7. Make Payment
+02:05:16,457  INFO StudentCRSMenu,main:32 - 8. LogOut
+02:05:16,458  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+02:05:20,996  INFO StudentCRSMenu,main:70 - You Are Logged Out
+02:05:20,999  INFO CRSApplication,main:65 - ********* ************ ***********
+02:05:21,001  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+02:05:21,004  INFO CRSApplication,main:29 - 1. Login as Student
+02:05:21,009  INFO CRSApplication,main:30 - 2. Login as Professor
+02:05:21,015  INFO CRSApplication,main:31 - 3. Login as Admin
+02:05:21,016  INFO CRSApplication,main:32 - 4. Student SignUp
+02:05:21,016  INFO CRSApplication,main:33 - 5. Update Password
+02:05:21,017  INFO CRSApplication,main:34 - Enter user input
+02:05:23,368  INFO CRSApplication,main:77 - ********* Professor Login ***********
+02:05:23,370  INFO CRSApplication,main:84 - Enter the userID: 
+02:05:26,653  INFO CRSApplication,main:86 - Enter the password: 
+02:05:29,382 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 3
+02:05:29,480 DEBUG ProfessorOperation,main:73 - Verifying Professor with userID : 3
+02:05:29,556 DEBUG ProfessorOperation,main:87 - Viewing Professor with userID : 3
+02:05:29,599  INFO ProfessorCRSMenu,main:26 - ----------Welcome To Professor Menu Professor ID : 1----------
+02:05:29,600  INFO ProfessorCRSMenu,main:27 - 1. View Course
+02:05:29,600  INFO ProfessorCRSMenu,main:28 - 2. View Enrolled Students
+02:05:29,601  INFO ProfessorCRSMenu,main:29 - 3. Add grade
+02:05:29,603  INFO ProfessorCRSMenu,main:30 - 4 LogOut
+02:05:29,605  INFO ProfessorCRSMenu,main:31 - ---------------------------------------------------
+02:05:33,542  INFO ProfessorCRSMenu,main:105 - -------- Add the Grade to the Student -----------
+02:05:33,548  INFO ProfessorCRSMenu,main:111 - Enter the studentId: 
+02:05:34,813  INFO ProfessorCRSMenu,main:113 - Enter the courseId: 
+02:05:35,742  INFO ProfessorCRSMenu,main:115 - Enter the Grade To assign: 
+02:05:38,440 DEBUG ProfessorOperation,main:47 - Adding Grade : 3.0 for Student : 1 for course : 1
+02:05:38,687  INFO ProfessorCRSMenu,main:122 - Grade Added Succesfully
+02:05:38,688  INFO ProfessorCRSMenu,main:125 - -------- ---------------------------- -----------
+02:05:38,690  INFO ProfessorCRSMenu,main:26 - ----------Welcome To Professor Menu Professor ID : 1----------
+02:05:38,692  INFO ProfessorCRSMenu,main:27 - 1. View Course
+02:05:38,694  INFO ProfessorCRSMenu,main:28 - 2. View Enrolled Students
+02:05:38,696  INFO ProfessorCRSMenu,main:29 - 3. Add grade
+02:05:38,697  INFO ProfessorCRSMenu,main:30 - 4 LogOut
+02:05:38,698  INFO ProfessorCRSMenu,main:31 - ---------------------------------------------------
+02:05:42,230  INFO ProfessorCRSMenu,main:55 - You are Logged Out
+02:05:42,232  INFO CRSApplication,main:104 - ********* *************** ***********
+02:05:42,234  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+02:05:42,243  INFO CRSApplication,main:29 - 1. Login as Student
+02:05:42,248  INFO CRSApplication,main:30 - 2. Login as Professor
+02:05:42,251  INFO CRSApplication,main:31 - 3. Login as Admin
+02:05:42,252  INFO CRSApplication,main:32 - 4. Student SignUp
+02:05:42,254  INFO CRSApplication,main:33 - 5. Update Password
+02:05:42,256  INFO CRSApplication,main:34 - Enter user input
+02:05:47,370  INFO CRSApplication,main:39 - ********* Student Login ***********
+02:05:47,373  INFO CRSApplication,main:46 - Enter the userID: 
+02:05:51,733  INFO CRSApplication,main:48 - Enter the password: 
+02:05:54,984 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 2
+02:05:55,089 DEBUG StudentOperation,main:76 - Verifying Student with ID : 2
+02:05:55,122 DEBUG StudentOperation,main:42 - Getting Student ID for user ID: 2
+02:05:55,156  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+02:05:55,156  INFO StudentCRSMenu,main:25 - 1. Add Course
+02:05:55,156  INFO StudentCRSMenu,main:26 - 2. Drop Course
+02:05:55,156  INFO StudentCRSMenu,main:27 - 3. View Course
+02:05:55,157  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+02:05:55,157  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+02:05:55,157  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+02:05:55,157  INFO StudentCRSMenu,main:31 - 7. Make Payment
+02:05:55,158  INFO StudentCRSMenu,main:32 - 8. LogOut
+02:05:55,158  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+02:05:59,679  INFO StudentCRSMenu,main:229 - --------View Your Grade Card----------
+02:05:59,683 DEBUG StudentOperation,main:50 - Grade Card for Student with ID : 1
+02:05:59,853  INFO StudentCRSMenu,main:239 - courseId : 1 ---> 3.0
+02:05:59,854  INFO StudentCRSMenu,main:242 - ---------------------------------------
+02:05:59,854  INFO StudentCRSMenu,main:24 - ----------Welcome To Student Menu StudentID : 1----------
+02:05:59,855  INFO StudentCRSMenu,main:25 - 1. Add Course
+02:05:59,855  INFO StudentCRSMenu,main:26 - 2. Drop Course
+02:05:59,856  INFO StudentCRSMenu,main:27 - 3. View Course
+02:05:59,857  INFO StudentCRSMenu,main:28 - 4. View Registered Course
+02:05:59,858  INFO StudentCRSMenu,main:29 - 5. View Grade Card
+02:05:59,859  INFO StudentCRSMenu,main:30 - 6. Check If Approved
+02:05:59,860  INFO StudentCRSMenu,main:31 - 7. Make Payment
+02:05:59,861  INFO StudentCRSMenu,main:32 - 8. LogOut
+02:05:59,862  INFO StudentCRSMenu,main:33 - ---------------------------------------------
+02:06:04,459  INFO StudentCRSMenu,main:70 - You Are Logged Out
+02:06:04,461  INFO CRSApplication,main:65 - ********* ************ ***********
+02:06:04,463  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+02:06:04,473  INFO CRSApplication,main:29 - 1. Login as Student
+02:06:04,477  INFO CRSApplication,main:30 - 2. Login as Professor
+02:06:04,479  INFO CRSApplication,main:31 - 3. Login as Admin
+02:06:04,482  INFO CRSApplication,main:32 - 4. Student SignUp
+02:06:04,488  INFO CRSApplication,main:33 - 5. Update Password
+02:06:04,491  INFO CRSApplication,main:34 - Enter user input
+02:12:11,974  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+02:12:11,983  INFO CRSApplication,main:29 - 1. Login as Student
+02:12:11,984  INFO CRSApplication,main:30 - 2. Login as Professor
+02:12:11,985  INFO CRSApplication,main:31 - 3. Login as Admin
+02:12:11,986  INFO CRSApplication,main:32 - 4. Student SignUp
+02:12:11,986  INFO CRSApplication,main:33 - 5. Update Password
+02:12:11,987  INFO CRSApplication,main:34 - Enter user input
+09:27:02,613  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+09:27:03,802  INFO CRSApplication,main:29 - 1. Login as Student
+09:27:03,806  INFO CRSApplication,main:30 - 2. Login as Professor
+09:27:03,823  INFO CRSApplication,main:31 - 3. Login as Admin
+09:27:03,843  INFO CRSApplication,main:32 - 4. Student SignUp
+09:27:03,850  INFO CRSApplication,main:33 - 5. Update Password
+09:27:03,861  INFO CRSApplication,main:34 - Enter user input
+09:28:30,207  INFO CRSApplication,main:39 - ********* Student Login ***********
+09:28:30,210  INFO CRSApplication,main:46 - Enter the userID: 
+09:28:34,035  INFO CRSApplication,main:48 - Enter the password: 
+09:28:37,694 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 6
+09:28:44,169 ERROR UserDaoOperation,main:49 - There is an Error verifyCredential : User with userId: 6 not found.
+09:28:44,170 ERROR CRSApplication,main:62 - Wrong Credentials For Student check again
+09:28:44,171  INFO CRSApplication,main:65 - ********* ************ ***********
+09:28:44,172  INFO CRSApplication,main:28 - -----------Welcome to Course Management System--------------
+09:28:44,172  INFO CRSApplication,main:29 - 1. Login as Student
+09:28:44,173  INFO CRSApplication,main:30 - 2. Login as Professor
+09:28:44,173  INFO CRSApplication,main:31 - 3. Login as Admin
+09:28:44,174  INFO CRSApplication,main:32 - 4. Student SignUp
+09:28:44,174  INFO CRSApplication,main:33 - 5. Update Password
+09:28:44,174  INFO CRSApplication,main:34 - Enter user input
+11:03:45,535 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 2
+11:03:48,520 DEBUG StudentOperation,main:76 - Verifying Student with ID : 2
+11:03:48,751 DEBUG StudentOperation,main:42 - Getting Student ID for user ID: 2
+11:03:58,191 DEBUG RegistrationOperation,main:59 -  Viewing Registerd Courses for Student with ID : 1
+11:04:13,244 DEBUG RegistrationOperation,main:67 - Calculating fees for Student with ID : 1
+15:19:00,338 DEBUG StudentOperation,main:25 - Initiating Registration for Student with ID : 2
+15:19:14,158 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 5
+15:19:14,615 DEBUG StudentOperation,main:76 - Verifying Student with ID : 5
+15:19:14,721 DEBUG StudentOperation,main:42 - Getting Student ID for user ID: 5
+15:19:20,138  INFO StudentCRSMenu,main:152 - You are Not Approved by Admin
+15:21:16,562 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 5
+15:21:17,922 DEBUG StudentOperation,main:76 - Verifying Student with ID : 5
+15:21:17,990 DEBUG StudentOperation,main:42 - Getting Student ID for user ID: 5
+15:21:21,589  INFO StudentCRSMenu,main:154 - You are Not Approved by Admin
+15:21:43,113 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 2
+15:21:43,242 DEBUG StudentOperation,main:76 - Verifying Student with ID : 2
+15:21:43,320 DEBUG StudentOperation,main:42 - Getting Student ID for user ID: 2
+02:49:10,966 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 2
+02:49:16,375 DEBUG StudentOperation,main:110 - Verifying Student with ID : 2
+02:49:17,305 DEBUG StudentOperation,main:60 - Getting Student ID for user ID: 2
+02:49:34,050 DEBUG RegistrationOperation,main:87 -  Viewing Registerd Courses for Student with ID : 1
+02:49:43,737 DEBUG StudentOperation,main:74 - Grade Card for Student with ID : 1
+02:49:56,547 DEBUG RegistrationOperation,main:102 - Calculating fees for Student with ID : 1
+02:50:13,613 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 1
+02:50:13,874 DEBUG StudentOperation,main:110 - Verifying Student with ID : 1
+02:50:38,182 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 2
+02:50:38,446 DEBUG StudentOperation,main:110 - Verifying Student with ID : 2
+02:50:38,543 DEBUG StudentOperation,main:60 - Getting Student ID for user ID: 2
+02:50:42,625 DEBUG RegistrationOperation,main:87 -  Viewing Registerd Courses for Student with ID : 1
+02:50:58,480 DEBUG RegistrationOperation,main:72 - Viewing Course list 
+02:51:03,227 DEBUG RegistrationOperation,main:29 - Adding Course with ID: 1 for Student with ID : 1
+02:51:03,608  INFO RegistrationDaoOperation,main:57 - Duplicate entry '1-1' for key 'EnrolledStudent.PRIMARY'
+02:51:03,609  INFO StudentCRSMenu,main:176 - Course Registration fail
+02:53:08,742 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 1
+02:53:17,336 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 2
+02:53:17,509 DEBUG StudentOperation,main:110 - Verifying Student with ID : 2
+02:53:17,726 DEBUG StudentOperation,main:60 - Getting Student ID for user ID: 2
+02:53:24,773 DEBUG RegistrationOperation,main:72 - Viewing Course list 
+02:53:37,929 DEBUG RegistrationOperation,main:29 - Adding Course with ID: 1 for Student with ID : 1
+02:53:38,263  INFO RegistrationDaoOperation,main:57 - Duplicate entry '1-1' for key 'EnrolledStudent.PRIMARY'
+02:53:38,264  INFO StudentCRSMenu,main:176 - Course Registration fail
+03:01:18,091 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 2
+03:01:19,105 DEBUG StudentOperation,main:110 - Verifying Student with ID : 2
+03:01:19,242 DEBUG StudentOperation,main:60 - Getting Student ID for user ID: 2
+03:01:30,425 DEBUG RegistrationOperation,main:72 - Viewing Course list 
+03:01:32,697 DEBUG RegistrationOperation,main:133 - Checking if Course with ID: 1is registered for Student with ID : 1
+03:01:32,903 DEBUG RegistrationOperation,main:29 - Adding Course with ID: 1 for Student with ID : 1
+03:01:33,057  INFO RegistrationDaoOperation,main:57 - Duplicate entry '1-1' for key 'EnrolledStudent.PRIMARY'
+03:02:27,991 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 2
+03:02:28,920 DEBUG StudentOperation,main:110 - Verifying Student with ID : 2
+03:02:28,995 DEBUG StudentOperation,main:60 - Getting Student ID for user ID: 2
+03:02:33,343 DEBUG RegistrationOperation,main:72 - Viewing Course list 
+03:02:35,655 DEBUG RegistrationOperation,main:133 - Checking if Course with ID: 1is registered for Student with ID : 1
+03:02:35,814 DEBUG RegistrationOperation,main:29 - Adding Course with ID: 1 for Student with ID : 1
+03:02:36,090  INFO RegistrationDaoOperation,main:57 - Duplicate entry '1-1' for key 'EnrolledStudent.PRIMARY'
+03:06:39,841 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 2
+03:06:40,578 DEBUG StudentOperation,main:110 - Verifying Student with ID : 2
+03:06:40,754 DEBUG StudentOperation,main:60 - Getting Student ID for user ID: 2
+03:06:46,123 DEBUG RegistrationOperation,main:72 - Viewing Course list 
+03:06:48,430 DEBUG RegistrationOperation,main:133 - Checking if Course with ID: 1is registered for Student with ID : 1
+03:07:55,311 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 2
+03:07:56,248 DEBUG StudentOperation,main:110 - Verifying Student with ID : 2
+03:07:56,338 DEBUG StudentOperation,main:60 - Getting Student ID for user ID: 2
+03:07:58,721 DEBUG RegistrationOperation,main:72 - Viewing Course list 
+03:07:59,956 DEBUG RegistrationOperation,main:133 - Checking if Course with ID: 1is registered for Student with ID : 1
+03:08:11,283 DEBUG RegistrationOperation,main:87 -  Viewing Registerd Courses for Student with ID : 1
+03:08:17,588 DEBUG RegistrationOperation,main:53 - Dropping Course with ID: 1 for Student with ID : 1
+03:08:22,992 DEBUG RegistrationOperation,main:72 - Viewing Course list 
+03:08:24,877 DEBUG RegistrationOperation,main:133 - Checking if Course with ID: 1is registered for Student with ID : 1
+03:08:25,105 DEBUG RegistrationOperation,main:29 - Adding Course with ID: 1 for Student with ID : 1
+18:48:45,457 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 1
+18:48:50,366 DEBUG AdminOperation,main:162 - Verifying Professor 1
+18:48:50,752 DEBUG AdminOperation,main:175 - Getting Admin with ID : 1
+18:50:03,041 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 1
+18:50:03,973 DEBUG AdminOperation,main:162 - Verifying Professor 1
+18:50:04,033 DEBUG AdminOperation,main:175 - Getting Admin with ID : 1
+18:50:48,895 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 1
+18:50:49,764 DEBUG AdminOperation,main:162 - Verifying Professor 1
+18:50:49,825 DEBUG AdminOperation,main:175 - Getting Admin with ID : 1
+18:51:29,140 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 1
+18:51:30,010 DEBUG AdminOperation,main:162 - Verifying Professor 1
+18:51:30,135 DEBUG AdminOperation,main:175 - Getting Admin with ID : 1
+18:52:27,750 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 1
+18:52:28,801 DEBUG AdminOperation,main:162 - Verifying Professor 1
+18:52:28,874 DEBUG AdminOperation,main:175 - Getting Admin with ID : 1
+18:56:35,418 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 1
+18:56:36,901 DEBUG AdminOperation,main:162 - Verifying Professor 1
+18:56:36,983 DEBUG AdminOperation,main:175 - Getting Admin with ID : 1
+18:56:45,725 DEBUG RegistrationOperation,main:72 - Viewing Course list 
+19:05:40,914 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 1
+19:05:42,142 DEBUG AdminOperation,main:162 - Verifying Professor 1
+19:05:42,247 DEBUG AdminOperation,main:175 - Getting Admin with ID : 1
+19:05:47,828 DEBUG RegistrationOperation,main:72 - Viewing Course list 
