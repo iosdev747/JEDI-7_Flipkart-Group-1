@@ -5,6 +5,7 @@ import com.flipkart.business.StudentOperation;
 import com.flipkart.business.UserInterface;
 import com.flipkart.business.UserOperation;
 import com.flipkart.exception.UserNotFoundException;
+import com.flipkart.utils.UserAuth;
 
 import javax.validation.ValidationException;
 import javax.validation.constraints.NotNull;
@@ -40,7 +41,7 @@ public class UserRestController {
         } catch (Exception e) {
             return Response.status(500).entity(e.getMessage()).build();
         }
-        return Response.status(201).entity("Student (" + name + ") registered successfully").build();
+        return Response.status(201).entity("User (" + name + ") registered successfully").build();
     }
 
     @POST
@@ -51,12 +52,10 @@ public class UserRestController {
             @NotNull
             @QueryParam("password") String password) throws ValidationException {
         try {
-            if (userHandler.verifyCredentials(userID, password)) {
-                boolean isApproved = studentHandler.isApproved(studentHandler.getStudentId(userID));
-                if (isApproved) {
-                    return Response.status(200).entity("Login successfully").build();
-                }
-                return Response.status(400).entity("Student not verified").build();
+            boolean isVerified = userHandler.verifyCredentials(userID, password);
+            if (isVerified) {
+                String token = UserAuth.getToken(userID);
+                return Response.status(200).entity("Login successfully, token = " + token).build();
             } else {
                 return Response.status(400).entity("wrong userID/password").build();
             }

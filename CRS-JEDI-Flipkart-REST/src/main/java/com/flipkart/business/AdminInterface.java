@@ -89,13 +89,13 @@ public interface AdminInterface {
     public List<Professor> viewProfessor();
 
     /**
-     * Method to verify that the user is a Professor
+     * Method to verify that the user is a Admin
      *
      * @param userId
      * @return
      */
 
-    public boolean verifyProfessor(int userId);
+    public boolean verifyAdmin(int userId);
 
     /**
      * To get AdminId from userId
