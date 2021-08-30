@@ -26,6 +26,12 @@ public class AdminRestController {
         this.adminHandler = new AdminOperation();
     }
 
+    /**
+     * /admin/viewCourse
+     * REST-service for viewing Course List
+     *
+     * @return List of Courses
+     */
     @GET
     @Path("/viewCourse")
     @Produces(MediaType.APPLICATION_JSON)
@@ -33,6 +39,14 @@ public class AdminRestController {
         return adminHandler.viewCourse();
     }
 
+    /**
+     * /admin/addCourse
+     * REST-service for adding Course
+     *
+     * @param token:  AuthToken
+     * @param userID: ID of the Admin
+     * @return
+     */
     @POST
     @Path("/addCourse")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -53,6 +67,15 @@ public class AdminRestController {
         }
     }
 
+    /**
+     * /admin/deleteCourse
+     * REST-service for Deleting Course
+     *
+     * @param token:    AuthToken
+     * @param userID:   ID of the Admin
+     * @param courseID: ID of Course.
+     * @return
+     */
     @DELETE
     @Path("/deleteCourse")
     @Produces(MediaType.APPLICATION_JSON)
@@ -72,6 +95,16 @@ public class AdminRestController {
         }
     }
 
+    /**
+     * /admin/assignCourseToProfessor
+     * REST-service for assigning course to professor
+     *
+     * @param token:AuthToken
+     * @param userID:         ID of the Admin
+     * @param courseID:       ID of the Course
+     * @param professorID:    ID of the Professor
+     * @return
+     */
     @POST
     @Path("/assignCourseToProfessor")
     @Produces(MediaType.APPLICATION_JSON)
@@ -92,6 +125,15 @@ public class AdminRestController {
         }
     }
 
+    /**
+     * /admin/addProfessor
+     * REST-service for addding a new professor
+     *
+     * @param token:    AuthToken
+     * @param userID:   ID of the Admin
+     * @param professor : Object containing details of the Professor to be added.
+     * @return
+     */
     @POST
     @Path("/addProfessor")
     @Consumes("application/json")
@@ -112,6 +154,14 @@ public class AdminRestController {
         }
     }
 
+    /**
+     * /admin/viewPendingAdmissions
+     * REST-service for getting all pending-approval of students
+     *
+     * @param token:AuthToken
+     * @param userID          :ID of the Admin
+     * @return
+     */
     @GET
     @Path("/viewPendingAdmissions")
     @Produces(MediaType.APPLICATION_JSON)
@@ -125,6 +175,15 @@ public class AdminRestController {
         }
     }
 
+    /**
+     * /admin/approveStudent
+     * REST-service for approving the student admission
+     *
+     * @param token:    AuthToken
+     * @param userID    : ID of the Admin
+     * @param studentID : ID of the student to be approved.
+     * @return
+     */
     @PUT
     @Path("/approveStudent")
     @Produces(MediaType.APPLICATION_JSON)

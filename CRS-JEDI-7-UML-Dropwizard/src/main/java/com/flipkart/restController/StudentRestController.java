@@ -28,6 +28,16 @@ public class StudentRestController {
         this.studentHandler = new StudentOperation();
     }
 
+    /**
+     * Method to handle API request for course registration
+     *
+     * @param token:AuthToken
+     * @param userID:UserId   of the student
+     * @param studentID       :StudentID of the student
+     * @param courseID        : Course ID of the course to be registered.
+     * @return
+     * @throws ValidationException
+     */
     @POST
     @Path("/registerCourse")
     @Consumes("application/json")
@@ -49,6 +59,16 @@ public class StudentRestController {
         }
     }
 
+    /**
+     * Handles API request to drop a course
+     *
+     * @param token:AuthToken
+     * @param userID:userID   of the student.
+     * @param courseID        :Course ID of the course to be dropped
+     * @param studentID       :StudentID of the student
+     * @return
+     * @throws ValidationException
+     */
     @DELETE
     @Path("/dropCourse")
     @Produces(MediaType.APPLICATION_JSON)
@@ -71,6 +91,15 @@ public class StudentRestController {
         }
     }
 
+    /**
+     * Method handles API request to view the list of registered courses for a student
+     *
+     * @param token:AuthToken
+     * @param userID:UserID   of the student
+     * @param studentID       :StudentID of the student
+     * @return List of Registered Courses
+     * @throws ValidationException
+     */
     @GET
     @Path("/viewRegisteredCourses")
     @Produces(MediaType.APPLICATION_JSON)
@@ -91,6 +120,15 @@ public class StudentRestController {
         }
     }
 
+    /**
+     * Method handles API request to calculate the Registration fees of a student.
+     *
+     * @param token:AuthToken
+     * @param userID:UserID   of the student
+     * @param studentID       :StudentID of the student
+     * @return Fees
+     * @throws ValidationException
+     */
     @GET
     @Path("/calculateFees")
     public double calculateFee(
@@ -110,6 +148,15 @@ public class StudentRestController {
         }
     }
 
+    /**
+     * Method handles request to get the grades of Student
+     *
+     * @param token:AuthToken
+     * @param userID          :UserID of the student
+     * @param studentID       :studentID of the student
+     * @return List of Grade Objects
+     * @throws ValidationException
+     */
     @GET
     @Path("/viewGrades")
     @Produces(MediaType.APPLICATION_JSON)
@@ -130,6 +177,12 @@ public class StudentRestController {
         }
     }
 
+    /**
+     * Method handles API request to view the list of courses
+     *
+     * @return
+     * @throws ValidationException
+     */
     @GET
     @Path("/viewCourse")
     @Produces(MediaType.APPLICATION_JSON)

@@ -22,6 +22,14 @@ public class ProfessorRestController {
         this.professorHandler = new ProfessorOperation();
     }
 
+    /**
+     * /professor/getEnrolledStudents
+     * REST-service for getting the List of Students enrolled to a Professor
+     *
+     * @param token:AuthToken
+     * @param userID          :ID of the Professor
+     * @return List Of Enrolled Students.
+     */
     @GET
     @Path("/getEnrolledStudents")
     @Produces(MediaType.APPLICATION_JSON)
@@ -42,6 +50,14 @@ public class ProfessorRestController {
         }
     }
 
+    /**
+     * /professor/getCourses
+     * REST-service for getting the List of Courses assigned to a Professor
+     *
+     * @param token:AuthToken
+     * @param userID          :ID of the Professor
+     * @return List Of Assigned Courses.
+     */
     @GET
     @Path("/getCourses")
     @Produces(MediaType.APPLICATION_JSON)
@@ -63,6 +79,17 @@ public class ProfessorRestController {
         }
     }
 
+    /**
+     * /professor/addGrade
+     * REST-service for adding Grade of a Student for a particular Course
+     *
+     * @param token:AuthToken
+     * @param userID          :ID of the Professor
+     * @param courseID        : ID of the Course
+     * @param studentID       : ID of the student
+     * @param grade           : Grade to be added
+     * @return List Of Enrolled Students.
+     */
     @POST
     @Path("/addGrade")
     @Consumes(MediaType.APPLICATION_JSON)
