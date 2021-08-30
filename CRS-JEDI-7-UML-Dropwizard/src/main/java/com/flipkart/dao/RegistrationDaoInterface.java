@@ -1,27 +1,26 @@
 package com.flipkart.dao;
 
-import java.util.*;
-import java.sql.SQLException;
-
-import com.flipkart.exception.*;
 import com.flipkart.bean.Course;
+
+import java.sql.SQLException;
+import java.util.List;
 
 
 public interface RegistrationDaoInterface {
 
-    public boolean addCourse(String courseId, String studentId) throws SQLException;
+    boolean addCourse(String courseId, String studentId) throws SQLException;
 
-    public boolean dropCourse(String courseId, String studentId) throws SQLException;
+    boolean dropCourse(String courseId, String studentId) throws SQLException;
 
-    public List<Course> viewCourse() throws SQLException;
+    List<Course> viewCourse() throws SQLException;
 
-    public List<Course> viewRegisterCourse(String studentId) throws SQLException;
+    List<Course> viewRegisterCourse(String studentId) throws SQLException;
 
-    public double calculate(String studentId) throws SQLException;
+    double calculate(String studentId) throws SQLException;
 
-    public int numOfRegisteredCourses(String studentId) throws SQLException;
+    int numOfRegisteredCourses(String studentId) throws SQLException;
 
-    public boolean isRegistered(String courseId, String studentId) throws SQLException;
+    boolean isRegistered(String courseId, String studentId) throws SQLException;
 
 
 }

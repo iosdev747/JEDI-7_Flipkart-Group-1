@@ -1,11 +1,13 @@
 package com.flipkart;
 
-import com.flipkart.restController.*;
+import com.flipkart.restController.AdminRestController;
+import com.flipkart.restController.ProfessorRestController;
+import com.flipkart.restController.StudentRestController;
+import com.flipkart.restController.UserRestController;
 import io.dropwizard.Application;
 import io.dropwizard.Configuration;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

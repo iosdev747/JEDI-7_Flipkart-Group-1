@@ -4,17 +4,15 @@ import com.flipkart.bean.Grade;
 import com.flipkart.bean.Student;
 import com.flipkart.dao.StudentDaoInterface;
 import com.flipkart.dao.StudentDaoOperation;
-import com.flipkart.exception.*;
-
+import com.flipkart.exception.StudentNotRegisteredException;
 import org.apache.log4j.Logger;
 
-import java.util.*;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 
-
-
-public class StudentOperation  implements StudentInterface{
+public class StudentOperation implements StudentInterface {
 
     /**
      * Constructor
@@ -24,6 +22,7 @@ public class StudentOperation  implements StudentInterface{
 
     /**
      * Registration
+     *
      * @param userID
      * @param name
      * @param password
@@ -54,25 +53,27 @@ public class StudentOperation  implements StudentInterface{
 
     /**
      * get student id
+     *
      * @param userId
      * @return
      */
     @Override
-    public String getStudentId(int userId){
+    public String getStudentId(int userId) {
         Logger logger = Logger.getLogger(StudentOperation.class);
-        logger.debug("Getting Student ID for user ID: " + Integer.toString(userId));
+        logger.debug("Getting Student ID for user ID: " + userId);
         StudentDaoInterface studentDaoInterface = new StudentDaoOperation();
         return studentDaoInterface.getStudentId(userId);
     }
 
     /**
      * view grade card
+     *
      * @param studentId
      * @return
      * @throws SQLException
      */
     @Override
-    public List<Grade> getGrade(String studentId) throws SQLException{
+    public List<Grade> getGrade(String studentId) throws SQLException {
         Logger logger = Logger.getLogger(StudentOperation.class);
         logger.debug("Grade Card for Student with ID : " + studentId);
         StudentDaoInterface studentDaoInterface = new StudentDaoOperation();
@@ -81,8 +82,7 @@ public class StudentOperation  implements StudentInterface{
 
         try {
             gradeList = studentDaoInterface.getGrade(studentId);
-        }
-        catch(SQLException e){
+        } catch (SQLException e) {
             throw e;
         }
         return gradeList;
@@ -91,11 +91,12 @@ public class StudentOperation  implements StudentInterface{
 
     /**
      * is student approved?
+     *
      * @param studentId
      * @return
      */
     @Override
-    public boolean isApproved(String studentId){
+    public boolean isApproved(String studentId) {
 
         StudentDaoInterface studentDaoInterface = new StudentDaoOperation();
         return studentDaoInterface.isApproved(studentId);
@@ -104,11 +105,12 @@ public class StudentOperation  implements StudentInterface{
 
     /**
      * verify student
+     *
      * @param userId
      * @return
      */
     @Override
-    public boolean verifyStudent(int userId){
+    public boolean verifyStudent(int userId) {
         Logger logger = Logger.getLogger(StudentOperation.class);
         logger.debug("Verifying Student with ID : " + userId);
         StudentDaoInterface studentDaoInterface = new StudentDaoOperation();

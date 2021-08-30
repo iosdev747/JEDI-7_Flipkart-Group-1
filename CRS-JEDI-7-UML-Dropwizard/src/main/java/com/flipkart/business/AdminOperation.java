@@ -1,19 +1,21 @@
 package com.flipkart.business;
 
-import java.util.*;
-import java.sql.SQLException;
-
-import com.flipkart.bean.*;
+import com.flipkart.bean.Course;
+import com.flipkart.bean.Professor;
+import com.flipkart.bean.Student;
+import com.flipkart.bean.User;
 import com.flipkart.dao.AdminDaoInterface;
 import com.flipkart.dao.AdminDaoOperation;
 import com.flipkart.dao.RegistrationDaoInterface;
 import com.flipkart.dao.RegistrationDaoOperation;
 import com.flipkart.exception.*;
-
 import org.apache.log4j.Logger;
 
+import java.sql.SQLException;
+import java.util.List;
 
-public class AdminOperation implements AdminInterface{
+
+public class AdminOperation implements AdminInterface {
 
     /**
      * Constructor
@@ -37,11 +39,12 @@ public class AdminOperation implements AdminInterface{
 
     /**
      * Method to delete course
+     *
      * @param courseId
      * @return
      */
     @Override
-    public void deleteCourse(String courseId) throws CourseNotDeletedException, CourseNotFoundException{
+    public void deleteCourse(String courseId) throws CourseNotDeletedException, CourseNotFoundException {
         Logger logger = Logger.getLogger(AdminOperation.class);
         logger.debug("Deleting Course " + courseId);
         AdminDaoInterface adminInterface = new AdminDaoOperation();
@@ -50,29 +53,30 @@ public class AdminOperation implements AdminInterface{
 
     /**
      * Method to add course
-     * @param: courseId, courseName, credit, professorEmpId, fee
+     *
      * @return
+     * @param: courseId, courseName, credit, professorEmpId, fee
      */
     @Override
-    public void addCourse(String courseId, String courseName, int credit, String professorEmpId, double fee) throws CourseFoundException{
+    public void addCourse(String courseId, String courseName, int credit, String professorEmpId, double fee) throws CourseFoundException {
         Logger logger = Logger.getLogger(AdminOperation.class);
         logger.debug("Adding Course " + courseId);
         Course course = new Course(courseId, courseName, credit, professorEmpId, fee);
         AdminDaoInterface adminInterface = new AdminDaoOperation();
-        try{
+        try {
             adminInterface.addCourse(course);
-        }
-        catch(CourseFoundException e) {
+        } catch (CourseFoundException e) {
             throw e;
         }
     }
 
     /**
      * view pending approvals
+     *
      * @return
      */
     @Override
-    public List<Student> viewPendingAdmissions(){
+    public List<Student> viewPendingAdmissions() {
 
         AdminDaoInterface adminDaoInterface = new AdminDaoOperation();
         return adminDaoInterface.viewPendingAdmissions();
@@ -81,18 +85,18 @@ public class AdminOperation implements AdminInterface{
 
     /**
      * approve student
+     *
      * @param studentId
      * @throws StudentNotFoundForApprovalException
      */
     @Override
-    public void approveStudent(String studentId) throws StudentNotFoundForApprovalException{
+    public void approveStudent(String studentId) throws StudentNotFoundForApprovalException {
 
         AdminDaoInterface adminDaoInterface = new AdminDaoOperation();
 
-        try{
+        try {
             adminDaoInterface.approveStudent(studentId);
-        }
-        catch(StudentNotFoundForApprovalException e) {
+        } catch (StudentNotFoundForApprovalException e) {
             throw e;
         }
     }
@@ -100,18 +104,18 @@ public class AdminOperation implements AdminInterface{
 
     /**
      * Method to assign add professor
+     *
      * @param professor
      * @return
      */
     @Override
-    public void addProfessor(Professor professor) throws ProfessorNotAddedException, UserIdAlreadyInUseException{
+    public void addProfessor(Professor professor) throws ProfessorNotAddedException, UserIdAlreadyInUseException {
         Logger logger = Logger.getLogger(AdminOperation.class);
         logger.debug("Adding Professor " + professor.getProfessorEmpId());
         AdminDaoInterface adminInterface = new AdminDaoOperation();
-        try{
+        try {
             adminInterface.addProfessor(professor);
-        }
-        catch(ProfessorNotAddedException | UserIdAlreadyInUseException e) {
+        } catch (ProfessorNotAddedException | UserIdAlreadyInUseException e) {
             throw e;
         }
     }
@@ -119,19 +123,19 @@ public class AdminOperation implements AdminInterface{
 
     /**
      * Method to add a user
+     *
      * @param user
      * @return
      */
     @Override
-    public void addUser(User user) throws UserNotAddedException, UserIdAlreadyInUseException{
+    public void addUser(User user) throws UserNotAddedException, UserIdAlreadyInUseException {
         Logger logger = Logger.getLogger(AdminOperation.class);
         logger.debug("Adding User " + user.getUserID());
         AdminDaoInterface adminInterface = new AdminDaoOperation();
 
-        try{
+        try {
             adminInterface.addUser(user);
-        }
-        catch(UserNotAddedException | UserIdAlreadyInUseException e){
+        } catch (UserNotAddedException | UserIdAlreadyInUseException e) {
             throw e;
         }
 
@@ -139,18 +143,18 @@ public class AdminOperation implements AdminInterface{
 
     /**
      * Method to assign course to professor
+     *
      * @param courseId, professorEmpId
      * @return
      */
     @Override
-    public void assignCourse(String courseId, String professorEmpId) throws CourseNotFoundException, UserNotFoundException{
+    public void assignCourse(String courseId, String professorEmpId) throws CourseNotFoundException, UserNotFoundException {
         Logger logger = Logger.getLogger(AdminOperation.class);
         logger.debug("Assigning Course " + courseId + " to professor with ID " + professorEmpId);
         AdminDaoInterface adminInterface = new AdminDaoOperation();
-        try{
+        try {
             adminInterface.assignCourse(courseId, professorEmpId);
-        }
-        catch(CourseNotFoundException | UserNotFoundException e){
+        } catch (CourseNotFoundException | UserNotFoundException e) {
             throw e;
         }
         //adminInterface.assignCourse(courseId, professorEmpId);
@@ -158,11 +162,12 @@ public class AdminOperation implements AdminInterface{
 
     /**
      * Method to view list of professors
+     *
      * @param
      * @return List<Professor>
      */
     @Override
-    public List<Professor> viewProfessor(){
+    public List<Professor> viewProfessor() {
         Logger logger = Logger.getLogger(AdminOperation.class);
         logger.debug("Viewing Professors ");
         AdminDaoInterface adminInterface = new AdminDaoOperation();
@@ -171,11 +176,12 @@ public class AdminOperation implements AdminInterface{
 
     /**
      * Method to get verify
+     *
      * @param userId
      * @return
      */
     @Override
-    public boolean verifyAdmin(int userId){
+    public boolean verifyAdmin(int userId) {
         Logger logger = Logger.getLogger(AdminOperation.class);
         logger.debug("Verifying Professor " + userId);
         AdminDaoInterface adminInterface = new AdminDaoOperation();
@@ -184,11 +190,12 @@ public class AdminOperation implements AdminInterface{
 
     /**
      * Method to get admin
+     *
      * @param userId
      * @return admin's user ID
      */
     @Override
-    public String getAdminId(int userId){
+    public String getAdminId(int userId) {
         Logger logger = Logger.getLogger(AdminOperation.class);
         logger.debug("Getting Admin with ID : " + userId);
         AdminDaoInterface adminInterface = new AdminDaoOperation();

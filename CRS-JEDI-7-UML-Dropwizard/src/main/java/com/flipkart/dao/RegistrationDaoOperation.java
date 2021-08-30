@@ -1,27 +1,20 @@
 package com.flipkart.dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.*;
-
-import java.util.*;
-
 import com.flipkart.bean.Course;
 import com.flipkart.constant.SQLConstant;
-import com.flipkart.exception.*;
-import com.flipkart.exception.*;
 import org.apache.log4j.Logger;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class RegistrationDaoOperation implements RegistrationDaoInterface {
 
-    private static String url = "jdbc:mysql://localhost:3306/JEDI-7-CRS";
-    private static String user = "root";
-    private static String pass = "root";
-    private static Logger logger = Logger.getLogger(RegistrationDaoOperation.class);
+    private static final String url = SQLConstant.DB_URL;
+    private static final String user = SQLConstant.DB_USER;
+    private static final String pass = SQLConstant.DB_PASS;
+    private static final Logger logger = Logger.getLogger(RegistrationDaoOperation.class);
 
     public RegistrationDaoOperation() { // In future may be change to private
 
