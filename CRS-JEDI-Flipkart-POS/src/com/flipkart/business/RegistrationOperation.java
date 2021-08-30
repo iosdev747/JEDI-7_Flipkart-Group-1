@@ -1,13 +1,13 @@
 package com.flipkart.business;
 
-import java.sql.SQLException;
-import java.util.*;
-
 import com.flipkart.bean.Course;
 import com.flipkart.dao.RegistrationDaoInterface;
 import com.flipkart.dao.RegistrationDaoOperation;
 import com.flipkart.exception.CourseNotFoundException;
 import org.apache.log4j.Logger;
+
+import java.sql.SQLException;
+import java.util.List;
 
 public class RegistrationOperation implements RegistrationInterface {
 

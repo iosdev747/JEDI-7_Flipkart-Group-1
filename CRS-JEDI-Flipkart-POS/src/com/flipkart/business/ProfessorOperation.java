@@ -4,12 +4,12 @@ import com.flipkart.bean.Course;
 import com.flipkart.bean.EnrolledStudent;
 import com.flipkart.dao.ProfessorDaoInterface;
 import com.flipkart.dao.ProfessorDaoOperation;
-import com.flipkart.exception.*;
-
+import com.flipkart.exception.GradeNotAddedException;
 import org.apache.log4j.Logger;
 
-import java.util.*;
-import java.sql.*;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProfessorOperation implements ProfessorInterface {
 
@@ -101,7 +101,7 @@ public class ProfessorOperation implements ProfessorInterface {
     @Override
     public boolean verifyProfessor(int userId) {
         Logger logger = Logger.getLogger(ProfessorOperation.class);
-        logger.debug("Verifying Professor with userID : " + Integer.toString(userId));
+        logger.debug("Verifying Professor with userID : " + userId);
         ProfessorDaoInterface professorInterface = new ProfessorDaoOperation();
 
         return professorInterface.verifyProfessor(userId);
@@ -116,7 +116,7 @@ public class ProfessorOperation implements ProfessorInterface {
     @Override
     public String getProfessorId(int userId) {
         Logger logger = Logger.getLogger(ProfessorOperation.class);
-        logger.debug("Viewing Professor with userID : " + Integer.toString(userId));
+        logger.debug("Viewing Professor with userID : " + userId);
         ProfessorDaoInterface professorInterface = new ProfessorDaoOperation();
 
         return professorInterface.getProfessorId(userId);

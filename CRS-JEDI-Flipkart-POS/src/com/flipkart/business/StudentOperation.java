@@ -4,12 +4,12 @@ import com.flipkart.bean.Grade;
 import com.flipkart.bean.Student;
 import com.flipkart.dao.StudentDaoInterface;
 import com.flipkart.dao.StudentDaoOperation;
-import com.flipkart.exception.*;
-
+import com.flipkart.exception.StudentNotRegisteredException;
 import org.apache.log4j.Logger;
 
-import java.util.*;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class StudentOperation implements StudentInterface {
@@ -57,7 +57,7 @@ public class StudentOperation implements StudentInterface {
     @Override
     public String getStudentId(int userId) {
         Logger logger = Logger.getLogger(StudentOperation.class);
-        logger.debug("Getting Student ID for user ID: " + Integer.toString(userId));
+        logger.debug("Getting Student ID for user ID: " + userId);
         StudentDaoInterface studentDaoInterface = new StudentDaoOperation();
         return studentDaoInterface.getStudentId(userId);
     }

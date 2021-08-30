@@ -1,27 +1,30 @@
 package com.flipkart.application;
 
-import java.util.Scanner;
-import java.util.*;
-import java.sql.SQLException;
-
-import com.flipkart.bean.*;
-import com.flipkart.business.*;
+import com.flipkart.bean.Course;
+import com.flipkart.bean.Professor;
+import com.flipkart.bean.Student;
+import com.flipkart.business.AdminInterface;
+import com.flipkart.business.AdminOperation;
+import com.flipkart.business.RegistrationInterface;
+import com.flipkart.business.RegistrationOperation;
 import com.flipkart.exception.*;
-
 import org.apache.log4j.Logger;
+
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Scanner;
 
 
 public class AdminCRSMenu {
 
+    private static final Logger logger = Logger.getLogger(AdminCRSMenu.class);
     Scanner sc = new Scanner(System.in);
 
-    private static Logger logger = Logger.getLogger(AdminCRSMenu.class);
-
-    public void createMenu(String adminId){
+    public void createMenu(String adminId) {
 
         boolean logginFlag = true;
 
-        while(logginFlag) {
+        while (logginFlag) {
 
             System.out.println("----------Welcome To Admin Menu AdminID : " + adminId + "----------");
             System.out.println("1. View Course in Catalog");
@@ -72,20 +75,20 @@ public class AdminCRSMenu {
         System.out.println("You Are Logged Out");
     }
 
-    private void listUnapprovedStudent(){
+    private void listUnapprovedStudent() {
         System.out.println("-------All Unapproved Student list---------");
 
         AdminInterface adminInterface = new AdminOperation();
 
         List<Student> studentList = adminInterface.viewPendingAdmissions();
 
-        System.out.printf("%10s \t %10s","StudentID", "Student Name");
+        System.out.printf("%10s \t %10s", "StudentID", "Student Name");
         System.out.printf("\n");
-        for(Student student : studentList){
+        for (Student student : studentList) {
             String studentId = student.getStudentId();
             String name = student.getName();
 
-            System.out.printf("%10s \t %10s",studentId ,name);
+            System.out.printf("%10s \t %10s", studentId, name);
             System.out.printf("\n");
         }
 
@@ -94,7 +97,7 @@ public class AdminCRSMenu {
     }
 
 
-    private void approveStudent(){
+    private void approveStudent() {
         try {
             System.out.println("-------Approve a Student Registration---------");
 
@@ -110,14 +113,13 @@ public class AdminCRSMenu {
             System.out.println("Student Approval Successful!!");
 
             System.out.println("----------------------------------------------");
-        }
-        catch(StudentNotFoundForApprovalException e){
+        } catch (StudentNotFoundForApprovalException e) {
             logger.error(e.getMessage());
         }
     }
 
 
-    private void viewCourse(){
+    private void viewCourse() {
 
         try {
             System.out.println("-------All Courses In Catalog---------");
@@ -125,7 +127,7 @@ public class AdminCRSMenu {
             RegistrationInterface registrationInterface = new RegistrationOperation();
             List<Course> courseList = registrationInterface.viewCourse();
 
-            System.out.printf("%10s \t %10s \t %10s \t %10s \t %10s","CoureseID", "CourseName","Credits","ProfessiorID", "Fee");
+            System.out.printf("%10s \t %10s \t %10s \t %10s \t %10s", "CoureseID", "Credits", "ProfessiorID", "Fee", "CourseName");
             System.out.printf("\n");
             for (Course course : courseList) {
                 String courseId = course.getCourseId();
@@ -133,18 +135,17 @@ public class AdminCRSMenu {
                 int credit = course.getCredit();
                 String professorEmpId = course.getProfessorEmpId();
                 double fee = course.getFee();
-                System.out.printf("%10s \t %10s \t %10s \t %10s \t %10s" , courseId , courseName , credit ,professorEmpId, fee);
+                System.out.printf("%10s \t %10s \t %10s \t %10s \t %10s", courseId, credit, professorEmpId, fee, courseName);
                 System.out.printf("\n");
             }
 
             System.out.println("---------------------------------------");
-        }
-        catch(SQLException e){
+        } catch (SQLException e) {
             logger.error(e.getMessage());
         }
     }
 
-    private void addCourse(){
+    private void addCourse() {
 
         try {
             System.out.println("-------Add A course to Catalog---------");
@@ -175,13 +176,12 @@ public class AdminCRSMenu {
 
 
             System.out.println("---------------------------------------");
-        }
-        catch(CourseFoundException e){
+        } catch (CourseFoundException e) {
             logger.error(e.getMessage());
         }
     }
 
-    private void deleteCourse(){
+    private void deleteCourse() {
 
         try {
 
@@ -197,14 +197,13 @@ public class AdminCRSMenu {
             System.out.println("course : " + courseId + " Dropped from catalog Successfully!!");
 
             System.out.println("------------------------------------------");
-        }
-        catch(CourseNotFoundException | CourseNotDeletedException e){
+        } catch (CourseNotFoundException | CourseNotDeletedException e) {
             logger.error(e.getMessage());
         }
     }
 
 
-    private void addProfessor(){
+    private void addProfessor() {
 
         try {
 
@@ -246,13 +245,12 @@ public class AdminCRSMenu {
             System.out.println("Professor : " + name + " Added to catalog Successfully!!");
 
             System.out.println("---------------------------------");
-        }
-        catch(ProfessorNotAddedException | UserIdAlreadyInUseException e){
+        } catch (ProfessorNotAddedException | UserIdAlreadyInUseException e) {
             logger.error(e.getMessage());
         }
     }
 
-    private void assignCourseToProfessor(){
+    private void assignCourseToProfessor() {
 
         try {
             System.out.println("-------Assign Course to Professor---------");
@@ -274,8 +272,7 @@ public class AdminCRSMenu {
 
 
             System.out.println("------------------------------------------");
-        }
-        catch(CourseNotFoundException | UserNotFoundException e){
+        } catch (CourseNotFoundException | UserNotFoundException e) {
             logger.error(e.getMessage());
         }
     }

@@ -1623,3 +1623,24 @@
 19:05:42,142 DEBUG AdminOperation,main:162 - Verifying Professor 1
 19:05:42,247 DEBUG AdminOperation,main:175 - Getting Admin with ID : 1
 19:05:47,828 DEBUG RegistrationOperation,main:72 - Viewing Course list 
+19:32:28,934 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 5
+19:33:28,081 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 5
+19:33:28,143 DEBUG StudentOperation,main:110 - Verifying Student with ID : 5
+19:33:28,210 DEBUG StudentOperation,main:60 - Getting Student ID for user ID: 5
+19:33:33,844 DEBUG RegistrationOperation,main:72 - Viewing Course list 
+19:35:04,373 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 5
+19:35:05,332 DEBUG StudentOperation,main:110 - Verifying Student with ID : 5
+19:35:05,385 DEBUG StudentOperation,main:60 - Getting Student ID for user ID: 5
+19:35:07,115 DEBUG RegistrationOperation,main:72 - Viewing Course list 
+19:35:47,040 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 5
+19:35:47,988 DEBUG StudentOperation,main:110 - Verifying Student with ID : 5
+19:35:48,022 DEBUG StudentOperation,main:60 - Getting Student ID for user ID: 5
+19:35:49,388 DEBUG RegistrationOperation,main:72 - Viewing Course list 
+19:36:51,105 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 5
+19:36:52,027 DEBUG StudentOperation,main:110 - Verifying Student with ID : 5
+19:36:52,120 DEBUG StudentOperation,main:60 - Getting Student ID for user ID: 5
+19:36:53,595 DEBUG RegistrationOperation,main:72 - Viewing Course list 
+19:38:10,529 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 5
+19:38:11,450 DEBUG StudentOperation,main:110 - Verifying Student with ID : 5
+19:38:11,525 DEBUG StudentOperation,main:60 - Getting Student ID for user ID: 5
+19:38:12,623 DEBUG RegistrationOperation,main:72 - Viewing Course list 

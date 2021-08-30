@@ -1,7 +1,7 @@
 package com.flipkart.exception;
 
-public class CourseFoundException extends Exception{
-    private String courseCode;
+public class CourseFoundException extends Exception {
+    private final String courseCode;
 
     /***
      * Constructor
@@ -14,6 +14,7 @@ public class CourseFoundException extends Exception{
 
     /**
      * Getter method
+     *
      * @return course code
      */
     public String getCourseCode() {

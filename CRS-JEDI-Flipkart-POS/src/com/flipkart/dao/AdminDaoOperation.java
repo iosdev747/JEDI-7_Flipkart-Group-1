@@ -1,21 +1,24 @@
 package com.flipkart.dao;
 
-import java.sql.*;
-import java.util.*;
-
-import com.flipkart.bean.*;
-import com.flipkart.business.UserOperation;
+import com.flipkart.bean.Course;
+import com.flipkart.bean.Professor;
+import com.flipkart.bean.Student;
+import com.flipkart.bean.User;
 import com.flipkart.constant.SQLConstant;
 import com.flipkart.exception.*;
 import org.apache.log4j.Logger;
 
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
-public class AdminDaoOperation implements AdminDaoInterface{
 
-    private static String url = SQLConstant.DB_URL;
-    private static String user = SQLConstant.DB_USER;
-    private static String pass = SQLConstant.DB_PASS;
-    private static Logger logger = Logger.getLogger(AdminDaoOperation.class);
+public class AdminDaoOperation implements AdminDaoInterface {
+
+    private static final String url = SQLConstant.DB_URL;
+    private static final String user = SQLConstant.DB_USER;
+    private static final String pass = SQLConstant.DB_PASS;
+    private static final Logger logger = Logger.getLogger(AdminDaoOperation.class);
 
     /**
      * Constructor
@@ -25,6 +28,7 @@ public class AdminDaoOperation implements AdminDaoInterface{
 
     /**
      * Method to delete course
+     *
      * @param courseId
      * @throws CourseNotDeletedException
      * @throws CourseNotFoundException
@@ -36,35 +40,34 @@ public class AdminDaoOperation implements AdminDaoInterface{
         try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
-            Connection conn = DriverManager.getConnection(url,user,pass);
+            Connection conn = DriverManager.getConnection(url, user, pass);
 
             // Delete the course from Database, it will be cascade to EnrolledStudent
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.DELETE_COURSE);
-            preparedStatement.setString(1,courseId);
+            preparedStatement.setString(1, courseId);
             int row = preparedStatement.executeUpdate();
 
             logger.info(row + " entries deleted.");
 
-            if(row == 0){
+            if (row == 0) {
                 logger.error(courseId + " not in catalog!");
                 conn.close();
                 throw new CourseNotFoundException(courseId);
             }
 
             conn.close();
-        }
-        catch(SQLException e){
+        } catch (SQLException e) {
             logger.error(e.getMessage());
             throw new CourseNotDeletedException(courseId);
-        }
-        catch(Exception e){
-            logger.error("There is an Error : "+ e.getMessage());
+        } catch (Exception e) {
+            logger.error("There is an Error : " + e.getMessage());
             throw new CourseNotDeletedException(courseId);
         }
     }
 
     /**
      * Method to add course
+     *
      * @param course
      * @throws CourseFoundException
      */
@@ -80,7 +83,7 @@ public class AdminDaoOperation implements AdminDaoInterface{
         try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
-            Connection conn = DriverManager.getConnection(url,user,pass);
+            Connection conn = DriverManager.getConnection(url, user, pass);
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.ADD_COURSE);
             preparedStatement.setString(1, courseId);
             preparedStatement.setString(2, courseName);
@@ -91,41 +94,40 @@ public class AdminDaoOperation implements AdminDaoInterface{
             int row = preparedStatement.executeUpdate();
 
             logger.info(row + " Course added");
-            if(row == 0){
+            if (row == 0) {
                 logger.info("Course with courseCode: " + courseId + "not added to catalog.");
                 conn.close();
                 throw new CourseFoundException(courseId);
             }
             conn.close();
-        }
-        catch(SQLException se) {
+        } catch (SQLException se) {
             logger.error(se.getMessage());
             throw new CourseFoundException(courseId);
-        }
-        catch(Exception e){
-            logger.error("There is an Error : "+ e.getMessage());
+        } catch (Exception e) {
+            logger.error("There is an Error : " + e.getMessage());
         }
 
     }
 
     /**
      * Method to view pending admissions
+     *
      * @return list of students
      */
     @Override
-    public List<Student> viewPendingAdmissions(){
+    public List<Student> viewPendingAdmissions() {
 
         List<Student> studentList = new ArrayList<Student>();
 
-        try{
+        try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
-            Connection conn = DriverManager.getConnection(url,user,pass);
+            Connection conn = DriverManager.getConnection(url, user, pass);
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.VIEW_PENDING_ADMISSION_QUERY);
 
             ResultSet result = preparedStatement.executeQuery();
 
-            while(result.next()){
+            while (result.next()) {
                 int userId = result.getInt("userID");
                 String name = result.getString("userName");
                 String password = result.getString("paswrd");
@@ -135,14 +137,13 @@ public class AdminDaoOperation implements AdminDaoInterface{
                 String branch = result.getString("department");
 
 
-                Student student = new Student(userId, name,password, address,studentId,batch,branch,false);
+                Student student = new Student(userId, name, password, address, studentId, batch, branch, false);
                 studentList.add(student);
             }
 
             conn.close();
-        }
-        catch(Exception e){
-            logger.error("There is an Error in viewPending : "+ e.getMessage());
+        } catch (Exception e) {
+            logger.error("There is an Error in viewPending : " + e.getMessage());
         }
 
 
@@ -151,6 +152,7 @@ public class AdminDaoOperation implements AdminDaoInterface{
 
     /**
      * Method to approve student registration
+     *
      * @param studentId
      * @throws StudentNotFoundForApprovalException
      */
@@ -160,30 +162,29 @@ public class AdminDaoOperation implements AdminDaoInterface{
         try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
-            Connection conn = DriverManager.getConnection(url,user,pass);
+            Connection conn = DriverManager.getConnection(url, user, pass);
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.APPROVE_STUDENT_QUERY);
             preparedStatement.setString(1, studentId);
 
             int rows = preparedStatement.executeUpdate();
             logger.info("-----------Student Approval---------");
-            if(rows == 0){
+            if (rows == 0) {
                 // here throw an error StudentNotFoundForApprovalException(studentId)
                 conn.close();
                 throw new StudentNotFoundForApprovalException(Integer.parseInt(studentId));
             }
 
             conn.close();
-        }
-        catch(SQLException se) {
+        } catch (SQLException se) {
             logger.error(se.getMessage());
-        }
-        catch(Exception e){
-            logger.error("There is an Error in approveStudent : "+ e.getMessage());
+        } catch (Exception e) {
+            logger.error("There is an Error in approveStudent : " + e.getMessage());
         }
     }
 
     /**
      * Method to add professor
+     *
      * @param professor
      * @throws ProfessorNotAddedException
      * @throws UserIdAlreadyInUseException
@@ -201,7 +202,7 @@ public class AdminDaoOperation implements AdminDaoInterface{
         try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
-            Connection conn = DriverManager.getConnection(url,user,pass);
+            Connection conn = DriverManager.getConnection(url, user, pass);
             // since student is dependent on user first insert user
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.ADD_USER);
             preparedStatement.setString(1, String.valueOf(userId));
@@ -213,47 +214,45 @@ public class AdminDaoOperation implements AdminDaoInterface{
             // execute it to add to the userDetail table
             int rows = preparedStatement.executeUpdate();
             logger.info("----------Adding Professor------------");
-            if(rows == 1){
+            if (rows == 1) {
                 // now add the Student
                 PreparedStatement preparedStatement2 = conn.prepareStatement(SQLConstant.ADD_PROFESSOR);
                 preparedStatement2.setString(1, String.valueOf(userId));
                 preparedStatement2.setString(2, professorEmpId);
                 preparedStatement2.setString(3, department);
 
-                int row2 =preparedStatement2.executeUpdate();
-                if(row2 == 0){
+                int row2 = preparedStatement2.executeUpdate();
+                if (row2 == 0) {
                     logger.error("Professor with professorId: " + professorEmpId + " not added.");
                     conn.close();
                     throw new ProfessorNotAddedException(professorEmpId);
                 }
-            }
-            else{
+            } else {
                 logger.info(userId + " Not Added");
                 conn.close();
                 throw new UserIdAlreadyInUseException(Integer.toString(userId));
             }
             conn.close();
-        }
-        catch(SQLException se) {
+        } catch (SQLException se) {
 
             logger.error(se.getMessage());
             throw new UserIdAlreadyInUseException(professorEmpId);
 
-        }
-        catch(Exception e){
-            logger.error("There is an Error : "+ e.getMessage());
+        } catch (Exception e) {
+            logger.error("There is an Error : " + e.getMessage());
         }
 
     }
 
     /**
      * Method to add user
+     *
      * @param user
      * @throws UserNotAddedException
      * @throws UserIdAlreadyInUseException
      */
     @Override
-    public void addUser(User userR) throws UserNotAddedException, UserIdAlreadyInUseException{
+    public void addUser(User userR) throws UserNotAddedException, UserIdAlreadyInUseException {
 
         int userId = userR.getUserID();
         String name = userR.getName();
@@ -263,7 +262,7 @@ public class AdminDaoOperation implements AdminDaoInterface{
         try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
-            Connection conn = DriverManager.getConnection(url,user,pass);
+            Connection conn = DriverManager.getConnection(url, user, pass);
             // since student is dependent on user first insert user
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.ADD_USER);
             preparedStatement.setString(1, String.valueOf(userId));
@@ -275,37 +274,36 @@ public class AdminDaoOperation implements AdminDaoInterface{
             // execute it to add to the userDetail table
             int row = preparedStatement.executeUpdate();
             logger.info(row + " user added.");
-            if(row == 0){
+            if (row == 0) {
                 logger.error("User with userId: " + userId + " not added.");
                 conn.close();
                 throw new UserNotAddedException(Integer.toString(userId));
             }
             logger.info("User with userId: " + userId + " added.");
             conn.close();
-        }
-        catch(SQLException se) {
+        } catch (SQLException se) {
             logger.error(se.getMessage());
             throw new UserIdAlreadyInUseException(Integer.toString(userId));
-        }
-        catch(Exception e){
-            logger.error("There is an Error : "+ e.getMessage());
+        } catch (Exception e) {
+            logger.error("There is an Error : " + e.getMessage());
         }
     }
 
     /**
      * Method to assign course
+     *
      * @param courseId
      * @param professorEmpId
      * @throws CourseNotFoundException
      * @throws UserNotFoundException
      */
     @Override
-    public void assignCourse(String courseId, String professorEmpId) throws CourseNotFoundException, UserNotFoundException{
+    public void assignCourse(String courseId, String professorEmpId) throws CourseNotFoundException, UserNotFoundException {
         //logger.debug("-----------Assigning Course to Professor---------");
         try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
-            Connection conn = DriverManager.getConnection(url,user,pass);
+            Connection conn = DriverManager.getConnection(url, user, pass);
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.ASSIGN_COURSE);
             preparedStatement.setString(1, professorEmpId);
             preparedStatement.setString(2, courseId);
@@ -313,24 +311,23 @@ public class AdminDaoOperation implements AdminDaoInterface{
             int row = preparedStatement.executeUpdate();
 
             logger.info(row + " course assigned.");
-            if(row == 0) {
+            if (row == 0) {
                 logger.error(courseId + " not found");
                 conn.close();
                 throw new CourseNotFoundException(courseId);
             }
             conn.close();
-        }
-        catch(SQLException se) {
+        } catch (SQLException se) {
             logger.error(se.getMessage());
             throw new UserNotFoundException(professorEmpId);
-        }
-        catch(Exception e){
-            logger.error("There is an Error : "+ e.getMessage());
+        } catch (Exception e) {
+            logger.error("There is an Error : " + e.getMessage());
         }
     }
 
     /**
      * Method to view professors list
+     *
      * @return list of professors
      */
     @Override
@@ -338,15 +335,15 @@ public class AdminDaoOperation implements AdminDaoInterface{
         //logger.debug("-----------Viewing Professor---------");
         List<Professor> professorList = new ArrayList<Professor>();
 
-        try{
+        try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
-            Connection conn = DriverManager.getConnection(url,user,pass);
+            Connection conn = DriverManager.getConnection(url, user, pass);
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.VIEW_PROFESSOR);
 
             ResultSet result = preparedStatement.executeQuery();
             logger.info("-----------Viewing Professor---------");
-            while(result.next()){
+            while (result.next()) {
                 // change 1st getInt  to getString   if studentID is String
                 Professor professor = new Professor();
                 professor.setUserID(result.getInt("userID"));
@@ -360,9 +357,8 @@ public class AdminDaoOperation implements AdminDaoInterface{
             }
 
             conn.close();
-        }
-        catch(Exception e){
-            logger.error("There is an Error : "+ e.getMessage());
+        } catch (Exception e) {
+            logger.error("There is an Error : " + e.getMessage());
         }
 
         return professorList;
@@ -370,18 +366,19 @@ public class AdminDaoOperation implements AdminDaoInterface{
 
     /**
      * Method to verify professor
+     *
      * @param userId
      * @return true/false
      */
     @Override
-    public boolean verifyAdmin(int userId){
+    public boolean verifyAdmin(int userId) {
         //logger.debug("-----------Verifying Professor---------");
         boolean flag = false;
 
-        try{
+        try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
-            Connection conn = DriverManager.getConnection(url,user,pass);
+            Connection conn = DriverManager.getConnection(url, user, pass);
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.VERIFY_ADMIN);
             preparedStatement.setString(1, String.valueOf(userId));
 
@@ -391,41 +388,40 @@ public class AdminDaoOperation implements AdminDaoInterface{
 
             int numRow = result.getInt(1);
             logger.info("-----------Verifying Professor---------");
-            if(numRow == 1) flag = true;
+            if (numRow == 1) flag = true;
             conn.close();
 
-        }
-        catch(Exception e){
-            logger.error("There is an Error : "+ e.getMessage());
+        } catch (Exception e) {
+            logger.error("There is an Error : " + e.getMessage());
         }
         return flag;
     }
 
     /**
      * Method to get admin ID
+     *
      * @param userId
      * @return admin id
      */
     @Override
-    public String getAdminId(int userId){
-       //logger.debug("---------Getting Admin---------");
+    public String getAdminId(int userId) {
+        //logger.debug("---------Getting Admin---------");
         try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
-            Connection conn = DriverManager.getConnection(url,user,pass);
+            Connection conn = DriverManager.getConnection(url, user, pass);
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.GET_ADMIN_ID);
             preparedStatement.setString(1, String.valueOf(userId));
             ResultSet result = preparedStatement.executeQuery();
             logger.info("---------Getting Admin---------");
-            if(result.next()){
+            if (result.next()) {
                 String empId = result.getString("empID");  // return result.getString("empID);  //uncomment it otherwise
                 conn.close();
                 return empId;
             }
             conn.close();
-        }
-        catch(Exception e){
-            logger.error("There is an Error : "+ e.getMessage());
+        } catch (Exception e) {
+            logger.error("There is an Error : " + e.getMessage());
         }
         return "No Admin by this name"; // return "No Admin added"   // uncomment it if string
     }

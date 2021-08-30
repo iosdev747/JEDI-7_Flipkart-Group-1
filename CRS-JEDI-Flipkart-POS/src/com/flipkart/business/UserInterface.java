@@ -1,6 +1,6 @@
 package com.flipkart.business;
 
-import com.flipkart.exception.*;
+import com.flipkart.exception.UserNotFoundException;
 
 public interface UserInterface {
     /**
@@ -10,7 +10,7 @@ public interface UserInterface {
      * @param newPassword
      * @return boolean indicating if the password is updated successfully
      */
-    public boolean updatePassword(int userId, String newPassword);
+    boolean updatePassword(int userId, String newPassword);
 
     /**
      * Method to verify User credentials
@@ -19,6 +19,6 @@ public interface UserInterface {
      * @param password
      * @return boolean indicating if user exists in the database
      */
-    public boolean verifyCredentials(int userId, String password) throws UserNotFoundException;
+    boolean verifyCredentials(int userId, String password) throws UserNotFoundException;
 
 }

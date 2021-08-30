@@ -8,26 +8,26 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.List ;
 
-public class NotificationDaoOperation implements NotificationDaoInterface{
+public class NotificationDaoOperation implements NotificationDaoInterface {
 
-    private static String url = SQLConstant.DB_URL;
-    private static String user = SQLConstant.DB_USER;
-    private static String pass = SQLConstant.DB_PASS;
-    private static Logger logger = Logger.getLogger(NotificationDaoOperation.class);
+    private static final String url = SQLConstant.DB_URL;
+    private static final String user = SQLConstant.DB_USER;
+    private static final String pass = SQLConstant.DB_PASS;
+    private static final Logger logger = Logger.getLogger(NotificationDaoOperation.class);
 
     /**
      * send notification
+     *
      * @param userId
-     * @param msg: Message to be sent
+     * @param msg:   Message to be sent
      * @return notification ID
      */
     public String sendNotification(int userId, String msg) {
         //logger.debug("-------------Sending Notification--------");
         int notificationId = 0;
         try {
-            Connection connection = DriverManager.getConnection(url,user,pass);
+            Connection connection = DriverManager.getConnection(url, user, pass);
             String sql = "INSERT INTO Notifications(userID, msg, isSeen) values (?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(sql);
 
@@ -45,6 +45,7 @@ public class NotificationDaoOperation implements NotificationDaoInterface{
 
     /**
      * read notification
+     *
      * @param userID: userID to view all notifications for
      * @return notification message
      */
@@ -52,14 +53,14 @@ public class NotificationDaoOperation implements NotificationDaoInterface{
         //logger.debug("-------------Reading Notification--------");
         ArrayList<String> notifications = new ArrayList<String>();
         try {
-            Connection connection = DriverManager.getConnection(url,user,pass);
+            Connection connection = DriverManager.getConnection(url, user, pass);
             String sql = "SELECT msg FROM Notifications where userID=?";
             PreparedStatement statement = connection.prepareStatement(sql);
 
             statement.setString(1, String.valueOf(userID));
             ResultSet result = statement.executeQuery();
             logger.info("-------------Reading Notification--------");
-            while(result.next()) {
+            while (result.next()) {
                 notifications.add(result.getString(1));
             }
 

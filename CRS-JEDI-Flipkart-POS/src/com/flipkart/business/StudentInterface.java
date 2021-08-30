@@ -1,11 +1,10 @@
 package com.flipkart.business;
 
 import com.flipkart.bean.Grade;
-import com.flipkart.bean.Student;
-import com.flipkart.exception.*;
+import com.flipkart.exception.StudentNotRegisteredException;
 
-import java.util.*;
 import java.sql.SQLException;
+import java.util.List;
 
 public interface StudentInterface {
     /**
@@ -22,7 +21,7 @@ public interface StudentInterface {
      * @return boolean to show that student has successfully registered.
      * @throws StudentNotRegisteredException
      */
-    public boolean register(int userID, String name, String password, String address, String studentId, int batch, String branch, boolean isApproved) throws StudentNotRegisteredException;
+    boolean register(int userID, String name, String password, String address, String studentId, int batch, String branch, boolean isApproved) throws StudentNotRegisteredException;
 
     /**
      * Method to get Student ID from User ID
@@ -30,7 +29,7 @@ public interface StudentInterface {
      * @param userId
      * @return Student ID
      */
-    public String getStudentId(int userId);
+    String getStudentId(int userId);
     //  can change return to string if studentId in Db is string
 
     /**
@@ -39,7 +38,7 @@ public interface StudentInterface {
      * @param studentId
      * @return List of Grades for a particular student.
      */
-    public List<Grade> getGrade(String studentId) throws SQLException;
+    List<Grade> getGrade(String studentId) throws SQLException;
     // here also change input to String if studentId is String in db
 
     /**
@@ -48,7 +47,7 @@ public interface StudentInterface {
      * @param studentId
      * @return
      */
-    public boolean isApproved(String studentId);   // --> this is not present in the database either left it or add to database
+    boolean isApproved(String studentId);   // --> this is not present in the database either left it or add to database
 
     // here also change input to String if studentId is String in db
 
@@ -58,6 +57,6 @@ public interface StudentInterface {
      * @param userId
      * @return Student ID
      */
-    public boolean verifyStudent(int userId);
+    boolean verifyStudent(int userId);
 
 }

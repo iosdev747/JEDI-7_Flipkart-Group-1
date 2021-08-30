@@ -1,10 +1,11 @@
 package com.flipkart.exception;
 
-public class CourseAlreadyRegisteredException extends Exception{
-    private String courseCode;
+public class CourseAlreadyRegisteredException extends Exception {
+    private final String courseCode;
 
     /**
      * Constructor
+     *
      * @param courseCode
      */
     public CourseAlreadyRegisteredException(String courseCode) {
@@ -13,6 +14,7 @@ public class CourseAlreadyRegisteredException extends Exception{
 
     /**
      * Getter method
+     *
      * @return course code
      */
     public String getCourseCode() {

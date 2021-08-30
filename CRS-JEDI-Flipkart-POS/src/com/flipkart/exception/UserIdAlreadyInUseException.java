@@ -1,6 +1,6 @@
 package com.flipkart.exception;
 
-public class UserIdAlreadyInUseException extends Exception{
+public class UserIdAlreadyInUseException extends Exception {
     private String userId;
 
 
@@ -13,6 +13,7 @@ public class UserIdAlreadyInUseException extends Exception{
 
     /**
      * Method to get usere ID
+     *
      * @return
      */
     public String getUserId() {
@@ -21,6 +22,7 @@ public class UserIdAlreadyInUseException extends Exception{
 
     /**
      * Method to set professor ID
+     *
      * @param userId
      */
     public void setProfessorId(String userId) {
@@ -29,6 +31,7 @@ public class UserIdAlreadyInUseException extends Exception{
 
     /**
      * Method to throw exception message
+     *
      * @return
      */
     @Override

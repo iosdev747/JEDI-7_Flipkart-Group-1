@@ -1,26 +1,27 @@
 package com.flipkart.application;
 
-import java.util.Scanner;
-import java.util.*;
-import java.sql.SQLException;
-
-import com.flipkart.bean.*;
-import com.flipkart.business.*;
-import com.flipkart.exception.*;
-
+import com.flipkart.bean.Course;
+import com.flipkart.bean.Grade;
+import com.flipkart.business.RegistrationInterface;
+import com.flipkart.business.RegistrationOperation;
+import com.flipkart.business.StudentInterface;
+import com.flipkart.business.StudentOperation;
+import com.flipkart.exception.CourseNotFoundException;
 import org.apache.log4j.Logger;
+
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Scanner;
 
 public class StudentCRSMenu {
 
-    private static Logger logger = Logger.getLogger(StudentCRSMenu.class);
+    private static final Logger logger = Logger.getLogger(StudentCRSMenu.class);
     Scanner sc = new Scanner(System.in);
 
-
-
-    public void createMenu(String studentId){
+    public void createMenu(String studentId) {
         boolean logginFlag = true;
 
-        while(logginFlag) {
+        while (logginFlag) {
 
             System.out.println("----------Welcome To Student Menu StudentID : " + studentId + "----------");
             System.out.println("1. Add Course");
@@ -71,11 +72,11 @@ public class StudentCRSMenu {
         System.out.println("You Are Logged Out");
     }
 
-    private void makePayment(String studentId){
+    private void makePayment(String studentId) {
 
         StudentInterface studentInterface = new StudentOperation();
 
-        if(!studentInterface.isApproved(studentId)){
+        if (!studentInterface.isApproved(studentId)) {
             System.out.println("You are Not Approved by Admin");
             logger.info("You are Not Approved by Admin");
             return;
@@ -93,24 +94,22 @@ public class StudentCRSMenu {
             System.out.println("Your total amount is : " + amount);
 
             System.out.println("------------------------------------");
-        }
-        catch (SQLException e){
+        } catch (SQLException e) {
             logger.error(e.getMessage());
         }
     }
 
-    private void checkIfApproved(String studentId){
+    private void checkIfApproved(String studentId) {
 
         StudentInterface studentInterface = new StudentOperation();
 
         boolean check = studentInterface.isApproved(studentId);
 
-        if(check){
+        if (check) {
             System.out.println("--------------------------------------");
             System.out.println("Your Registration is Approved by Admin");
             System.out.println("--------------------------------------");
-        }
-        else{
+        } else {
             System.out.println("------------------------------------------");
             System.out.println("Your Registration is Not Approved by Admin");
             System.out.println("------------------------------------------");
@@ -119,7 +118,7 @@ public class StudentCRSMenu {
     }
 
 
-    private void viewCourse(String studentId){
+    private void viewCourse(String studentId) {
 
         try {
 
@@ -128,7 +127,7 @@ public class StudentCRSMenu {
             RegistrationInterface registrationInterface = new RegistrationOperation();
             List<Course> courseList = registrationInterface.viewCourse();
 
-            System.out.printf("%10s \t %10s \t %10s \t %10s \t %10s","CoureseID", "CourseName","Credits","ProfessiorID", "Fee");
+            System.out.printf("%10s \t \t %10s \t \t %10s \t %10s \t %10s", "CoureseID", "Credits", "ProfessiorID", "Fee", "CourseName");
             System.out.printf("\n");
 
             for (Course course : courseList) {
@@ -137,22 +136,21 @@ public class StudentCRSMenu {
                 int credit = course.getCredit();
                 String professorEmpId = course.getProfessorEmpId();
                 double fee = course.getFee();
-                System.out.printf("%10s \t %10s \t %10s \t %10s \t %10s" , courseId , courseName , credit ,professorEmpId, fee);
+                System.out.printf("%10s \t \t %10s \t \t %10s \t %10s \t %10s", courseId, "" + credit, professorEmpId, fee, courseName);
                 System.out.printf("\n");
             }
 
             System.out.println("---------------------------------------");
-        }
-        catch (SQLException e){
+        } catch (SQLException e) {
             logger.error(e.getMessage());
         }
     }
 
-    private void addCourse(String studentId){
+    private void addCourse(String studentId) {
 
         StudentInterface studentInterface = new StudentOperation();
 
-        if(!studentInterface.isApproved(studentId)){
+        if (!studentInterface.isApproved(studentId)) {
             System.out.println("You are Not Approved by Admin");
             logger.info("You are Not Approved by Admin");
             return;
@@ -172,9 +170,9 @@ public class StudentCRSMenu {
 
             RegistrationInterface registrationInterface = new RegistrationOperation();
 
-            boolean alreadyRegistered = registrationInterface.isRegistered(courseId,studentId);
+            boolean alreadyRegistered = registrationInterface.isRegistered(courseId, studentId);
 
-            if(alreadyRegistered){
+            if (alreadyRegistered) {
                 System.out.println("IsAlready registered For course");
                 return;
             }
@@ -186,18 +184,17 @@ public class StudentCRSMenu {
             } else {
                 System.out.println("Course Registration fail");
             }
-        }
-        catch (CourseNotFoundException | SQLException e){
+        } catch (CourseNotFoundException | SQLException e) {
             logger.error(e.getMessage());
         }
     }
 
-    private void viewRegisteredCourse(String studentId){
+    private void viewRegisteredCourse(String studentId) {
 
 
         StudentInterface studentInterface = new StudentOperation();
 
-        if(!studentInterface.isApproved(studentId)){
+        if (!studentInterface.isApproved(studentId)) {
             System.out.println("You are Not Approved by Admin");
             logger.info("You are Not Approved by Admin");
             return;
@@ -211,11 +208,10 @@ public class StudentCRSMenu {
             List<Course> courseList = registrationInterface.viewRegisterCourse(studentId);
 
             System.out.println("---Your Registered Courses Are----");
-            if(courseList.size()==0){
+            if (courseList.size() == 0) {
                 System.out.println("No Course SelectedBy you");
-            }
-            else {
-                System.out.printf("%10s \t %10s \t %10s \t %10s \t %10s","CoureseID", "CourseName","Credits","ProfessiorID", "Fee");
+            } else {
+                System.out.printf("%10s \t %10s \t %10s \t %10s \t %10s", "CoureseID", "Credits", "ProfessiorID", "Fee", "CourseName");
                 System.out.printf("\n");
                 for (Course course : courseList) {
                     String courseId = course.getCourseId();
@@ -223,24 +219,23 @@ public class StudentCRSMenu {
                     int credit = course.getCredit();
                     String professorEmpId = course.getProfessorEmpId();
                     double fee = course.getFee();
-                    System.out.printf("%10s \t %10s \t %10s \t %10s \t %10s" , courseId , courseName , credit ,professorEmpId, fee);
+                    System.out.printf("%10s \t %10s \t %10s \t %10s \t %10s", courseId, credit, professorEmpId, fee, courseName);
                     System.out.printf("\n");
                 }
             }
 
             System.out.println("----------------------------------");
-        }
-        catch(SQLException e){
+        } catch (SQLException e) {
             logger.error(e.getMessage());
         }
 
     }
 
-    private void dropCourse(String studentId){
+    private void dropCourse(String studentId) {
 
         StudentInterface studentInterface = new StudentOperation();
 
-        if(!studentInterface.isApproved(studentId)){
+        if (!studentInterface.isApproved(studentId)) {
             System.out.println("You are Not Approved by Admin");
             logger.info("You are Not Approved by Admin");
             return;
@@ -269,18 +264,17 @@ public class StudentCRSMenu {
             }
 
             System.out.println("---------------------------------------------");
-        }
-        catch(CourseNotFoundException | SQLException e){
+        } catch (CourseNotFoundException | SQLException e) {
             logger.error(e.getMessage());
         }
     }
 
 
-    private void viewGradeCard(String studentId){
+    private void viewGradeCard(String studentId) {
 
         StudentInterface studentInterface = new StudentOperation();
 
-        if(!studentInterface.isApproved(studentId)){
+        if (!studentInterface.isApproved(studentId)) {
             System.out.println("You are Not Approved by Admin");
             logger.info("You are Not Approved by Admin");
             return;
@@ -293,19 +287,18 @@ public class StudentCRSMenu {
             studentInterface = new StudentOperation();
 
             List<Grade> gradeList = studentInterface.getGrade(studentId);
-            System.out.printf("%10s \t %10s","CourseID", "Grade In Course");
+            System.out.printf("%10s \t %10s", "CourseID", "Grade In Course");
             System.out.printf("\n");
             for (Grade grade : gradeList) {
                 String courseId = grade.getCourseId();
                 double mark = grade.getGrade();
 
-                System.out.printf("%10s \t %10s",courseId, mark);
+                System.out.printf("%10s \t %10s", courseId, mark);
                 System.out.printf("\n");
             }
 
             System.out.println("---------------------------------------");
-        }
-        catch (SQLException e){
+        } catch (SQLException e) {
             logger.error(e.getMessage());
         }
     }

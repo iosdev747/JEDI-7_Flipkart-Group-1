@@ -1,27 +1,24 @@
 package com.flipkart.dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.*;
-import java.sql.SQLException;
-
 import com.flipkart.bean.Grade;
 import com.flipkart.bean.Student;
 import com.flipkart.constant.SQLConstant;
 import com.flipkart.exception.StudentNotRegisteredException;
 import org.apache.log4j.Logger;
 
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
 
 // there may be some extra conn.close() statments so remove if it feel redundant
 
-public class StudentDaoOperation implements StudentDaoInterface{
+public class StudentDaoOperation implements StudentDaoInterface {
 
-    private static String url = SQLConstant.DB_URL;
-    private static String user = SQLConstant.DB_USER;
-    private static String pass = SQLConstant.DB_PASS;
-    private static Logger logger = Logger.getLogger(StudentDaoOperation.class);
+    private static final String url = SQLConstant.DB_URL;
+    private static final String user = SQLConstant.DB_USER;
+    private static final String pass = SQLConstant.DB_PASS;
+    private static final Logger logger = Logger.getLogger(StudentDaoOperation.class);
 
     /**
      * Constructor
@@ -31,6 +28,7 @@ public class StudentDaoOperation implements StudentDaoInterface{
 
     /**
      * Add student
+     *
      * @param student
      * @return
      * @throws StudentNotRegisteredException
@@ -54,7 +52,7 @@ public class StudentDaoOperation implements StudentDaoInterface{
 
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
-            Connection conn = DriverManager.getConnection(url,user,pass);
+            Connection conn = DriverManager.getConnection(url, user, pass);
 
             // since student is dependent on user first insert user
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.ADD_USER);
@@ -65,8 +63,8 @@ public class StudentDaoOperation implements StudentDaoInterface{
             // execute it to add to the userDetail table
             int rows = preparedStatement.executeUpdate();
 
-           // logger.info("---------Adding Student--------");
-            if(rows == 1){
+            // logger.info("---------Adding Student--------");
+            if (rows == 1) {
                 // now add the Student
                 PreparedStatement preparedStatement2 = conn.prepareStatement(SQLConstant.ADD_STUDENT);
                 preparedStatement2.setString(1, studentID);
@@ -79,9 +77,8 @@ public class StudentDaoOperation implements StudentDaoInterface{
             }
             conn.close();
             return true;
-        }
-        catch(Exception e){
-            logger.error("There is an Error : "+ e.getMessage());
+        } catch (Exception e) {
+            logger.error("There is an Error : " + e.getMessage());
             throw new StudentNotRegisteredException(name);
         }
 
@@ -91,69 +88,67 @@ public class StudentDaoOperation implements StudentDaoInterface{
 
     /**
      * get student ID
+     *
      * @param userId
      * @return student ID
      */
     @Override
-    public String getStudentId(int userId){
+    public String getStudentId(int userId) {
         //logger.debug("---------Get Student Details--------");
         try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
-            Connection conn = DriverManager.getConnection(url,user,pass);
+            Connection conn = DriverManager.getConnection(url, user, pass);
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.GET_STUDENT_ID);
             preparedStatement.setString(1, String.valueOf(userId));
             ResultSet result = preparedStatement.executeQuery();
             //logger.info("---------Get Student Details--------");
-            if(result.next()){
+            if (result.next()) {
                 String studentId = result.getString("studentID");
                 conn.close();
                 return studentId;
                 //return result.getInt("studentID");  // return result.getString("studentID);  //uncomment it otherwise
             }
             conn.close();
-        }
-        catch(Exception e){
-            logger.error("There is an Error getStudentID : "+ e.getMessage());
+        } catch (Exception e) {
+            logger.error("There is an Error getStudentID : " + e.getMessage());
         }
         return "No such student"; // return "No student added"   // uncomment it if string
     }
 
     /**
      * get grade card
+     *
      * @param studentId
      * @return grade card
      * @throws SQLException
      */
     @Override
-    public List<Grade> getGrade(String studentId) throws SQLException{
+    public List<Grade> getGrade(String studentId) throws SQLException {
         //logger.debug("---------Get Grade Card--------");
         List<Grade> gradeList = new ArrayList<Grade>();
 
         try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
-            Connection conn = DriverManager.getConnection(url,user,pass);
+            Connection conn = DriverManager.getConnection(url, user, pass);
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.GET_STUDENT_GRADE);
             preparedStatement.setString(1, studentId);
 
             ResultSet result = preparedStatement.executeQuery();
-           // logger.info("---------Get Grade Card--------");
-            while(result.next()){
+            // logger.info("---------Get Grade Card--------");
+            while (result.next()) {
                 // change 1st getInt  to getString   if studentID is String
                 gradeList.add(new Grade(result.getString("studentID"), result.getString("courseID"), result.getDouble("grade")));
 
             }
-           conn.close();
+            conn.close();
 
-        }
-        catch(SQLException e){
+        } catch (SQLException e) {
             logger.error(e.getMessage());
-        }
-        catch(Exception e){
-            logger.error("There is an Error getGrade : "+ e.getMessage());
-        }
-        finally{
+        } catch (Exception e) {
+            logger.error("There is an Error getGrade : " + e.getMessage());
+        } finally {
             logger.debug("This Finally is to getGrade");
         }
 
@@ -163,32 +158,32 @@ public class StudentDaoOperation implements StudentDaoInterface{
 
     // uncomment it if is Approved is implemented and added to Student database
     // the sql command is already there
+
     /**
      * is student approved?
+     *
      * @param studentId
      * @return true/false
      */
     @Override
-    public boolean isApproved(String studentId){
+    public boolean isApproved(String studentId) {
         logger.debug("---------Checking if Student is Approved or NOT--------");
-        try{
+        try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
-            Connection conn = DriverManager.getConnection(url,user,pass);
+            Connection conn = DriverManager.getConnection(url, user, pass);
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.IS_APPROVED);
             preparedStatement.setString(1, studentId);
 
             ResultSet rs = preparedStatement.executeQuery();
 
-            if(rs.next()){
+            if (rs.next()) {
                 return rs.getBoolean("isApproved");
             }
             conn.close();
-        }
-        catch(Exception e){
-            logger.error("There is an Error : "+ e.getMessage());
-        }
-        finally{
+        } catch (Exception e) {
+            logger.error("There is an Error : " + e.getMessage());
+        } finally {
             logger.debug("This Finally is to getGrade");
         }
         return false;
@@ -197,17 +192,18 @@ public class StudentDaoOperation implements StudentDaoInterface{
 
     /**
      * verify student
+     *
      * @param userId
      * @return true/false
      */
     @Override
-    public boolean verifyStudent(int userId){
+    public boolean verifyStudent(int userId) {
 
         logger.debug("---------Verifying Student--------");
-        try{
+        try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
-            Connection conn = DriverManager.getConnection(url,user,pass);
+            Connection conn = DriverManager.getConnection(url, user, pass);
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.VERIFY_STUDENT);
             preparedStatement.setString(1, String.valueOf(userId));
 
@@ -217,14 +213,13 @@ public class StudentDaoOperation implements StudentDaoInterface{
 
             int numRow = result.getInt(1);
 
-            if(numRow == 1) {
-               conn.close();
+            if (numRow == 1) {
+                conn.close();
                 return true;
             }
             conn.close();
-        }
-        catch(Exception e){
-            logger.error("There is an Error verifyStudent : "+ e.getMessage());
+        } catch (Exception e) {
+            logger.error("There is an Error verifyStudent : " + e.getMessage());
         }
         return false;
     }

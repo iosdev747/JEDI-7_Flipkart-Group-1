@@ -1,29 +1,19 @@
-
 package com.flipkart.application;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Scanner;
-
-import com.flipkart.business.StudentInterface;
-import com.flipkart.business.StudentOperation;
-import com.flipkart.business.UserInterface;
-import com.flipkart.business.UserOperation;
-import com.flipkart.business.ProfessorInterface;
-import com.flipkart.business.ProfessorOperation;
-import com.flipkart.business.AdminInterface;
-import com.flipkart.business.AdminOperation;
-import com.flipkart.exception.*;
-
+import com.flipkart.business.*;
+import com.flipkart.exception.StudentNotRegisteredException;
+import com.flipkart.exception.UserNotFoundException;
 import org.apache.log4j.Logger;
+
+import java.util.Scanner;
 
 //import org.apache.log4j.Logger;
 
 public class CRSApplication {
 
-    private static Logger logger = Logger.getLogger(CRSApplication.class);
+    private static final Logger logger = Logger.getLogger(CRSApplication.class);
 
-    public static void createMainMenu(){
+    public static void createMainMenu() {
 
         System.out.println("-----------Welcome to Course Management System--------------");
         System.out.println("1. Login as Student");
@@ -35,7 +25,7 @@ public class CRSApplication {
         System.out.println("Enter user input");
     }
 
-    public static void loginStudent(){
+    public static void loginStudent() {
         try {
             System.out.println("********* Student Login ***********");
 
@@ -64,14 +54,13 @@ public class CRSApplication {
             }
 
             System.out.println("********* ************ ***********");
-        }
-        catch(UserNotFoundException e){
+        } catch (UserNotFoundException e) {
             logger.error(e.getMessage());
         }
 
     }
 
-    public  static void loginProfessor(){
+    public static void loginProfessor() {
 
         try {
 
@@ -103,13 +92,12 @@ public class CRSApplication {
 
 
             System.out.println("********* *************** ***********");
-        }
-        catch(UserNotFoundException e){
+        } catch (UserNotFoundException e) {
             logger.error(e.getMessage());
         }
     }
 
-    public static void loginAdmin(){
+    public static void loginAdmin() {
 
         try {
             System.out.println("********* Admin Login ***********");
@@ -140,13 +128,12 @@ public class CRSApplication {
 
 
             System.out.println("********* *************** ***********");
-        }
-        catch(UserNotFoundException e){
+        } catch (UserNotFoundException e) {
             logger.error(e.getMessage());
         }
     }
 
-    public static void registerStudent(){
+    public static void registerStudent() {
 
         try {
             System.out.println("********* Student Register Window ***********");
@@ -193,14 +180,13 @@ public class CRSApplication {
 
 
             System.out.println("********* *********************** ***********");
-        }
-        catch(StudentNotRegisteredException e){
+        } catch (StudentNotRegisteredException e) {
             logger.error(e.getMessage());
         }
     }
 
 
-    public static void updatePassword(){
+    public static void updatePassword() {
 
         try {
             System.out.println("********* Change Password ***********");
@@ -224,12 +210,11 @@ public class CRSApplication {
                 String newPassword;
                 System.out.println("Enter New Password");
                 newPassword = sc.next();
-                boolean success = userInterface.updatePassword(userId,newPassword);
+                boolean success = userInterface.updatePassword(userId, newPassword);
 
-                if(success){
+                if (success) {
                     System.out.println("Password Change SuccessFull");
-                }
-                else{
+                } else {
                     System.out.println("Password Change UnSuccessFull");
                 }
 
@@ -240,14 +225,13 @@ public class CRSApplication {
 
 
             System.out.println("********* *************** ***********");
-        }
-        catch(UserNotFoundException e){
+        } catch (UserNotFoundException e) {
             logger.error(e.getMessage());
         }
 
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         boolean inside = true;
 
@@ -257,30 +241,30 @@ public class CRSApplication {
         int userInput;
 
         //login page
-        while(inside) {
+        while (inside) {
             createMainMenu();
             userInput = sc.nextInt();
             switch (userInput) {
                 case 1:
                     // login for student
-                    crsApplication.loginStudent();
+                    loginStudent();
                     break;
 
                 case 2:
                     // login as Professor
-                    crsApplication.loginProfessor();
+                    loginProfessor();
                     break;
                 case 3:
                     // login as Admin
-                    crsApplication.loginAdmin();
+                    loginAdmin();
                     break;
                 case 4:
                     // register Student
-                    crsApplication.registerStudent();
+                    registerStudent();
                     break;
                 case 5:
                     //update password
-                    crsApplication.updatePassword();
+                    updatePassword();
                     break;
                 default:
                     inside = false;
