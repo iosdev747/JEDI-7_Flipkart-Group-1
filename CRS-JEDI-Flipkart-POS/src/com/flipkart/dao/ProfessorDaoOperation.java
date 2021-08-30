@@ -214,7 +214,7 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
      */
     @Override
     public String getProfessorId(int userId){
-        logger.debug("---------Getting Professor--------");
+        //logger.info("---------Getting Professor--------");
         try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
@@ -223,6 +223,7 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
             preparedStatement.setString(1, String.valueOf(userId));
             ResultSet result = preparedStatement.executeQuery();
 
+            logger.info("---------Getting Professor--------");
             if(result.next()){
                 String profId = result.getString("professorEmpID");  // return result.getString("professorID);  //uncomment it otherwise
                 conn.close();

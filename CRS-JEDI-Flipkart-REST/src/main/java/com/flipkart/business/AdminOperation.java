@@ -67,7 +67,10 @@ public class AdminOperation implements AdminInterface{
         }
     }
 
-
+    /**
+     * view pending approvals
+     * @return
+     */
     @Override
     public List<Student> viewPendingAdmissions(){
 
@@ -76,6 +79,11 @@ public class AdminOperation implements AdminInterface{
 
     }
 
+    /**
+     * approve student
+     * @param studentId
+     * @throws StudentNotFoundForApprovalException
+     */
     @Override
     public void approveStudent(String studentId) throws StudentNotFoundForApprovalException{
 

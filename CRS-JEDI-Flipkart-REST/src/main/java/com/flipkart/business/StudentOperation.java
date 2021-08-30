@@ -16,9 +16,25 @@ import java.sql.SQLException;
 
 public class StudentOperation  implements StudentInterface{
 
+    /**
+     * Constructor
+     */
     public StudentOperation() { // In future may be change to private
     }
 
+    /**
+     * Registration
+     * @param userID
+     * @param name
+     * @param password
+     * @param address
+     * @param studentId
+     * @param batch
+     * @param branch
+     * @param isApproved
+     * @return
+     * @throws StudentNotRegisteredException
+     */
     @Override
     public boolean register(int userID, String name, String password, String address, String studentId, int batch, String branch, boolean isApproved) throws StudentNotRegisteredException {
         Logger logger = Logger.getLogger(StudentOperation.class);
@@ -36,6 +52,11 @@ public class StudentOperation  implements StudentInterface{
         return flag;
     }
 
+    /**
+     * get student id
+     * @param userId
+     * @return
+     */
     @Override
     public String getStudentId(int userId){
         Logger logger = Logger.getLogger(StudentOperation.class);
@@ -44,6 +65,12 @@ public class StudentOperation  implements StudentInterface{
         return studentDaoInterface.getStudentId(userId);
     }
 
+    /**
+     * view grade card
+     * @param studentId
+     * @return
+     * @throws SQLException
+     */
     @Override
     public List<Grade> getGrade(String studentId) throws SQLException{
         Logger logger = Logger.getLogger(StudentOperation.class);
@@ -62,6 +89,11 @@ public class StudentOperation  implements StudentInterface{
     }
 
 
+    /**
+     * is student approved?
+     * @param studentId
+     * @return
+     */
     @Override
     public boolean isApproved(String studentId){
 
@@ -70,6 +102,11 @@ public class StudentOperation  implements StudentInterface{
 
     }
 
+    /**
+     * verify student
+     * @param userId
+     * @return
+     */
     @Override
     public boolean verifyStudent(int userId){
         Logger logger = Logger.getLogger(StudentOperation.class);
