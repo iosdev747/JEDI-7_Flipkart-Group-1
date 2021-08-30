@@ -155,6 +155,7 @@ public class StudentCRSMenu {
             return;
         }
 
+
         try {
 
             System.out.println("-----You can Enter Add Course Window------");
@@ -168,12 +169,19 @@ public class StudentCRSMenu {
 
             RegistrationInterface registrationInterface = new RegistrationOperation();
 
+            boolean alreadyRegistered = registrationInterface.isRegistered(courseId,studentId);
+
+            if(alreadyRegistered){
+                System.out.println("IsAlready registered For course");
+                return;
+            }
+
             boolean success = registrationInterface.addCourse(courseId, studentId);
 
             if (success) {
-                logger.info("Course Registration Successful");
+                System.out.println("Course Registration Successful");
             } else {
-                logger.info("Course Registration fail");
+                System.out.println("Course Registration fail");
             }
         }
         catch (CourseNotFoundException | SQLException e){

@@ -1547,3 +1547,56 @@
 15:21:43,113 DEBUG UserOperation,main:30 - Verifying Credentials for User with ID : 2
 15:21:43,242 DEBUG StudentOperation,main:76 - Verifying Student with ID : 2
 15:21:43,320 DEBUG StudentOperation,main:42 - Getting Student ID for user ID: 2
+02:49:10,966 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 2
+02:49:16,375 DEBUG StudentOperation,main:110 - Verifying Student with ID : 2
+02:49:17,305 DEBUG StudentOperation,main:60 - Getting Student ID for user ID: 2
+02:49:34,050 DEBUG RegistrationOperation,main:87 -  Viewing Registerd Courses for Student with ID : 1
+02:49:43,737 DEBUG StudentOperation,main:74 - Grade Card for Student with ID : 1
+02:49:56,547 DEBUG RegistrationOperation,main:102 - Calculating fees for Student with ID : 1
+02:50:13,613 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 1
+02:50:13,874 DEBUG StudentOperation,main:110 - Verifying Student with ID : 1
+02:50:38,182 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 2
+02:50:38,446 DEBUG StudentOperation,main:110 - Verifying Student with ID : 2
+02:50:38,543 DEBUG StudentOperation,main:60 - Getting Student ID for user ID: 2
+02:50:42,625 DEBUG RegistrationOperation,main:87 -  Viewing Registerd Courses for Student with ID : 1
+02:50:58,480 DEBUG RegistrationOperation,main:72 - Viewing Course list 
+02:51:03,227 DEBUG RegistrationOperation,main:29 - Adding Course with ID: 1 for Student with ID : 1
+02:51:03,608  INFO RegistrationDaoOperation,main:57 - Duplicate entry '1-1' for key 'EnrolledStudent.PRIMARY'
+02:51:03,609  INFO StudentCRSMenu,main:176 - Course Registration fail
+02:53:08,742 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 1
+02:53:17,336 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 2
+02:53:17,509 DEBUG StudentOperation,main:110 - Verifying Student with ID : 2
+02:53:17,726 DEBUG StudentOperation,main:60 - Getting Student ID for user ID: 2
+02:53:24,773 DEBUG RegistrationOperation,main:72 - Viewing Course list 
+02:53:37,929 DEBUG RegistrationOperation,main:29 - Adding Course with ID: 1 for Student with ID : 1
+02:53:38,263  INFO RegistrationDaoOperation,main:57 - Duplicate entry '1-1' for key 'EnrolledStudent.PRIMARY'
+02:53:38,264  INFO StudentCRSMenu,main:176 - Course Registration fail
+03:01:18,091 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 2
+03:01:19,105 DEBUG StudentOperation,main:110 - Verifying Student with ID : 2
+03:01:19,242 DEBUG StudentOperation,main:60 - Getting Student ID for user ID: 2
+03:01:30,425 DEBUG RegistrationOperation,main:72 - Viewing Course list 
+03:01:32,697 DEBUG RegistrationOperation,main:133 - Checking if Course with ID: 1is registered for Student with ID : 1
+03:01:32,903 DEBUG RegistrationOperation,main:29 - Adding Course with ID: 1 for Student with ID : 1
+03:01:33,057  INFO RegistrationDaoOperation,main:57 - Duplicate entry '1-1' for key 'EnrolledStudent.PRIMARY'
+03:02:27,991 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 2
+03:02:28,920 DEBUG StudentOperation,main:110 - Verifying Student with ID : 2
+03:02:28,995 DEBUG StudentOperation,main:60 - Getting Student ID for user ID: 2
+03:02:33,343 DEBUG RegistrationOperation,main:72 - Viewing Course list 
+03:02:35,655 DEBUG RegistrationOperation,main:133 - Checking if Course with ID: 1is registered for Student with ID : 1
+03:02:35,814 DEBUG RegistrationOperation,main:29 - Adding Course with ID: 1 for Student with ID : 1
+03:02:36,090  INFO RegistrationDaoOperation,main:57 - Duplicate entry '1-1' for key 'EnrolledStudent.PRIMARY'
+03:06:39,841 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 2
+03:06:40,578 DEBUG StudentOperation,main:110 - Verifying Student with ID : 2
+03:06:40,754 DEBUG StudentOperation,main:60 - Getting Student ID for user ID: 2
+03:06:46,123 DEBUG RegistrationOperation,main:72 - Viewing Course list 
+03:06:48,430 DEBUG RegistrationOperation,main:133 - Checking if Course with ID: 1is registered for Student with ID : 1
+03:07:55,311 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 2
+03:07:56,248 DEBUG StudentOperation,main:110 - Verifying Student with ID : 2
+03:07:56,338 DEBUG StudentOperation,main:60 - Getting Student ID for user ID: 2
+03:07:58,721 DEBUG RegistrationOperation,main:72 - Viewing Course list 
+03:07:59,956 DEBUG RegistrationOperation,main:133 - Checking if Course with ID: 1is registered for Student with ID : 1
+03:08:11,283 DEBUG RegistrationOperation,main:87 -  Viewing Registerd Courses for Student with ID : 1
+03:08:17,588 DEBUG RegistrationOperation,main:53 - Dropping Course with ID: 1 for Student with ID : 1
+03:08:22,992 DEBUG RegistrationOperation,main:72 - Viewing Course list 
+03:08:24,877 DEBUG RegistrationOperation,main:133 - Checking if Course with ID: 1is registered for Student with ID : 1
+03:08:25,105 DEBUG RegistrationOperation,main:29 - Adding Course with ID: 1 for Student with ID : 1
