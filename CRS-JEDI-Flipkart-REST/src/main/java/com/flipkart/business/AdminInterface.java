@@ -1,12 +1,12 @@
 package com.flipkart.business;
 
-import java.util.*;
-
 import com.flipkart.bean.Course;
 import com.flipkart.bean.Professor;
 import com.flipkart.bean.Student;
 import com.flipkart.bean.User;
 import com.flipkart.exception.*;
+
+import java.util.List;
 
 public interface AdminInterface {
     /**
@@ -16,7 +16,7 @@ public interface AdminInterface {
      * @throws CourseNotFoundException
      * @throws CourseNotDeletedException
      */
-    public void deleteCourse(String courseId) throws CourseNotFoundException, CourseNotDeletedException;
+    void deleteCourse(String courseId) throws CourseNotFoundException, CourseNotDeletedException;
 
     /**
      * Method to add Course to Course Catalog
@@ -28,7 +28,7 @@ public interface AdminInterface {
      * @param professorEmpId
      * @throws CourseNotFoundException
      */
-    public void addCourse(String courseId, String courseName, int credit, String professorEmpId, double fee) throws CourseFoundException;
+    void addCourse(String courseId, String courseName, int credit, String professorEmpId, double fee) throws CourseFoundException;
 
 
     // this two depend on the isApproved in DB which is not in student
@@ -38,7 +38,7 @@ public interface AdminInterface {
      *
      * @return List of Students with pending admissions
      */
-    public List<Student> viewPendingAdmissions();
+    List<Student> viewPendingAdmissions();
 
     /**
      * Method to approve a Student
@@ -47,7 +47,7 @@ public interface AdminInterface {
      * @throws StudentNotFoundForApprovalException
      */
 
-    public void approveStudent(String studentId) throws StudentNotFoundForApprovalException;
+    void approveStudent(String studentId) throws StudentNotFoundForApprovalException;
 
     /**
      * Method to add Professor to DB
@@ -58,7 +58,7 @@ public interface AdminInterface {
      */
 
 
-    public void addProfessor(Professor professor) throws ProfessorNotAddedException, UserIdAlreadyInUseException;
+    void addProfessor(Professor professor) throws ProfessorNotAddedException, UserIdAlreadyInUseException;
 
     /**
      * Method to add User to DB
@@ -68,7 +68,7 @@ public interface AdminInterface {
      * @throws UserIdAlreadyInUseException
      */
 
-    public void addUser(User user) throws UserNotAddedException, UserIdAlreadyInUseException;
+    void addUser(User user) throws UserNotAddedException, UserIdAlreadyInUseException;
 
     /**
      * Method to assign Course to a Professor
@@ -79,14 +79,14 @@ public interface AdminInterface {
      * @throws UserNotFoundException
      */
 
-    public void assignCourse(String courseId, String professorEmpId) throws CourseNotFoundException, UserNotFoundException;
+    void assignCourse(String courseId, String professorEmpId) throws CourseNotFoundException, UserNotFoundException;
 
     /**
      * View professor in the institute
      *
      * @return List of the professors in the institute
      */
-    public List<Professor> viewProfessor();
+    List<Professor> viewProfessor();
 
     /**
      * Method to verify that the user is a Admin
@@ -95,7 +95,7 @@ public interface AdminInterface {
      * @return
      */
 
-    public boolean verifyAdmin(int userId);
+    boolean verifyAdmin(int userId);
 
     /**
      * To get AdminId from userId
@@ -103,10 +103,11 @@ public interface AdminInterface {
      * @return AdminId
      */
 
-    public String getAdminId(int userId);
+    String getAdminId(int userId);
 
     /**
      * To get all the course list
+     *
      * @return course list
      */
     List<Course> viewCourse();

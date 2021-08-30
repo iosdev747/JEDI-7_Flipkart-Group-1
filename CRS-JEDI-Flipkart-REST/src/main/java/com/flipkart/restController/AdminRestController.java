@@ -26,6 +26,7 @@ public class AdminRestController {
         this.adminHandler = new AdminOperation();
     }
 
+
     @GET
     @Path("/viewCourse")
     @Produces(MediaType.APPLICATION_JSON)

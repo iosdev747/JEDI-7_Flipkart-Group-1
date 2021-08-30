@@ -1,21 +1,23 @@
 package com.flipkart.dao;
 
-import java.sql.*;
-
+import com.flipkart.constant.SQLConstant;
 import com.flipkart.exception.UserNotFoundException;
 import org.apache.log4j.Logger;
-import com.flipkart.constant.SQLConstant;
-import com.flipkart.exception.*;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 
-public class UserDaoOperation implements UserDaoInterface{
+public class UserDaoOperation implements UserDaoInterface {
 
-    private static String url = "jdbc:mysql://localhost:3306/JEDI-7-CRS";
-    private static String user = "root";
-    private static String pass = "root";
-    private static Logger logger = Logger.getLogger(UserDaoOperation.class);
+    private static final String url = SQLConstant.DB_URL;
+    private static final String user = SQLConstant.DB_USER;
+    private static final String pass = SQLConstant.DB_PASS;
+    private static final Logger logger = Logger.getLogger(UserDaoOperation.class);
 
-    public UserDaoOperation(){      // in future may be changed to private
+    public UserDaoOperation() {      // in future may be changed to private
 
     }
 
@@ -25,61 +27,49 @@ public class UserDaoOperation implements UserDaoInterface{
         try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
-            Connection conn = DriverManager.getConnection(url,user,pass);
+            Connection conn = DriverManager.getConnection(url, user, pass);
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.VERIFY_CREDENTIAL);
-            preparedStatement.setString(1,String.valueOf(userId));
+            preparedStatement.setString(1, String.valueOf(userId));
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            if(!resultSet.next()){
+            if (!resultSet.next()) {
                 conn.close();
                 throw new UserNotFoundException(Integer.toString(userId));
-            }
-
-            else if(password.equals(resultSet.getString("paswrd"))){
+            } else if (password.equals(resultSet.getString("paswrd"))) {
                 conn.close();
                 return true;
-            }
-            else {
+            } else {
                 conn.close();
                 return false;
             }
-        }
-        catch(Exception e){
-            logger.error("There is an Error verifyCredential : "+ e.getMessage());
-        }
-        finally{
+        } catch (Exception e) {
+            logger.error("There is an Error verifyCredential : " + e.getMessage());
+        } finally {
             logger.debug("Who Knows What happens verifyCredential");
         }
         return false;
     }
 
     @Override
-    public boolean updatePassword(int userId, String newPassword){
+    public boolean updatePassword(int userId, String newPassword) {
 
-        try{
+        try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
-            Connection conn = DriverManager.getConnection(url,user,pass);
+            Connection conn = DriverManager.getConnection(url, user, pass);
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.UPDATE_PASSWORD);
-            preparedStatement.setString(1,newPassword);
-            preparedStatement.setString(2,String.valueOf(userId));
+            preparedStatement.setString(1, newPassword);
+            preparedStatement.setString(2, String.valueOf(userId));
 
             int row = preparedStatement.executeUpdate();
             conn.close();
 
-            if(row==1){
-                return true;
-            }
-            else {
-                return false;
-            }
+            return row == 1;
 
-        }
-        catch(Exception e){
-            logger.error("There is an Error : "+ e.getMessage());
-        }
-        finally{
+        } catch (Exception e) {
+            logger.error("There is an Error : " + e.getMessage());
+        } finally {
             logger.debug("This Finally is to update password");
         }
 

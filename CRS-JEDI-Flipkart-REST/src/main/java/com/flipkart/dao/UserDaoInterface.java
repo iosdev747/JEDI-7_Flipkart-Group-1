@@ -1,10 +1,10 @@
 package com.flipkart.dao;
 
-import com.flipkart.exception.*;
+import com.flipkart.exception.UserNotFoundException;
 
 public interface UserDaoInterface {
 
-    public boolean verifyCredentials(int userId, String password) throws UserNotFoundException;
+    boolean verifyCredentials(int userId, String password) throws UserNotFoundException;
 
-    public boolean updatePassword(int userId, String newPassword);
+    boolean updatePassword(int userId, String newPassword);
 }

@@ -1,5 +1,6 @@
 package com.flipkart.dao;
 
+import com.flipkart.constant.SQLConstant;
 import org.apache.log4j.Logger;
 
 import java.sql.Connection;
@@ -7,20 +8,19 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.List ;
 
-public class NotificationDaoOperation implements NotificationDaoInterface{
+public class NotificationDaoOperation implements NotificationDaoInterface {
 
-    private static String url = "jdbc:mysql://localhost:3306/JEDI-7-CRS";
-    private static String user = "root";
-    private static String pass = "root";
-    private static Logger logger = Logger.getLogger(NotificationDaoOperation.class);
+    private static final String url = SQLConstant.DB_URL;
+    private static final String user = SQLConstant.DB_USER;
+    private static final String pass = SQLConstant.DB_PASS;
+    private static final Logger logger = Logger.getLogger(NotificationDaoOperation.class);
 
     public String sendNotification(int userId, String msg) {
         logger.debug("-------------Sending Notification--------");
         int notificationId = 0;
         try {
-            Connection connection = DriverManager.getConnection(url,user,pass);
+            Connection connection = DriverManager.getConnection(url, user, pass);
             String sql = "INSERT INTO Notifications(userID, msg, isSeen) values (?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(sql);
 
@@ -40,14 +40,14 @@ public class NotificationDaoOperation implements NotificationDaoInterface{
         logger.debug("-------------Reading Notification--------");
         ArrayList<String> notifications = new ArrayList<String>();
         try {
-            Connection connection = DriverManager.getConnection(url,user,pass);
+            Connection connection = DriverManager.getConnection(url, user, pass);
             String sql = "SELECT msg FROM Notifications where userID=?";
             PreparedStatement statement = connection.prepareStatement(sql);
 
             statement.setString(1, String.valueOf(userID));
             ResultSet result = statement.executeQuery();
 
-            while(result.next()) {
+            while (result.next()) {
                 notifications.add(result.getString(1));
             }
 
