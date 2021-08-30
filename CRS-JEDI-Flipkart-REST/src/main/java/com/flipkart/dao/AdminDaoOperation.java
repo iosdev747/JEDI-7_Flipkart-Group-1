@@ -12,23 +12,13 @@ import org.apache.log4j.Logger;
 
 public class AdminDaoOperation implements AdminDaoInterface{
 
-    private static String url = SQLConstant.DB_URL;
-    private static String user = SQLConstant.DB_USER;
-    private static String pass = SQLConstant.DB_PASS;
+    private static String url = "jdbc:mysql://localhost:3306/JEDI-7-CRS";
+    private static String user = "root";
+    private static String pass = "root";
     private static Logger logger = Logger.getLogger(AdminDaoOperation.class);
-
-    /**
-     * Constructor
-     */
     public AdminDaoOperation() {    // In future may be change to private
     }
 
-    /**
-     * Method to delete course
-     * @param courseId
-     * @throws CourseNotDeletedException
-     * @throws CourseNotFoundException
-     */
     @Override
     public void deleteCourse(String courseId) throws CourseNotDeletedException, CourseNotFoundException {
 
@@ -63,11 +53,6 @@ public class AdminDaoOperation implements AdminDaoInterface{
         }
     }
 
-    /**
-     * Method to add course
-     * @param course
-     * @throws CourseFoundException
-     */
     public void addCourse(Course course) throws CourseFoundException {
 
         // first take details from the course
@@ -108,10 +93,6 @@ public class AdminDaoOperation implements AdminDaoInterface{
 
     }
 
-    /**
-     * Method to view pending admissions
-     * @return list of students
-     */
     @Override
     public List<Student> viewPendingAdmissions(){
 
@@ -149,14 +130,9 @@ public class AdminDaoOperation implements AdminDaoInterface{
         return studentList;
     }
 
-    /**
-     * Method to approve student registration
-     * @param studentId
-     * @throws StudentNotFoundForApprovalException
-     */
     @Override
     public void approveStudent(String studentId) throws StudentNotFoundForApprovalException {
-
+        logger.debug("-----------Student Approval---------");
         try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
@@ -165,7 +141,7 @@ public class AdminDaoOperation implements AdminDaoInterface{
             preparedStatement.setString(1, studentId);
 
             int rows = preparedStatement.executeUpdate();
-            logger.info("-----------Student Approval---------");
+
             if(rows == 0){
                 // here throw an error StudentNotFoundForApprovalException(studentId)
                 conn.close();
@@ -182,15 +158,10 @@ public class AdminDaoOperation implements AdminDaoInterface{
         }
     }
 
-    /**
-     * Method to add professor
-     * @param professor
-     * @throws ProfessorNotAddedException
-     * @throws UserIdAlreadyInUseException
-     */
+
     @Override
     public void addProfessor(Professor professor) throws ProfessorNotAddedException, UserIdAlreadyInUseException {
-
+        logger.debug("----------Adding Professor------------");
         int userId = professor.getUserID();
         String name = professor.getName();
         String password = professor.getPassword();
@@ -209,10 +180,8 @@ public class AdminDaoOperation implements AdminDaoInterface{
             preparedStatement.setString(3, password);
             preparedStatement.setString(4, address);
 
-            //logger.info("----------Adding Professor------------");
             // execute it to add to the userDetail table
             int rows = preparedStatement.executeUpdate();
-            logger.info("----------Adding Professor------------");
             if(rows == 1){
                 // now add the Student
                 PreparedStatement preparedStatement2 = conn.prepareStatement(SQLConstant.ADD_PROFESSOR);
@@ -246,15 +215,9 @@ public class AdminDaoOperation implements AdminDaoInterface{
 
     }
 
-    /**
-     * Method to add user
-     * @param user
-     * @throws UserNotAddedException
-     * @throws UserIdAlreadyInUseException
-     */
     @Override
     public void addUser(User userR) throws UserNotAddedException, UserIdAlreadyInUseException{
-
+        logger.debug("------------Adding User----------");
         int userId = userR.getUserID();
         String name = userR.getName();
         String password = userR.getPassword();
@@ -271,7 +234,6 @@ public class AdminDaoOperation implements AdminDaoInterface{
             preparedStatement.setString(3, password);
             preparedStatement.setString(4, address);
 
-            //logger.info("------------Adding User----------");
             // execute it to add to the userDetail table
             int row = preparedStatement.executeUpdate();
             logger.info(row + " user added.");
@@ -292,16 +254,10 @@ public class AdminDaoOperation implements AdminDaoInterface{
         }
     }
 
-    /**
-     * Method to assign course
-     * @param courseId
-     * @param professorEmpId
-     * @throws CourseNotFoundException
-     * @throws UserNotFoundException
-     */
+
     @Override
     public void assignCourse(String courseId, String professorEmpId) throws CourseNotFoundException, UserNotFoundException{
-        //logger.debug("-----------Assigning Course to Professor---------");
+        logger.debug("-----------Assigning Course to Professor---------");
         try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
@@ -318,6 +274,7 @@ public class AdminDaoOperation implements AdminDaoInterface{
                 conn.close();
                 throw new CourseNotFoundException(courseId);
             }
+
             conn.close();
         }
         catch(SQLException se) {
@@ -329,13 +286,9 @@ public class AdminDaoOperation implements AdminDaoInterface{
         }
     }
 
-    /**
-     * Method to view professors list
-     * @return list of professors
-     */
     @Override
     public List<Professor> viewProfessor() {
-        //logger.debug("-----------Viewing Professor---------");
+        logger.debug("-----------Viewing Professor---------");
         List<Professor> professorList = new ArrayList<Professor>();
 
         try{
@@ -345,7 +298,7 @@ public class AdminDaoOperation implements AdminDaoInterface{
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.VIEW_PROFESSOR);
 
             ResultSet result = preparedStatement.executeQuery();
-            logger.info("-----------Viewing Professor---------");
+
             while(result.next()){
                 // change 1st getInt  to getString   if studentID is String
                 Professor professor = new Professor();
@@ -368,14 +321,9 @@ public class AdminDaoOperation implements AdminDaoInterface{
         return professorList;
     }
 
-    /**
-     * Method to verify professor
-     * @param userId
-     * @return true/false
-     */
     @Override
     public boolean verifyAdmin(int userId){
-        //logger.debug("-----------Verifying Professor---------");
+        logger.debug("-----------Verifying Professor---------");
         boolean flag = false;
 
         try{
@@ -390,7 +338,7 @@ public class AdminDaoOperation implements AdminDaoInterface{
             result.next();
 
             int numRow = result.getInt(1);
-            logger.info("-----------Verifying Professor---------");
+
             if(numRow == 1) flag = true;
             conn.close();
 
@@ -401,14 +349,9 @@ public class AdminDaoOperation implements AdminDaoInterface{
         return flag;
     }
 
-    /**
-     * Method to get admin ID
-     * @param userId
-     * @return admin id
-     */
     @Override
     public String getAdminId(int userId){
-       //logger.debug("---------Getting Admin---------");
+        logger.debug("---------Getting Admin---------");
         try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
@@ -416,7 +359,7 @@ public class AdminDaoOperation implements AdminDaoInterface{
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.GET_ADMIN_ID);
             preparedStatement.setString(1, String.valueOf(userId));
             ResultSet result = preparedStatement.executeQuery();
-            logger.info("---------Getting Admin---------");
+
             if(result.next()){
                 String empId = result.getString("empID");  // return result.getString("empID);  //uncomment it otherwise
                 conn.close();

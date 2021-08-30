@@ -12,19 +12,15 @@ import org.apache.log4j.Logger;
 
 public class ProfessorDaoOperation implements ProfessorDaoInterface{
 
-    private static String url = SQLConstant.DB_URL;
-    private static String user = SQLConstant.DB_USER;
-    private static String pass = SQLConstant.DB_PASS;
+    private static String url = "jdbc:mysql://localhost:3306/JEDI-7-CRS";
+    private static String user = "root";
+    private static String pass = "root";
     private static Logger logger = Logger.getLogger(ProfessorDaoOperation.class);
 
     public ProfessorDaoOperation() {   // In future may be change to private
     }
 
-    /**
-     * Get courses list taught by professor
-     * @param professorEmpId
-     * @return list of courses taught by professor
-     */
+    // here also change the professorEmpId to string if it is in db
     @Override
     public List<Course> getCoursesByProfessor(String professorEmpId) {
 
@@ -57,11 +53,7 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
         return courseList;
     }
 
-    /**
-     * view list of enrolled students
-     * @param professorEmpId
-     * @return list of enrolled students
-     */
+    // here also change it to professorEmpId to string if in db
     @Override
     public List<EnrolledStudent> getEnrolledStudent(String professorEmpId){
 
@@ -93,14 +85,7 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
         return enrolledList;
     }
 
-    /**
-     * add grade
-     * @param studentId
-     * @param courseId
-     * @param grade
-     * @return true/false
-     * @throws GradeNotAddedException
-     */
+    // studentId can be change to String if db is String
     @Override
     public boolean addGrade(String studentId, String courseId, double grade) throws GradeNotAddedException{
 
@@ -142,11 +127,7 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
         //return false;
     }
 
-    /**
-     * get professor name
-     * @param professorEmpId
-     * @return professor name
-     */
+    // change professorEmpId to String if in db it is String
     @Override
     public String getProfessorName(String professorEmpId) {
         logger.debug("---------Getting Name of Professor--------");
@@ -174,11 +155,6 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
         return "No Professor of ID: "+professorEmpId;
     }
 
-    /**
-     * verify professor
-     * @param userId
-     * @return true/false
-     */
     @Override
     public boolean verifyProfessor(int userId){
         logger.debug("---------Verifying Professor--------");
@@ -207,14 +183,9 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
         return flag;
     }
 
-    /**
-     * get professor ID
-     * @param userId
-     * @return professor id
-     */
     @Override
     public String getProfessorId(int userId){
-        //logger.info("---------Getting Professor--------");
+        logger.debug("---------Getting Professor--------");
         try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
@@ -223,7 +194,6 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface{
             preparedStatement.setString(1, String.valueOf(userId));
             ResultSet result = preparedStatement.executeQuery();
 
-            logger.info("---------Getting Professor--------");
             if(result.next()){
                 String profId = result.getString("professorEmpID");  // return result.getString("professorID);  //uncomment it otherwise
                 conn.close();

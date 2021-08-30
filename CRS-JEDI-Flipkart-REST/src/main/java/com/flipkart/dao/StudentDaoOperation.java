@@ -18,26 +18,17 @@ import org.apache.log4j.Logger;
 
 public class StudentDaoOperation implements StudentDaoInterface{
 
-    private static String url = SQLConstant.DB_URL;
-    private static String user = SQLConstant.DB_USER;
-    private static String pass = SQLConstant.DB_PASS;
+    private static String url = "jdbc:mysql://localhost:3306/JEDI-7-CRS";
+    private static String user = "root";
+    private static String pass = "root";
     private static Logger logger = Logger.getLogger(StudentDaoOperation.class);
 
-    /**
-     * Constructor
-     */
-    public StudentDaoOperation() {
+    public StudentDaoOperation() {    // In future may be change to private
     }
 
-    /**
-     * Add student
-     * @param student
-     * @return
-     * @throws StudentNotRegisteredException
-     */
     @Override
     public boolean addStudent(Student student) throws StudentNotRegisteredException {
-        //logger.debug("---------Adding Student--------");
+        logger.debug("---------Adding Student--------");
         // let get all the details from the student first
         String studentID = student.getStudentId();   // also change this to string if studentId in db is String
         int batch = student.getBatch();
@@ -64,8 +55,6 @@ public class StudentDaoOperation implements StudentDaoInterface{
             preparedStatement.setString(4, address);
             // execute it to add to the userDetail table
             int rows = preparedStatement.executeUpdate();
-
-           // logger.info("---------Adding Student--------");
             if(rows == 1){
                 // now add the Student
                 PreparedStatement preparedStatement2 = conn.prepareStatement(SQLConstant.ADD_STUDENT);
@@ -89,14 +78,10 @@ public class StudentDaoOperation implements StudentDaoInterface{
     }
 
 
-    /**
-     * get student ID
-     * @param userId
-     * @return student ID
-     */
+    // also change it to string is studentId is String in db
     @Override
     public String getStudentId(int userId){
-        //logger.debug("---------Get Student Details--------");
+        logger.debug("---------Get Student Details--------");
         try {
             Class.forName("com.mysql.jdbc.Driver");   // see if it will be used
 
@@ -104,7 +89,7 @@ public class StudentDaoOperation implements StudentDaoInterface{
             PreparedStatement preparedStatement = conn.prepareStatement(SQLConstant.GET_STUDENT_ID);
             preparedStatement.setString(1, String.valueOf(userId));
             ResultSet result = preparedStatement.executeQuery();
-            //logger.info("---------Get Student Details--------");
+
             if(result.next()){
                 String studentId = result.getString("studentID");
                 conn.close();
@@ -119,15 +104,9 @@ public class StudentDaoOperation implements StudentDaoInterface{
         return "No such student"; // return "No student added"   // uncomment it if string
     }
 
-    /**
-     * get grade card
-     * @param studentId
-     * @return grade card
-     * @throws SQLException
-     */
     @Override
     public List<Grade> getGrade(String studentId) throws SQLException{
-        //logger.debug("---------Get Grade Card--------");
+        logger.debug("---------Get Grade Card--------");
         List<Grade> gradeList = new ArrayList<Grade>();
 
         try {
@@ -138,7 +117,7 @@ public class StudentDaoOperation implements StudentDaoInterface{
             preparedStatement.setString(1, studentId);
 
             ResultSet result = preparedStatement.executeQuery();
-           // logger.info("---------Get Grade Card--------");
+
             while(result.next()){
                 // change 1st getInt  to getString   if studentID is String
                 gradeList.add(new Grade(result.getString("studentID"), result.getString("courseID"), result.getDouble("grade")));
@@ -163,11 +142,6 @@ public class StudentDaoOperation implements StudentDaoInterface{
 
     // uncomment it if is Approved is implemented and added to Student database
     // the sql command is already there
-    /**
-     * is student approved?
-     * @param studentId
-     * @return true/false
-     */
     @Override
     public boolean isApproved(String studentId){
         logger.debug("---------Checking if Student is Approved or NOT--------");
@@ -195,11 +169,7 @@ public class StudentDaoOperation implements StudentDaoInterface{
     }
 
 
-    /**
-     * verify student
-     * @param userId
-     * @return true/false
-     */
+
     @Override
     public boolean verifyStudent(int userId){
 
