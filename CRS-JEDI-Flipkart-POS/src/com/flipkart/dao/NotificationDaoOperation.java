@@ -24,7 +24,7 @@ public class NotificationDaoOperation implements NotificationDaoInterface{
      * @return notification ID
      */
     public String sendNotification(int userId, String msg) {
-        logger.debug("-------------Sending Notification--------");
+        //logger.debug("-------------Sending Notification--------");
         int notificationId = 0;
         try {
             Connection connection = DriverManager.getConnection(url,user,pass);
@@ -35,7 +35,7 @@ public class NotificationDaoOperation implements NotificationDaoInterface{
             statement.setString(2, msg);
             statement.setString(3, "No");
             notificationId = statement.executeUpdate();
-            logger.error(notificationId + " was successfully sent.");
+            logger.info(notificationId + " was successfully sent.");
             connection.close();
         } catch (Exception e) {
             logger.error("EXCEPTION OCCURED");
@@ -49,7 +49,7 @@ public class NotificationDaoOperation implements NotificationDaoInterface{
      * @return notification message
      */
     public ArrayList<String> readNotification(int userID) {
-        logger.debug("-------------Reading Notification--------");
+        //logger.debug("-------------Reading Notification--------");
         ArrayList<String> notifications = new ArrayList<String>();
         try {
             Connection connection = DriverManager.getConnection(url,user,pass);
@@ -58,7 +58,7 @@ public class NotificationDaoOperation implements NotificationDaoInterface{
 
             statement.setString(1, String.valueOf(userID));
             ResultSet result = statement.executeQuery();
-
+            logger.info("-------------Reading Notification--------");
             while(result.next()) {
                 notifications.add(result.getString(1));
             }
