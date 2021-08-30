@@ -1600,3 +1600,26 @@
 03:08:22,992 DEBUG RegistrationOperation,main:72 - Viewing Course list 
 03:08:24,877 DEBUG RegistrationOperation,main:133 - Checking if Course with ID: 1is registered for Student with ID : 1
 03:08:25,105 DEBUG RegistrationOperation,main:29 - Adding Course with ID: 1 for Student with ID : 1
+18:48:45,457 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 1
+18:48:50,366 DEBUG AdminOperation,main:162 - Verifying Professor 1
+18:48:50,752 DEBUG AdminOperation,main:175 - Getting Admin with ID : 1
+18:50:03,041 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 1
+18:50:03,973 DEBUG AdminOperation,main:162 - Verifying Professor 1
+18:50:04,033 DEBUG AdminOperation,main:175 - Getting Admin with ID : 1
+18:50:48,895 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 1
+18:50:49,764 DEBUG AdminOperation,main:162 - Verifying Professor 1
+18:50:49,825 DEBUG AdminOperation,main:175 - Getting Admin with ID : 1
+18:51:29,140 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 1
+18:51:30,010 DEBUG AdminOperation,main:162 - Verifying Professor 1
+18:51:30,135 DEBUG AdminOperation,main:175 - Getting Admin with ID : 1
+18:52:27,750 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 1
+18:52:28,801 DEBUG AdminOperation,main:162 - Verifying Professor 1
+18:52:28,874 DEBUG AdminOperation,main:175 - Getting Admin with ID : 1
+18:56:35,418 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 1
+18:56:36,901 DEBUG AdminOperation,main:162 - Verifying Professor 1
+18:56:36,983 DEBUG AdminOperation,main:175 - Getting Admin with ID : 1
+18:56:45,725 DEBUG RegistrationOperation,main:72 - Viewing Course list 
+19:05:40,914 DEBUG UserOperation,main:42 - Verifying Credentials for User with ID : 1
+19:05:42,142 DEBUG AdminOperation,main:162 - Verifying Professor 1
+19:05:42,247 DEBUG AdminOperation,main:175 - Getting Admin with ID : 1
+19:05:47,828 DEBUG RegistrationOperation,main:72 - Viewing Course list 

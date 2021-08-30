@@ -128,6 +128,8 @@ public class StudentCRSMenu {
             RegistrationInterface registrationInterface = new RegistrationOperation();
             List<Course> courseList = registrationInterface.viewCourse();
 
+            System.out.printf("%10s \t %10s \t %10s \t %10s \t %10s","CoureseID", "CourseName","Credits","ProfessiorID", "Fee");
+            System.out.printf("\n");
 
             for (Course course : courseList) {
                 String courseId = course.getCourseId();
@@ -135,7 +137,8 @@ public class StudentCRSMenu {
                 int credit = course.getCredit();
                 String professorEmpId = course.getProfessorEmpId();
                 double fee = course.getFee();
-                System.out.println("CourseId : " + courseId + " , CourseName : " + courseName + " , credit : " + credit + " , ProfessorEmpId: " + professorEmpId + " , fee: " + fee);
+                System.out.printf("%10s \t %10s \t %10s \t %10s \t %10s" , courseId , courseName , credit ,professorEmpId, fee);
+                System.out.printf("\n");
             }
 
             System.out.println("---------------------------------------");
@@ -212,13 +215,16 @@ public class StudentCRSMenu {
                 System.out.println("No Course SelectedBy you");
             }
             else {
+                System.out.printf("%10s \t %10s \t %10s \t %10s \t %10s","CoureseID", "CourseName","Credits","ProfessiorID", "Fee");
+                System.out.printf("\n");
                 for (Course course : courseList) {
                     String courseId = course.getCourseId();
                     String courseName = course.getCourseName();
                     int credit = course.getCredit();
                     String professorEmpId = course.getProfessorEmpId();
                     double fee = course.getFee();
-                    System.out.println("CourseId : " + courseId + " , CourseName : " + courseName + " , credit : " + credit + " : ProfID : " + professorEmpId);
+                    System.out.printf("%10s \t %10s \t %10s \t %10s \t %10s" , courseId , courseName , credit ,professorEmpId, fee);
+                    System.out.printf("\n");
                 }
             }
 
@@ -287,12 +293,14 @@ public class StudentCRSMenu {
             studentInterface = new StudentOperation();
 
             List<Grade> gradeList = studentInterface.getGrade(studentId);
-
+            System.out.printf("%10s \t %10s","CourseID", "Grade In Course");
+            System.out.printf("\n");
             for (Grade grade : gradeList) {
                 String courseId = grade.getCourseId();
                 double mark = grade.getGrade();
 
-                System.out.println("courseId : " + courseId + " ---> " + mark);
+                System.out.printf("%10s \t %10s",courseId, mark);
+                System.out.printf("\n");
             }
 
             System.out.println("---------------------------------------");

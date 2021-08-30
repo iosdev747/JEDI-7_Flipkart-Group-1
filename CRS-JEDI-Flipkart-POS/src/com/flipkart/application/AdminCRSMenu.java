@@ -79,11 +79,14 @@ public class AdminCRSMenu {
 
         List<Student> studentList = adminInterface.viewPendingAdmissions();
 
+        System.out.printf("%10s \t %10s","StudentID", "Student Name");
+        System.out.printf("\n");
         for(Student student : studentList){
             String studentId = student.getStudentId();
             String name = student.getName();
 
-            System.out.println("StudentID: "+studentId +" , Student Name: "+name);
+            System.out.printf("%10s \t %10s",studentId ,name);
+            System.out.printf("\n");
         }
 
         System.out.println("-------------------------------------------");
@@ -104,6 +107,8 @@ public class AdminCRSMenu {
 
             adminInterface.approveStudent(studentId);
 
+            System.out.println("Student Approval Successful!!");
+
             System.out.println("----------------------------------------------");
         }
         catch(StudentNotFoundForApprovalException e){
@@ -120,14 +125,16 @@ public class AdminCRSMenu {
             RegistrationInterface registrationInterface = new RegistrationOperation();
             List<Course> courseList = registrationInterface.viewCourse();
 
-
+            System.out.printf("%10s \t %10s \t %10s \t %10s \t %10s","CoureseID", "CourseName","Credits","ProfessiorID", "Fee");
+            System.out.printf("\n");
             for (Course course : courseList) {
                 String courseId = course.getCourseId();
                 String courseName = course.getCourseName();
                 int credit = course.getCredit();
                 String professorEmpId = course.getProfessorEmpId();
                 double fee = course.getFee();
-                System.out.println("CourseId : " + courseId + " , CourseName : " + courseName + " , credit : " + credit + " , ProfessorEmpId: " + professorEmpId + " , fee: " + fee);
+                System.out.printf("%10s \t %10s \t %10s \t %10s \t %10s" , courseId , courseName , credit ,professorEmpId, fee);
+                System.out.printf("\n");
             }
 
             System.out.println("---------------------------------------");
@@ -164,6 +171,8 @@ public class AdminCRSMenu {
             AdminInterface adminInterface = new AdminOperation();
             adminInterface.addCourse(courseId, courseName, credit, professorEmpId, fee);
 
+            System.out.println("course : " + courseId + " Added to catalog Successfully!!");
+
 
             System.out.println("---------------------------------------");
         }
@@ -184,6 +193,8 @@ public class AdminCRSMenu {
 
             AdminInterface adminInterface = new AdminOperation();
             adminInterface.deleteCourse(courseId);
+
+            System.out.println("course : " + courseId + " Dropped from catalog Successfully!!");
 
             System.out.println("------------------------------------------");
         }
@@ -232,6 +243,8 @@ public class AdminCRSMenu {
 
             adminInterface.addProfessor(professor);
 
+            System.out.println("Professor : " + name + " Added to catalog Successfully!!");
+
             System.out.println("---------------------------------");
         }
         catch(ProfessorNotAddedException | UserIdAlreadyInUseException e){
@@ -256,6 +269,8 @@ public class AdminCRSMenu {
             AdminInterface adminInterface = new AdminOperation();
 
             adminInterface.assignCourse(courseId, professorId);
+
+            System.out.println("course : " + courseId + " Assigned to Professor " + professorId + " Successfully!");
 
 
             System.out.println("------------------------------------------");
