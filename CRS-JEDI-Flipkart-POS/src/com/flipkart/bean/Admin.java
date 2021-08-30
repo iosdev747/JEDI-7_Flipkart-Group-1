@@ -23,7 +23,7 @@ public class Admin extends User {
     /**
      * Method to set Employee Id
      *
-     * @param Employee Id
+     * @param empId Id
      */
     public void setEmpId(String empId) {
         this.empId = empId;
