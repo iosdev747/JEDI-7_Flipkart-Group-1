@@ -24,6 +24,18 @@ public class UserRestController {
         this.userHandler = new UserOperation();
     }
 
+    /**
+     * Method for new User to signup/register to the System
+     *
+     * @param userID:         UserId of the User
+     * @param name:           Name of the User
+     * @param password:       Password Credential
+     * @param address:Address of the User
+     * @param studentID       : StudentId of the Student
+     * @param batch:          Batch of the Student.
+     * @param branch:         Branch of the student
+     */
+    @GET
     @POST
     @Path("/signup")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -44,6 +56,14 @@ public class UserRestController {
         return Response.status(201).entity("User (" + name + ") registered successfully").build();
     }
 
+    /**
+     * Method to Verify Credentials so that User can Log in.
+     *
+     * @param userID:   ID of the User
+     * @param password: Password of the user.
+     * @return AuthToken
+     */
+    @GET
     @POST
     @Path("/login")
     public Response verifyCredentials(
@@ -64,6 +84,14 @@ public class UserRestController {
         }
     }
 
+    /**
+     * REST Service to update password for a User.
+     *
+     * @param userID:      UserId of the user
+     * @param newPassword: new password to be stored in db.
+     * @return return 201, if password is updated, else 500 in case of error
+     */
+    @GET
     @GET
     @Path("/updatePassword")
     public Response updatePassword(
