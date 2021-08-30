@@ -10,11 +10,19 @@ import org.apache.log4j.Logger;
 
 public class UserOperation implements UserInterface{
 
+    /**
+     * Constructor
+     */
     public  UserOperation(){   // In future may be change to private
 
     }
 
-
+    /**
+     * update password
+     * @param userId
+     * @param newPassword
+     * @return
+     */
     @Override
     public boolean updatePassword(int userId, String newPassword){
         Logger logger = Logger.getLogger(UserOperation.class);
@@ -24,6 +32,13 @@ public class UserOperation implements UserInterface{
         return userInterface.updatePassword(userId, newPassword);
     }
 
+    /**
+     * verify credentials
+     * @param userId
+     * @param password
+     * @return
+     * @throws UserNotFoundException
+     */
     @Override
     public boolean verifyCredentials(int userId, String password) throws UserNotFoundException {
         Logger logger = Logger.getLogger(UserOperation.class);

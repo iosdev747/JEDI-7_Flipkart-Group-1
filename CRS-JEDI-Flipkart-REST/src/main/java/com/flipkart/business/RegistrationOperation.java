@@ -11,9 +11,20 @@ import org.apache.log4j.Logger;
 
 public class RegistrationOperation implements RegistrationInterface{
 
+    /**
+     * Constructor
+     */
     public RegistrationOperation() {   // In future may be change to private
     }
 
+    /**
+     * add course
+     * @param courseId
+     * @param studentId
+     * @return
+     * @throws CourseNotFoundException
+     * @throws SQLException
+     */
     @Override
     public boolean addCourse(String courseId, String studentId) throws CourseNotFoundException, SQLException {
         Logger logger = Logger.getLogger(RegistrationOperation.class);
@@ -30,6 +41,14 @@ public class RegistrationOperation implements RegistrationInterface{
         }
     }
 
+    /**
+     * drop course
+     * @param courseId
+     * @param studentId
+     * @return
+     * @throws CourseNotFoundException
+     * @throws SQLException
+     */
     @Override
     public boolean dropCourse(String courseId, String studentId) throws CourseNotFoundException, SQLException{
         Logger logger = Logger.getLogger(RegistrationOperation.class);
@@ -44,6 +63,11 @@ public class RegistrationOperation implements RegistrationInterface{
         }
     }
 
+    /**
+     * view courses
+     * @return
+     * @throws SQLException
+     */
     @Override
     public List<Course> viewCourse() throws SQLException{
         Logger logger = Logger.getLogger(RegistrationOperation.class);
@@ -52,7 +76,12 @@ public class RegistrationOperation implements RegistrationInterface{
         return registrationInterface.viewCourse();
     }
 
-
+    /**
+     * view registered courses
+     * @param studentId
+     * @return
+     * @throws SQLException
+     */
     @Override
     public List<Course> viewRegisterCourse(String studentId) throws SQLException{
         Logger logger = Logger.getLogger(RegistrationOperation.class);
@@ -61,6 +90,12 @@ public class RegistrationOperation implements RegistrationInterface{
         return registrationInterface.viewRegisterCourse(studentId);
     }
 
+    /**
+     * calculate fees
+     * @param studentId
+     * @return
+     * @throws SQLException
+     */
     @Override
     public double calculate(String studentId) throws SQLException{
         Logger logger = Logger.getLogger(RegistrationOperation.class) ;
@@ -69,6 +104,12 @@ public class RegistrationOperation implements RegistrationInterface{
         return registrationInterface.calculate(studentId);
     }
 
+    /**
+     * number of registered courses
+     * @param studentId
+     * @return
+     * @throws SQLException
+     */
     @Override
     public int numOfRegisteredCourses(String studentId) throws SQLException{
         Logger logger = Logger.getLogger(RegistrationOperation.class);
@@ -77,6 +118,13 @@ public class RegistrationOperation implements RegistrationInterface{
         return registrationInterface.numOfRegisteredCourses(studentId);
     }
 
+    /**
+     * if registered or not
+     * @param courseId
+     * @param studentId
+     * @return
+     * @throws SQLException
+     */
     @Override
     public boolean isRegistered(String courseId, String studentId) throws SQLException{
         Logger logger = Logger.getLogger(RegistrationOperation.class);
