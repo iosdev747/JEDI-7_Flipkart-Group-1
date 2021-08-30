@@ -14,7 +14,7 @@ public class AdminDaoOperation implements AdminDaoInterface{
 
     private static String url = "jdbc:mysql://localhost:3306/JEDI-7-CRS";
     private static String user = "root";
-    private static String pass = "12345678";
+    private static String pass = "root";
     private static Logger logger = Logger.getLogger(AdminDaoOperation.class);
     public AdminDaoOperation() {    // In future may be change to private
     }

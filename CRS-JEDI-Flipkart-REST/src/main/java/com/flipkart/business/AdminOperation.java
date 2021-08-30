@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import com.flipkart.bean.*;
 import com.flipkart.dao.AdminDaoInterface;
 import com.flipkart.dao.AdminDaoOperation;
+import com.flipkart.dao.RegistrationDaoInterface;
+import com.flipkart.dao.RegistrationDaoOperation;
 import com.flipkart.exception.*;
 
 import org.apache.log4j.Logger;
@@ -19,6 +21,20 @@ public class AdminOperation implements AdminInterface{
     public AdminOperation() {   // In future may be change to private
     }
 
+
+    public List<Course> viewCourse() {
+        Logger logger = Logger.getLogger(AdminOperation.class);
+        logger.debug("View Course");
+        RegistrationDaoInterface registrationInterface = new RegistrationDaoOperation();
+        try {
+            return registrationInterface.viewCourse();
+        } catch (SQLException e) {
+            logger.debug(e.getMessage());
+        }
+        return null;
+    }
+
+
     /**
      * Method to delete course
      * @param courseId
@@ -29,13 +45,7 @@ public class AdminOperation implements AdminInterface{
         Logger logger = Logger.getLogger(AdminOperation.class);
         logger.debug("Deleting Course " + courseId);
         AdminDaoInterface adminInterface = new AdminDaoOperation();
-
-        try{
-            adminInterface.deleteCourse(courseId);
-        }
-        catch(CourseNotFoundException | CourseNotDeletedException e) {
-            throw e;
-        }
+        adminInterface.deleteCourse(courseId);
     }
 
     /**

@@ -105,4 +105,9 @@ public interface AdminInterface {
 
     public String getAdminId(int userId);
 
+    /**
+     * To get all the course list
+     * @return course list
+     */
+    List<Course> viewCourse();
 }

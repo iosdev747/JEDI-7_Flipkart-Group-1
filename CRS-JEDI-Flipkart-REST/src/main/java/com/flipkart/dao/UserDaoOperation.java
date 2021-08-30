@@ -12,7 +12,7 @@ public class UserDaoOperation implements UserDaoInterface{
 
     private static String url = "jdbc:mysql://localhost:3306/JEDI-7-CRS";
     private static String user = "root";
-    private static String pass = "12345678";
+    private static String pass = "root";
     private static Logger logger = Logger.getLogger(UserDaoOperation.class);
 
     public UserDaoOperation(){      // in future may be changed to private
