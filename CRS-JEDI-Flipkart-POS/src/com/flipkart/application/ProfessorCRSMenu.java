@@ -64,12 +64,15 @@ public class ProfessorCRSMenu {
 
         List<Course> courseList = professorInterface.getCoursesByProfessor(profId);
 
+        System.out.printf("%10s \t %10s \t %10s","CoureseID", "CourseName","Credits");
+        System.out.printf("\n");
         for(Course course : courseList){
             String courseId = course.getCourseId();
             String courseName = course.getCourseName();
             int credit = course.getCredit();
 
-            System.out.println("Course: " + courseId + " , CourseName : " + courseName + " , credit :" + credit);
+            System.out.printf("%10s \t %10s \t %10s \t %10s" , courseId , courseName , credit);
+            System.out.printf("\n");
         }
         System.out.println("--------------------------------------------");
 
@@ -86,10 +89,13 @@ public class ProfessorCRSMenu {
 
             List<EnrolledStudent> enrolList = professorInterface.getEnrolledStudent(profId);
 
+            System.out.printf("%10s \t %10s","CoureseID", "Student ID");
+            System.out.printf("\n");
             for (EnrolledStudent enrol : enrolList) {
                 String courseId = enrol.getCourseId();
                 String studentId = enrol.getStudentId();
-                System.out.println("CourseID : " + courseId + " ----> StudentId : " + studentId);
+                System.out.printf("%10s \t %10s", courseId,studentId);
+                System.out.printf("\n");
             }
 
             System.out.println("----------------------------------------------------");
@@ -119,8 +125,8 @@ public class ProfessorCRSMenu {
 
             boolean success = professorInterface.addGrade(studentId, courseId, mark);
 
-            if (success) logger.info("Grade Added Succesfully");
-            else logger.info("Grade Added Failed");
+            if (success) System.out.println("Grade Added Succesfully");
+            else System.out.println("Grade Added Failed");
 
             System.out.println("-------- ---------------------------- -----------");
         }

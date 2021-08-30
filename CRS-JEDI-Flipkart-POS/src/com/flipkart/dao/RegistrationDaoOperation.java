@@ -280,7 +280,6 @@ public class RegistrationDaoOperation implements RegistrationDaoInterface {
             ResultSet result = preparedStatement.executeQuery();
 
             // check is there is only one row in table then true,  can apply better logic?
-            result.next();
 
             if(result.next()){
                 conn.close();
