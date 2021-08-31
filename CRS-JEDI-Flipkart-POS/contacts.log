@@ -1644,3 +1644,19 @@
 19:38:11,450 DEBUG StudentOperation,main:110 - Verifying Student with ID : 5
 19:38:11,525 DEBUG StudentOperation,main:60 - Getting Student ID for user ID: 5
 19:38:12,623 DEBUG RegistrationOperation,main:72 - Viewing Course list 
+10:26:02,002 DEBUG UserOperation,main:41 - Verifying Credentials for User with ID : 301
+10:26:04,201 DEBUG StudentOperation,main:110 - Verifying Student with ID : 301
+10:26:04,304 DEBUG StudentOperation,main:60 - Getting Student ID for user ID: 301
+10:27:43,188 DEBUG UserOperation,main:41 - Verifying Credentials for User with ID : 301
+10:27:44,344 DEBUG StudentOperation,main:110 - Verifying Student with ID : 301
+10:27:44,471 DEBUG StudentOperation,main:60 - Getting Student ID for user ID: 301
+10:28:15,760 DEBUG RegistrationOperation,main:72 - Viewing Course list 
+10:28:25,224 DEBUG RegistrationOperation,main:133 - Checking if Course with ID: M1is registered for Student with ID : Udit#301
+10:28:25,280 DEBUG RegistrationOperation,main:29 - Adding Course with ID: M1 for Student with ID : Udit#301
+10:28:36,834 DEBUG RegistrationOperation,main:87 -  Viewing Registerd Courses for Student with ID : Udit#301
+10:28:48,117 DEBUG StudentOperation,main:74 - Grade Card for Student with ID : Udit#301
+10:29:47,393 DEBUG StudentOperation,main:37 - Initiating Registration for Student with ID : Karan#310
+10:30:02,462 DEBUG UserOperation,main:41 - Verifying Credentials for User with ID : 310
+10:30:02,513 DEBUG StudentOperation,main:110 - Verifying Student with ID : 310
+10:30:02,578 DEBUG StudentOperation,main:60 - Getting Student ID for user ID: 310
+10:30:13,894  INFO StudentCRSMenu,main:155 - You are Not Approved by Admin

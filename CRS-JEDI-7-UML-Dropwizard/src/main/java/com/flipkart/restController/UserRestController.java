@@ -35,7 +35,6 @@ public class UserRestController {
      * @param batch:          Batch of the Student.
      * @param branch:         Branch of the student
      */
-    @GET
     @POST
     @Path("/signup")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -63,7 +62,6 @@ public class UserRestController {
      * @param password: Password of the user.
      * @return AuthToken
      */
-    @GET
     @POST
     @Path("/login")
     public Response verifyCredentials(
@@ -91,8 +89,7 @@ public class UserRestController {
      * @param newPassword: new password to be stored in db.
      * @return return 201, if password is updated, else 500 in case of error
      */
-    @GET
-    @GET
+    @POST
     @Path("/updatePassword")
     public Response updatePassword(
             @NotNull
